@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package arrays_medium;
+package Leetcode_Java.arrays_medium;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -47,24 +47,32 @@ public class ThreeSum {
         List<List<Integer>> lists = new LinkedList();
         Arrays.sort(nums);
         for(int i =0;i<nums.length-1;i++){
+            //if i encounters a duplicate
             if(i!=0&&nums[i] == nums[i-1])continue;
             int j = i+1, k = nums.length - 1;
             while(j<k){
-                while(j<k && nums[j] == nums[j+1]) j++;
-                while(j<k && nums[k] == nums[k-1]) k--;
+                 
                 int sum = nums[i]+nums[j]+nums[k];
                 if(sum == 0){
+                    while(j<k && nums[j] == nums[j+1]) j++;
+                    while(j<k && nums[k] == nums[k-1]) k--;
                     lists.add(Arrays.asList(nums[i],nums[j],nums[k]));
+                    j++;
+                    k--;
                 }
-                j++;
-                k--;
+                else if(sum < 0){
+                    j++;
+                }
+                else{
+                    k--;
+                }
+                 
             }
         }
         
         return lists;
     }
      public static void main(String[] args){
-         System.out.println(threeSum(new int[]{1,-1,-1,0})); 
- 
+         System.out.println(threeSum(new int[]{-4,-2,1,-5,-4,-4,4,-2,0,4,0,-2,3,1,-5,0})); 
      }
 }
