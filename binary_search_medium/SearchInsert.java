@@ -17,7 +17,7 @@ public class SearchInsert {
         //find the first number >= target, if that num is not found return nums.length
         //possibilities, number >= target or number < target
         int s = 0, e = nums.length - 1, res = nums.length;
-        while(s + 1 < e){
+        while(s + 1 < e) {
             int mid = (s + e) >>> 1;
             if (nums[mid] >= target) {
                 e = mid;
