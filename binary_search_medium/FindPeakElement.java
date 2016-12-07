@@ -8,6 +8,18 @@ case 2:
 The numbers in adjacent positions are different.
 A[0] < A[1] && A[A.length - 2] > A[A.length - 1].
 we need to set s  = 1, e = n - 2 to avoid overflow
+time O(log n) space O(1)
+
+Another clever time O(n)
+
+public int findPeakElement(int[] nums) {
+        for(int i = 1; i < nums.length;i++){
+            if(nums[i] < nums[i-1])
+                return i-1;
+        }
+        return nums.length - 1;
+    }
+
  */
 package Leetcode_Java.binary_search_medium;
 
