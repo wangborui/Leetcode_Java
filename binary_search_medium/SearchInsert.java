@@ -14,10 +14,10 @@ public class SearchInsert {
         if(nums == null || nums.length == 0) {
             return 0;
         }
-        //find the first number >= target, if that num is not found return nums.length
+        int s = 0, e = nums.length - 1;
+         //find the first number >= target, if that num is not found return nums.length
         //possibilities, number >= target or number < target
-        int s = 0, e = nums.length - 1, res = nums.length;
-        while(s + 1 < e) {
+        while(s + 1 < e){
             int mid = (s + e) >>> 1;
             if (nums[mid] >= target) {
                 e = mid;
@@ -26,12 +26,15 @@ public class SearchInsert {
                 s = mid;
             }
         }
-        if(nums[e] >= target) {
-            res = e;
-        }
+        //
         if(nums[s] >= target) {
-            res = s;
+            return s;
         }
-        return res;
+        else if(nums[e] >= target) {
+            return e;
+        }else{
+            //after searching if all nums are < target, then e points to the last number in the array, therefore e + 1;
+            return e + 1;
+        }
     }
 }
