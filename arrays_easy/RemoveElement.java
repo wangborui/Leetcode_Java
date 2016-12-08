@@ -20,6 +20,11 @@ What happens when the elements to remove are rare?
 Solution:
 Time O(n) space O(1)
 use a pointer j to represent 0- - (not val values) - - j - - (val) - - i - (not processed num) - -n
+
+Follow up:
+Remove duplicate elements from sorted array, similar conditions:
+nums[i] != val
+nums[i] != nums[i - 1]
  */
 package Leetcode_Java.arrays_easy;
 
@@ -31,7 +36,7 @@ import edu.princeton.cs.algs4.StdOut;
  */
 public class RemoveElement {
     static int removeElement(int[] nums, int val) {
- 
+        //j starts with 0 because 0 index element could be val and therefore removed
          int j = 0;
          for(int i = 0; i < nums.length; i++){
              if(nums[i]!= val)
@@ -40,8 +45,12 @@ public class RemoveElement {
          return j;
     }
     public static void main(String [] args){
-        //int [] dig = {3,2,2,3,33,3,4};
-         int [] dig = {44};
+         int [] dig = {3,2,2,3,33,3,4};
+        // int [] dig = {44};
         StdOut.println(removeElement(dig,3) );
+        for(int num:dig){
+            System.out.print(num + " ");
+        }
+        
     }
 }
