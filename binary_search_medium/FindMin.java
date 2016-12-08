@@ -12,6 +12,7 @@ Find minimum number in the rotated integer array that may contain duplicates.
 O(n)
 Input:        1,1,1,1,0,1,1,1
 by getting the value mid and comparing to the end value target, we do not get any information like we do above
+the solution to this problem is to use a for loop to find the smallest element
  */
 package Leetcode_Java.binary_search_medium;
 
