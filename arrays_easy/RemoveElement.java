@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package arrays_easy;
+package Leetcode_Java.arrays_easy;
 
 import edu.princeton.cs.algs4.StdOut;
  
