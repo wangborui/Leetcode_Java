@@ -1,47 +1,56 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package arrays_easy;
+Source: https://leetcode.com/problems/merge-sorted-array/
 
-import edu.princeton.cs.algs4.StdOut;
-import java.util.Arrays;
+Problem:Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
+Note:
+You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold additional elements from nums2. 
+The number of elements initialized in nums1 and nums2 are m and n respectively.
+
+Solution:
+Time O(m+n) Space O(1)
+use 3 pointers i, j, k. 
+i represents the end of the merged array and decrement each time we add one element to num1
+j represents the end of nums1 array and decrement 1 when its value is added into merged array
+k represents the end of nums2 array and decrement 1 when its value is added into merged array
+
+Follow up:
+1.merge two sorted array of size m and n into another array of size m+n
+2.what if one array is very large and the other one is very small?
+* In this case if we assume m is much larger than n, then we can use binary search to find the insersion position of each element in n into m.
+this costs time O(n log m), then we copy those elements from array n into new array k, then copy everything from array m time O(m + n)
+this methods saves time because reading and writing elements alternatives from m,n, and k costs more time than to go directly all from n to k, then m to k
+
+ */
+package Leetcode_Java.arrays_easy;
+
 
 /**
  *
  * @author Borui Wang
  */
 public class Merge {
-    //answer found online 
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        int i=m-1, j=n-1, k=m+n-1;
-        while (i>-1 && j>-1) nums1[k--]= (nums1[i]>nums2[j]) ? nums1[i--] : nums2[j--];
-        while (j>-1)         nums1[k--]=nums2[j--];
-        StdOut.println(Arrays.toString(nums1));
+        //j is the last element in nums1, k is the last element in nums2
+        int j = m - 1, k = n - 1;
+        //i = m + n - 1, this is the last element of the merged array, each time i decrease 1 
+        for(int i = m + n - 1; i >= 0; i--) {
+            //either j is less than 0 or k is less than 0, meaning either nums1 or nums2 are finished, but the other one is not
+            //In this case, we need to use Integer.MIN_VALUE to represent the value from the array already depleted
+            //If both j and k >= 0, we choose the value from its array
+            int one = (j < 0) ? Integer.MIN_VALUE : nums1[j];
+            int two = (k < 0) ? Integer.MIN_VALUE : nums2[k];
+            if(one >= two) {
+                nums1[i] = nums1[j--];
+            } else {
+                nums1[i] = nums2[k--];
+            }
+        }
     }
-//    public void merge(int[] nums1, int m, int[] nums2, int n) {
-//        if(m == 0 || n == 0) return;
-//        int []nums3 = new int[m+n];
-//        int i,j,h;
-//        i = h = j = 0;
-//        while(i<m||j<n){
-//            if(i>=m)nums3[h]=nums2[j++];
-//            else if(j>=n)nums3[h]=nums1[i++];
-//            else{
-//                if(nums1[i]<=nums2[j]){
-//                    nums3[h]=nums1[i++];
-//                }else{
-//                    nums3[h]=nums2[j++];
-//                }
-//            }
-//            h++;
-//        }
-//        for(int c = 0; c < nums3.length; c++){
-//            nums1[c] = nums3[c];
-//        }
-//        
-//    }
+ /*Test cases
+    *case 1: when nums1 and nums2 are both size 0
+    *case 2: when one of them is size 0 the other one is not
+    *case 3: when both are greater than size 0
+    */
     public static void main(String[] args){
         int []a={2,4,6,8,0,0,0};
         int []b ={7,9,11};
