@@ -28,7 +28,9 @@ Mistakes:
 
 
 Follow up:
-Assume there may be duplicate in the array?
+Assume there may be duplicate in the array? 
+This is similar to find min element in rotated array with duplicates
+https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/
 Solution: O(n), since the array can contain duplicates if target = 0, we get 1110111111, we get a mid of 1, there is no telling if we should go right or left, where is the cut off point
 */
 package Leetcode_Java.binary_search_medium;
