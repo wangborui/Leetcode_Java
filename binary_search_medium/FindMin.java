@@ -1,10 +1,17 @@
 /*
 These are arrays without duplicate element, this can be done with binary search
+O(log n)
 
 Input: 1,2,3,4,5
 No rotation   : 1,2,3,4,5
 Rotate one    : 5,1,2,3,4
 Normal Rotate : 3,4,5,1,2
+
+Follow up:
+Find minimum number in the rotated integer array that may contain duplicates.
+O(n)
+Input:        1,1,1,1,0,1,1,1
+by getting the value mid and comparing to the end value target, we do not get any information like we do above
  */
 package Leetcode_Java.binary_search_medium;
 
