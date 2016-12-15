@@ -3,7 +3,7 @@
 
 *Inputs: sorted integer array and target value T
 <T = values less than T
-T  = values equal to T
+ T = values equal to T
 >T = values greater than T
 
 -T exists:
@@ -17,13 +17,13 @@ T  = values equal to T
 search for the left most index of T, if does not exist return [-1,-1]
 search for the right most index of T, then return range[left, right]
 -Left Search Time O(log n), SpaceO(1):
-left pointer point to 0, right pointer point to n.length - 1
+left pointer points to start of the array 0, right pointer point to end of the array n.length - 1
 -Invariant: 
 left pointer always point to values less than T
 right values always point to values larger than or equal to T
 -Loop termination:
-left pointer points to largest value less than T
-right pointer points to first value larger than or equal to T, which is the left index
+left pointer points to largest value less than T, except when array starts with T value
+right pointer points to first value larger than or equal to T, which is the left range index
 
 -Right Search follows similar logic Time O(log n), SpaceO(1)
 
