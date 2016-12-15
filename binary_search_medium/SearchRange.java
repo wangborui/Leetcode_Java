@@ -1,6 +1,7 @@
 /*
 *Source: https://leetcode.com/problems/search-for-a-range/
 
+********************************************************************************** 
 *Inputs: sorted integer array and target value T
 <T = values less than T
  T = values equal to T
@@ -12,6 +13,7 @@
 3. <T, <T, <T, [T,...T, T], >T, >T, >T
 
 -T does not exist: return [-1,-1] after one search
+********************************************************************************** 
 
 *Solutions:
 search for the left most index of T, if does not exist return [-1,-1]
