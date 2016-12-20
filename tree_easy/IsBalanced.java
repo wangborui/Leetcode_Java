@@ -74,8 +74,11 @@ public class IsBalanced {
         if (root == null) {
             return 0;
         }
+        //divide
         int left = maxDepthDivideNConquer(root.left);
         int right = maxDepthDivideNConquer(root.right);
+        
+        //conquer
         if(left == -1 || right == -1 || Math.abs(left - right) > 1) {
             return -1;
         }
