@@ -1,7 +1,23 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+Source: https://leetcode.com/problems/binary-tree-inorder-traversal/
+
+********************************************************************************
+Given a binary tree, return the inorder traversal of its nodes' values.
+
+For example:
+Given binary tree [1,null,2,3],
+   1
+    \
+     2
+    /
+   3
+return [1,3,2].
+
+Note: Recursive solution is trivial, could you do it iteratively?
+********************************************************************************
+
+3 solutions like preorder traversal
+recursive, iterative, and divide and conquer
  */
 package Leetcode_Java.tree_medium;
 

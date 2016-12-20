@@ -83,8 +83,8 @@ public class PreorderTraversal {
         }
 
         // Divide
-        ArrayList<Integer> left = preorderTraversalDivideNConquer(root.left);
-        ArrayList<Integer> right = preorderTraversalDivideNConquer(root.right);
+        List<Integer> left = preorderTraversalDivideNConquer(root.left);
+        List<Integer> right = preorderTraversalDivideNConquer(root.right);
 
         // Conquer
         result.add(root.val);
