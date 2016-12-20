@@ -21,6 +21,7 @@ Solution:
 add each root value to the result list, and recurse left sub-tree then right
 2. Iterative
 using stack and array list and helper data structures
+3. Divide and conquer
  */
 package Leetcode_Java.tree_medium;
 
