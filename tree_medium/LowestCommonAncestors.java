@@ -22,9 +22,7 @@ we are comparing objects, not values in objects
 Time O(n), space O(1) not including call stack
  */
 package Leetcode_Java.tree_medium;
-
-import java.util.LinkedList;
-import java.util.Queue;
+ 
 
 /**
  *
@@ -71,28 +69,4 @@ public class LowestCommonAncestors {
             return root;
         }
     }
-    
-    static TreeNode createTree(Integer[] nodes) {
-        Queue<TreeNode> q = new LinkedList();
-        int index = 0;
-        TreeNode root = new TreeNode(nodes[index++]);
-        q.add(root);
-
-        while (!q.isEmpty() && index < nodes.length) {
-            TreeNode temp = q.poll();
-
-            TreeNode left = nodes[index++] == null ? null : new TreeNode(nodes[index - 1]);
-            TreeNode right = nodes[index++] == null ? null : new TreeNode(nodes[index - 1]);
-            temp.left = left;
-            temp.right = right;
-            if (left != null) {
-                q.add(left);
-            }
-            if (right != null) {
-                q.add(right);
-            }
-        }
-        return root;
-    }
-  
 }
