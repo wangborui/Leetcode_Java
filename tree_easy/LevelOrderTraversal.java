@@ -24,6 +24,22 @@ Solution:
 2. use 1 queue with dummy nodes, add root into q1, add # as dummy node to mark its end, poll until we see #, add children then # ...
 3. use 1 queue (code below)
 
+Follow up:
+*how to reverse order level? return below instead
+[
+  [15,7],
+  [9,20],
+  [3],
+]
+instead of adding to the levels list do this levels.add(0,level) which reverses the order of adding
+
+*what about zigzag level order traversal we return below?
+[
+  [3],
+  [20,9],
+  [15,7]
+]
+use a boolean variable fromLeft to make sure the adding direction on each level, then set fromLeft = !fromLeft after one level is finished
  */
 package Leetcode_Java.tree_easy;
 
