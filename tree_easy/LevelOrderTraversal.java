@@ -20,8 +20,8 @@ return its level order traversal as:
 ********************************************************************************
 
 Solution:
-1. use 2 queues
-2. use 1 queue with dummy nodes
+1. use 2 queues: add root into q 1, poll, push its children into q2, poll, add their children to q1 ...
+2. use 1 queue with dummy nodes, add root into q1, add # as dummy node to mark its end, poll until we see #, add children then # ...
 3. use 1 queue (code below)
 
  */
