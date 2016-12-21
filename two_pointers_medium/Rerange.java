@@ -96,7 +96,7 @@ public class Rerange {
             posIdx = 1;
         }
         
-        while(posIdx < A.length || negIdx < A.length) {
+        while(posIdx < A.length && negIdx < A.length) {
             while(posIdx < A.length && A[posIdx] > 0) {
                 posIdx += 2;
             }
