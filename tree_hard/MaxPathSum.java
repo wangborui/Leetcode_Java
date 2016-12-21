@@ -14,6 +14,9 @@ Given the below binary tree,
      2   3
 Return 6.
 ********************************************************************************
+
+Solution: 
+Two important variables, global max sum and local max sum
  */
 package Leetcode_Java.tree_hard;
 
@@ -99,7 +102,55 @@ public class MaxPathSum {
         }
         return root;
     }
+ //localSinglePathMax assumes starting at current node, max single path value that can be passed up, must have one value
+    /*
+    there are 3 possibilities:
+    1.root val
+    2.root val + left.localsinglepathmax
+    3.root val + right.localsinglepathmax
+    */
+    //globalCrossPathMax is the largest cross path sum
+    /*
+    there are 4 possibilities:
+    1.max are below this level max(left.globalCrossPathMax, right.globalCrossPathMax)
+    2.max is at this level max(root val + max(left.localsinglepathmax, 0) + max(right.localsinglepathmax, 0),
+          previous level max)
 
+    */
+    private class ResultType {
+        int localSinglePathMax;
+        int globalCrossPathMax;
+        public ResultType(int localSinglePathMax, int globalCrossPathMax) {
+            this.localSinglePathMax = localSinglePathMax;
+            this.globalCrossPathMax = globalCrossPathMax;
+        }
+    }
+    public int maxPathSumWithClass(TreeNode root) {
+        ResultType res = helperWithClass(root);
+        return res.globalCrossPathMax;
+    }
+    
+    private ResultType helperWithClass(TreeNode root) {
+        if(root == null) {
+            return new ResultType(Integer.MIN_VALUE, Integer.MIN_VALUE);
+        }
+        
+        //divide
+        ResultType left = helperWithClass(root.left);
+        ResultType right = helperWithClass(root.right);
+        
+        //conquer
+        //this calculates the 3 possibilities
+        int singleMax = Math.max(Math.max(left.localSinglePathMax, right.localSinglePathMax), 0) + root.val;
+        
+        int globalMax = Math.max(left.globalCrossPathMax, right.globalCrossPathMax);
+        globalMax = Math.max(globalMax, 
+                            Math.max(left.localSinglePathMax, 0) +
+                            Math.max(right.localSinglePathMax, 0) + root.val);
+        
+        return new ResultType(singleMax, globalMax);
+        
+    }
     public static void main(String[] args) {
 
     }
