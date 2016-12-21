@@ -14,8 +14,17 @@ According to the definition of LCA on Wikipedia: “The lowest common ancestor i
          7   4
 For example, the lowest common ancestor (LCA) of nodes 5 and 1 is 3. Another example is LCA of nodes 5 and 4 is 5, since a node can be a descendant of itself according to the LCA definition.
 ********************************************************************************
+
+Note: 
+This question assumes gives nodes p and q, which are always unique, because p and q are part of the tree
+assume p is the node 5, then when traversing the tree and we get to node 5, p == cur is true, but any other node with value 5 is false p != cur
+we are comparing objects, not values in objects
+Time O(n), space O(1) not including call stack
  */
 package Leetcode_Java.tree_medium;
+
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  *
@@ -34,7 +43,7 @@ public class LowestCommonAncestors {
         }
     }
 
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         //if root is null return null, if root is either p or q return root, node can be its own LCA
         if (root == null || root == p || root == q) {
             return root;
@@ -62,4 +71,28 @@ public class LowestCommonAncestors {
             return root;
         }
     }
+    
+    static TreeNode createTree(Integer[] nodes) {
+        Queue<TreeNode> q = new LinkedList();
+        int index = 0;
+        TreeNode root = new TreeNode(nodes[index++]);
+        q.add(root);
+
+        while (!q.isEmpty() && index < nodes.length) {
+            TreeNode temp = q.poll();
+
+            TreeNode left = nodes[index++] == null ? null : new TreeNode(nodes[index - 1]);
+            TreeNode right = nodes[index++] == null ? null : new TreeNode(nodes[index - 1]);
+            temp.left = left;
+            temp.right = right;
+            if (left != null) {
+                q.add(left);
+            }
+            if (right != null) {
+                q.add(right);
+            }
+        }
+        return root;
+    }
+  
 }
