@@ -72,6 +72,69 @@ public class PostorderTraversal {
         result.add(root.val);
         return result;
     }
+    
+    static List<Integer> inorderTraversalIterative(TreeNode root) {
+        Stack<TreeNode> stack = new Stack();
+        List<Integer> res = new ArrayList();
+        TreeNode cur = root;
+        //stack is empty in the beginning of traversal
+        //cur is null after traversing all left nodes 
+        while(!stack.isEmpty() || cur != null) {
+            if(cur != null) {
+                if(cur.right != null) {
+                    stack.push(cur.right);
+                }
+                stack.push(cur);
+                cur = cur.left;
+            } else {
+                // top could be left node or top node with its right node in stack top
+                TreeNode top = stack.pop();
+                //if top is the last node in stack, after pop dont peek stack top
+                if(!stack.isEmpty() && top.right == stack.peek()) {
+                    //traverse right sub-tree of top 
+                    cur = stack.pop();
+                    //push top into stack the second time
+                    stack.push(top);
+                } else {
+                    res.add(top.val);
+                }
+            }
+        }
+        return res;
+    }
+   
+    /*  tree                  traverse mid, right, left using one stack and push result into postorder stack
+    pop postorder stack and add results into res list
+         *      1
+         *     / \
+         *    3   7
+         *  /   /  \
+         * 6   8    10
+         *
+      */
+    
+    static List<Integer> inorderTraversalTwoStacks(TreeNode root) {
+        List<Integer> res = new ArrayList();
+        Stack<TreeNode> reverseOrder = new Stack();
+        Stack<TreeNode> postOrder = new Stack();
+        TreeNode cur = root;
+        
+        while(!reverseOrder.isEmpty() || cur != null) {
+            if(cur != null) {
+                postOrder.push(cur);
+                reverseOrder.push(cur);
+                cur = cur.right;
+            } else {
+                TreeNode temp = reverseOrder.pop();
+                cur = temp.left;
+            }
+        }
+        
+        while(!postOrder.isEmpty()) {
+            res.add(postOrder.pop().val);
+        }
+        return res;
+    }
      public static void main(String[] args) {
         /*create tree
          *      1
@@ -94,5 +157,7 @@ public class PostorderTraversal {
         c.left = e;
         c.right = f;
          
+        System.out.println(inorderTraversalIterative(a));
+        System.out.println(inorderTraversalTwoStacks(a));
     }
 }
