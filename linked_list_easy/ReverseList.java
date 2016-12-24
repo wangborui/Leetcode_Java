@@ -7,6 +7,7 @@ Reverse a singly linked list.
 ********************************************************************************
 
 Note: esatblish 2 nodes, prev and cur/
+Invariant: after reversal, cur will be null, and return prev as new head
  */
 package Leetcode_Java.linked_list_easy;
 
