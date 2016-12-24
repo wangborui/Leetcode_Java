@@ -1,69 +1,57 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package linked_list_easy;
+Source: https://leetcode.com/problems/reverse-linked-list/
+Date: 12/23/2016
 
-import edu.princeton.cs.algs4.StdOut;
+********************************************************************************
+Reverse a singly linked list.
+********************************************************************************
+ */
+package Leetcode_Java.linked_list_easy;
 
 /**
  *
  * @author Borui Wang
  */
 public class ReverseList {
-   static class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) { val = x; }
-  }
-         /*
-         Iterative solution found
-         public ListNode reverseList(ListNode head) {
-    ListNode prev = null;
-    ListNode curr = head;
-    while (curr != null) {
-        ListNode nextTemp = curr.next;
-        curr.next = prev;
-        prev = curr;
-        curr = nextTemp;
-    }
-    return prev;
-}
-   
 
-         */
-         //my solution
-//    static ListNode reverseList(ListNode head) {
-//        if(head == null || head.next == null) return head;
-//        ListNode cur = head; ListNode next = head.next; ListNode prev = null;
-//        while(next != null){
-//            cur.next = prev;
-//            prev = cur;
-//            cur = next;
-//            next = next.next;
-//        }
-//        cur.next = prev;
-//        return cur;
-//    }//my solution recursive /   recursive solution found
-       static ListNode reverseList(ListNode head) {
-        if(head == null || head.next == null) return head;
-        ListNode newHead = reverseList(head.next);
-        head.next.next = head;
-        head.next = null;
-        return newHead;
+    static class ListNode {
+
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
-     public static void main(String[] args){
+
+    static ListNode reverseListIterative(ListNode head) {
+        ListNode prev = null;
+        while(head != null) {
+            ListNode next = head.next;
+            head.next = prev;
+            prev = head;
+            head = next;
+        }
+        return prev;
+    }
+
+    static ListNode reverseListRecursive(ListNode head) {
+          if(head == null || head.next == null) {
+              return head;
+          }
+          //assume reversed head reversed all nodes after head node, and is the head
+          ListNode reversedHead = reverseListRecursive(head.next);
+          head.next.next = head;
+          head.next = null;
+          return reversedHead;
+    }
+
+    public static void main(String[] args) {
         ListNode head = new ListNode(1);
         head.next = new ListNode(2);
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
-        
-         ListNode result = reverseList(head);
-        while(result != null){
-            StdOut.println(result.val);
-            result = result.next;
-        }
-        
+
+        ListNode result = reverseListIterative(head);
     }
 }

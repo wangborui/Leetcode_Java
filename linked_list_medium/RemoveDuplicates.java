@@ -1,0 +1,50 @@
+/*
+Source: https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+Date: 12/23/2016
+
+********************************************************************************
+Given a sorted linked list, delete all duplicates such that each element appear only once.
+
+For example,
+Given 1->1->2, return 1->2.
+Given 1->1->2->3->3, return 1->2->3.
+********************************************************************************
+
+Note: 
+No need to use dummy nodes because we are not possibly deleting the first node of the list
+Make sure walker is not null. if walker is null, then walker.val and walker.next will throw exception
+ */
+package Leetcode_Java.linked_list_medium;
+
+/**
+ *
+ * @author Borui Wang
+ */
+public class RemoveDuplicates {
+
+    public class ListNode {
+
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
+    }
+
+    public ListNode deleteDuplicates(ListNode head) {
+        if (head == null) {
+            return head;
+        }
+        ListNode walker = head;
+
+        while (walker.next != null) {
+            if (walker.val == walker.next.val) {
+                walker.next = walker.next.next;
+            } else {
+                walker = walker.next;
+            }
+        }
+        return head;
+    }
+}
