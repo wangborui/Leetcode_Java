@@ -5,6 +5,8 @@ Date: 12/23/2016
 ********************************************************************************
 Reverse a singly linked list.
 ********************************************************************************
+
+Note: esatblish 2 nodes, prev and cur/
  */
 package Leetcode_Java.linked_list_easy;
 
@@ -32,6 +34,7 @@ public class ReverseList {
             prev = head;
             head = next;
         }
+        //prev is the new reversed head
         return prev;
     }
 
