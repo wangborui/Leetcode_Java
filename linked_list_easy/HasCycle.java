@@ -39,21 +39,19 @@ public class HasCycle {
         }
     } 
     public boolean hasCycle(ListNode head) {
-        if (head == null || head.next == null) {
+        if(head == null || head.next == null) {
             return false;
         }
         ListNode slow = head;
-        ListNode fast = head.next;
-        //when fast pointer reaches the end of the list, and we find no cycle
-        while (fast.next != null && fast.next.next != null) {
-            //when fast and slow pointers meet in the cycle
-            if (slow == fast) {
-                return true;
-            }
+        ListNode fast = head;
+        
+        do{
             slow = slow.next;
             fast = fast.next.next;
-        }
-        return false;
+        } 
+        while(fast != null && fast.next != null && fast != slow);
+        
+        return slow == fast;
     }
 
     public static void main(String[] args) {
