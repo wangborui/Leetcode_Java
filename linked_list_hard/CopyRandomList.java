@@ -7,7 +7,7 @@ A linked list is given such that each node contains an additional random pointer
 Return a deep copy of the list.
 ********************************************************************************
 
-Solution:
+Solution: Time O(3n) Space O(n)
 given list 1->2->3...
 copy next: x' means the new deep copy of x 1->1'->2->2'->3->3'...
 copy random: copy original nodes random pointer to deep copy nodes random pointer
