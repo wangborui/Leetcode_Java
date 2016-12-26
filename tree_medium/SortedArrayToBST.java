@@ -6,6 +6,8 @@ Given an array where elements are sorted in ascending order, convert it to a hei
 
 Time O(n): each number in array needs to be converted to tree node once
 Space O(1):
+
+This is an in order traversal of binary search tree
  */
 package Leetcode_Java.tree_medium;
 
@@ -27,22 +29,25 @@ public class SortedArrayToBST {
     }
 
     public TreeNode sortedArrayToBST(int[] nums) {
-        if (nums == null || nums.length == 0) {
+        if(nums == null || nums.length == 0) {
             return null;
         }
-        TreeNode root = helper(nums, 0, nums.length - 1);
+        TreeNode root = inOrderTraversal(nums, 0, nums.length - 1);
         return root;
     }
-
-    private TreeNode helper(int[] nums, int start, int end) {
-        if (start > end) {
+    private TreeNode inOrderTraversal(int[]nums, int start, int end) {
+        if(start > end) {
             return null;
         }
-
+        
         int mid = start + (end - start) / 2;
+        TreeNode left = inOrderTraversal(nums, start, mid - 1);
         TreeNode root = new TreeNode(nums[mid]);
-        root.right = helper(nums, mid + 1, end);
-        root.left = helper(nums, start, mid - 1);
+        TreeNode right = inOrderTraversal(nums, mid + 1, end);
+        
+        root.left = left;
+        root.right = right;
+         
         return root;
     }
 }
