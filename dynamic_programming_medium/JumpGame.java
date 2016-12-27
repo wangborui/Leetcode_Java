@@ -44,4 +44,21 @@ public class JumpGame {
          }
          return farthest >= n - 1;
     }
+    //O(n^2) time complexity dynamic programming, exceeds time limit
+    public boolean canJumpDP(int[] nums) {
+        int n = nums.length;
+        boolean [] reachable = new boolean[n];
+        reachable[0] = true;
+        
+        for(int i = 1; i < n; i++) {
+            for(int j = 0; j < i; j++) {
+                if(reachable[j] && nums[j] + j >= i) {
+                    reachable[i] = true;
+                    break;
+                }
+            }   
+        }
+        
+        return reachable[n - 1];
+    }
 }
