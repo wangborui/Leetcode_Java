@@ -23,6 +23,7 @@ n is the number of rows
  */
 package Leetcode_Java.dynamic_programming_medium;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -94,6 +95,37 @@ public class Triangle {
 3. Bottom up memoization Time(n^2) unoptimized space O(n^2)
 ********************************************************************************
      */
+    
+static int minimumTotalBottomUp(List<List<Integer>> triangle) {
+    if (triangle == null || triangle.size() == 0 || triangle.get(0) == null || triangle.get(0).size() == 0) {
+            return -1;
+        }
+    int n = triangle.size();
+    //hash[i][j] means the shortest path from bottom of triangle to node i j
+    int [][] hash = new int[n][n];
+    //initialize hash to oo for each level
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n;j++) {
+            hash[i][j] = Integer.MAX_VALUE;
+        }
+    }
+    
+    //populate last level to triangle last level
+    for(int i = 0; i < n; i++) {
+        hash[n - 1][i] = triangle.get(n - 1).get(i);
+    }
+    //start at second til bottom level
+    for(int i = n - 2; i >= 0; i--) {
+        for(int j = 0; j <= i; j++) {
+            int left = hash[i + 1][j];
+            int right = hash[i + 1][j + 1];
+            int cur = triangle.get(i).get(j);
+            hash[i][j] = Math.min(left, right) + cur;
+        }
+    }
+    //return top of triangle
+    return hash[0][0];
+ }
  /*
 ********************************************************************************
 ********************************************************************************
@@ -103,4 +135,15 @@ public class Triangle {
 ********************************************************************************
 ********************************************************************************
      */
+     public static void main(String [] args) {
+         List<Integer> a = new ArrayList();
+         List<Integer> b = new ArrayList();
+         List<List<Integer>> c = new ArrayList();
+         a.add(-10);
+         b.add(3);
+         b.add(7);
+         c.add(a);
+         c.add(b);
+         minimumTotalBottomUp(c);
+     }
 }
