@@ -2,7 +2,7 @@
 Source : https://oj.leetcode.com/problems/jump-game/
 Date   : 12/27/2016
 
-/********************************************************************************** 
+/*******************************************************************************
 * 
 * Given an array of non-negative integers, you are initially positioned at the first index of the array.
 * 
@@ -16,7 +16,7 @@ Date   : 12/27/2016
 * A = [3,2,1,0,4], return false.
 * 
 *               
-*********************************************************************************
+********************************************************************************
 Solutions:
 1. Greedy algorithms Time O(n) space O(1)
 2. Dynamic programming Time O(n^2) space O(n)
