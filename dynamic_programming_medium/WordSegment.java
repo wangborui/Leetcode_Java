@@ -10,7 +10,8 @@ dict = ["leet", "code"].
 Return true because "leetcode" can be segmented as "leet code".
 ********************************************************************************
 
-Solutions: using dynamic programming Time O(n^2) Space O(n)
+Solutions: using dynamic programming Time O(NL), N is the length of word, L is the longest segmentable word length
+Space O(n)
 
 Initialization:
 f[0] = true if word dictionary contains this letter
