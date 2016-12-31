@@ -11,6 +11,28 @@ package Leetcode_Java.dynamic_programming_medium;
  */
 public class MaxSubArray {
 
+    public int maxSubArrayGreedy(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        //maxSum is global sum
+        int maxSum = Integer.MIN_VALUE;
+        //sum is local sum
+        int sum = 0;
+
+        for (int num : nums) {
+            sum += num;
+            maxSum = Math.max(maxSum, sum);
+            //local sum >= 0
+            if (sum < 0) {
+                sum = 0;
+            }
+
+        }
+
+        return maxSum;
+    }
+
     public int maxSubArrayDP(int[] nums) {
         if (nums == null || nums.length == 0) {
             return -1;
