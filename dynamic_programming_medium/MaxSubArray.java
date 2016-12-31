@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dynamic_programming_medium;
+package Leetcode_Java.dynamic_programming_medium;
 
 /**
  *
@@ -11,7 +11,25 @@ package dynamic_programming_medium;
  */
 public class MaxSubArray {
 
-    public int maxSubArray(int[] nums) {
+    public int maxSubArrayDP(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        //maxSum is global sum
+        int maxSum = nums[0];
+        //sum is local sum
+        int sum = nums[0];
+
+        for (int i = 1; i < nums.length; i++) {
+            //find max local sum, either current element or previous sum plus current element
+            sum = Math.max(nums[i], sum + nums[i]);
+            maxSum = Math.max(maxSum, sum);
+        }
+
+        return maxSum;
+    }
+
+    public int maxSubArrayDivideNConquer(int[] nums) {
         /*
     Divide-and-conquer method.
     The maximum summation of subarray can only exists under following conditions:
@@ -75,8 +93,9 @@ public class MaxSubArray {
 
         return leftsum + rightsum;
     }
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         MaxSubArray ms = new MaxSubArray();
-        System.out.println(ms.maxSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4}));
+        System.out.println(ms.maxSubArrayDivideNConquer(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));
     }
 }
