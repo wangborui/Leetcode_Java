@@ -14,6 +14,8 @@ Return
   ["a","a","b"]
 ]
 ********************************************************************************
+
+Time O(2^n) Space O(n)
  */
 package Leetcode_Java.arrays_medium;
 
