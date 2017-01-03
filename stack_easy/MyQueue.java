@@ -1,9 +1,30 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package stack_easy;
+Source: https://leetcode.com/problems/implement-queue-using-stacks/
+Date: 01/03/2017
+/********************************************************************************** 
+ * 
+ * Implement the following operations of a queue using stacks.
+ * 
+ * push(x) -- Push element x to the back of queue.
+ * 
+ * pop() -- Removes the element from in front of queue.
+ * 
+ * peek() -- Get the front element.
+ * 
+ * empty() -- Return whether the queue is empty.
+ * 
+ * Notes:
+ * 
+ * You must use only standard operations of a stack -- which means only push to top, 
+ * peek/pop from top, size, and is empty operations are valid.
+ * Depending on your language, stack may not be supported natively. You may simulate a 
+ * stack by using a list or deque (double-ended queue), as long as you use only 
+ * standard operations of a stack.
+ * You may assume that all operations are valid (for example, no pop or peek operations 
+ * will be called on an empty queue).
+ *               
+ **********************************************************************************/
+package Leetcode_Java.stack_easy;
 
 import java.util.Stack;
 
@@ -12,49 +33,52 @@ import java.util.Stack;
  * @author Borui Wang
  */
 public class MyQueue {
-      Stack<Integer> stack = new Stack<>();
- 
+
+    Stack<Integer> in = new Stack();
+    Stack<Integer> out = new Stack();
+
     // Push element x to the back of queue.
     public void push(int x) {
-        stack.push(x);
+        in.push(x);
     }
 
     // Removes the element from in front of queue.
     public void pop() {
-        Stack<Integer> temp = new Stack<Integer>();
-        
-        while(!stack.isEmpty()){
-            temp.push(stack.pop());
-        } 
-        temp.pop();
-        while(!temp.isEmpty()){
-            stack.push(temp.pop());
+        if (out.isEmpty()) {
+            if (in.isEmpty()) {
+                return;
+            } else {
+                while (!in.isEmpty()) {
+                    out.push(in.pop());
+                }
+            }
         }
+        out.pop();
     }
 
     // Get the front element.
     public int peek() {
-         Stack<Integer> temp = new Stack<Integer>();
-        
-        while(!stack.isEmpty()){
-            temp.push(stack.pop());
-        } 
-        int top = temp.peek();
-        while(!temp.isEmpty()){
-            stack.push(temp.pop());
+        if (out.isEmpty()) {
+            if (in.isEmpty()) {
+                return Integer.MIN_VALUE;
+            } else {
+                while (!in.isEmpty()) {
+                    out.push(in.pop());
+                }
+            }
         }
-        return top;
+        return out.peek();
     }
 
     // Return whether the queue is empty.
     public boolean empty() {
-        return stack.isEmpty();
+        return in.isEmpty() && out.isEmpty();
     }
-    public static void main(String[] args){
-//        MyQueue a = new MyQueue();
-//        a.push(1);
-//        a.push(2);
-//        System.out.println(a.peek());
-        System.out.println(2&3);
+
+    public static void main(String[] args) {
+        MyQueue a = new MyQueue();
+        a.push(1);
+        a.push(2);
+        System.out.println(a.peek());
     }
 }
