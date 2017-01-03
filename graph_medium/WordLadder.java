@@ -75,7 +75,9 @@
   
 package Leetcode_Java.graph_medium;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
@@ -86,7 +88,7 @@ import java.util.Set;
  * @author Borui Wang
  */
 public class WordLadder {
-    public int ladderLength(String beginWord, String endWord, Set<String> wordList) {
+    static int ladderLength(String beginWord, String endWord, Set<String> wordList) {
         /********************************************
          * Test Case:
          * 1. wordList is null, return 0
@@ -106,8 +108,9 @@ public class WordLadder {
         visited.put(beginWord, 1);
         q.add(beginWord);
         
-        //add begin word into dictionary
+        //add begin and end word into dictionary
         wordList.add(beginWord);
+        wordList.add(endWord);
         
         while(!q.isEmpty()) {
             String word = q.poll();
@@ -123,8 +126,11 @@ public class WordLadder {
                     }
                 }
             }
-            
         }
         return visited.getOrDefault(endWord, 0);
+    }
+    public static void main(String[] args) {
+        String[] list = {"hot","dot","dog","lot","log"};
+        System.out.println(ladderLength("hit", "cog", new HashSet(Arrays.asList(list))));
     }
 }
