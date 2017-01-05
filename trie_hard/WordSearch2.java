@@ -78,16 +78,31 @@ public class WordSearch2 {
     int [] dy = new int[] {1,-1, 0, 0};
     private void dfsSearch(int row, int col, List<String> found, TrieNode root, char[][] board) {
         /**
-         * Do not search if.
-         * 1. root is null, or
-         * 2. either row or col is out of bound, or
-         * 3. current position has been visited
+         * 1.Word Check: Check if current root is word before check loop termination conditions due to the structure of trie
+         * 2.Loop Termination Conditions: do not search.
+         *      a. root is null, or
+         *      b. either row or col is out of bound, or
+         *      c. current position has been visited
+         * 
+         * Note: 1. must be before 2. otherwise, as the following example: 
+         * 
+         * if we have trie as the following, and we search for word 'a'
+         * board = [['a']]                  [root]
+         *                                 /       \
+         *                          isString['a']  ['b']
+         * if we have loop termination condition before word check:
+         *      
+         *      1. walker = [root], row = 0, col = 0, board[0][0] is valid
+         *         does not trigger loop termination conditions, and is not a word, so we keep going
+         *      2. walker = ['a'], row = 1, col = 0, board[1][0] is not valid
+         *          triggers loop termination condition, but it is a word, and we skipped
          */
         if(root.isString) {
             if(!found.contains(root.word)) {
                 found.add(root.word);
             }
         }
+         
         if(row < 0 || row >= board.length || col < 0 || col >= board[0].length || board[row][col] == 0) {
                 return;
         }
