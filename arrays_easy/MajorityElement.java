@@ -1,47 +1,38 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+Source: https://leetcode.com/problems/majority-element/
+********************************************************************************
+Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.
+
+You may assume that the array is non-empty and the majority element always exist in the array.
+**********************************************************************************
  */
-package arrays_easy;
+package Leetcode_Java.arrays_easy;
 
 import edu.princeton.cs.algs4.StdOut;
-import java.util.HashMap;
 
 /**
  *
  * @author Borui Wang
  */
 public class MajorityElement {
-//    static int majorityElement(int[] nums) {
-//        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-//        int n = nums.length;
-//        for(int i = 0; i < n; i++){
-//            if(map.containsKey(nums[i])){
-//                int times = map.get(nums[i]);
-//                if(++times > n/2) return nums[i];
-//                map.put(nums[i], times);
-//            }
-//            else{
-//                map.put(nums[i], 1);
-//            }
-//        }
-//        return n;
-//    }
-    //solution found
+// Moore Voting Algorithm
+// Refer to: 
+// http://www.cs.utexas.edu/~moore/best-ideas/mjrty/index.html
     static int majorityElement(int[] nums) {
-        int majority = nums[0]; int count = 1;
-        for(int i = 1; i< nums.length; i ++){
-            if(nums[i] == majority)
+        int major = 0;
+        int count = 0;
+        
+        for(int num : nums) {
+            if(count == 0) {
+                major = num;
                 count++;
-            else if(count == 0){
-                majority = nums[i];
+            } else if(num == major) {
                 count++;
-            }
-            else
+            } else {
                 count--;
+            }
         }
-        return majority;
+        return major;
     }
     
     public static void main(String[] args){
