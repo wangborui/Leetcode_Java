@@ -20,7 +20,6 @@ import edu.princeton.cs.algs4.StdOut;
  * @author Borui Wang
  */
 public class MaxProfit {
-//
 //find the largest price difference between peak price and trough price, make sure trough happens before peak price
 //traverse all price points, for each price i, assume we sell at price i, and buy at min price from prices[0:i - 1]
 //update global profit if i - min(prices[0 : i - 1])
