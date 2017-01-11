@@ -1,8 +1,23 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// Source : https://oj.leetcode.com/problems/maximum-subarray/
+// Date   : 01/11/2017
+
+/********************************************************************************** 
+* 
+* Find the contiguous subarray within an array (containing at least one number) 
+* which has the largest sum.
+* 
+* For example, given the array [−2,1,−3,4,−1,2,1,−5,4],
+* the contiguous subarray [4,−1,2,1] has the largest sum = 6.
+* 
+* More practice:
+* 
+* If you have figured out the O(n) solution, try coding another solution using 
+* the divide and conquer approach, which is more subtle.
+* 
+*               
+**********************************************************************************/
+
 package Leetcode_Java.dynamic_programming_medium;
 
 /**
@@ -23,10 +38,9 @@ public class MaxSubArray {
         for (int num : nums) {
             sum += num;
             maxSum = Math.max(maxSum, sum);
-            //local sum >= 0
-            if (sum < 0) {
-                sum = 0;
-            }
+            //assume local sum is always greater than 0
+            //only keep sum value if it is greater than 0
+            sum = Math.max(sum, 0);
 
         }
 
@@ -79,9 +93,6 @@ public class MaxSubArray {
         int leftsum = subArray(A, left, mid); //left part of the subarray sum, condition 1
         int rightsum = subArray(A, mid + 1, right); //right part of the subarray sum, condition 2
         int middlesum = midSubArray(A, left, mid, right); //cross part of the subarray sum, condition 3
-        // System.out.println(leftsum);
-        // System.out.println(rightsum);
-        // System.out.println(middlesum);
 
         //following if condition will return middlesum if lost the "=" under the conditon of leftsum = rightsum, which may be problematic if leftsum = rightsum < middlesum.
         //for example: [-1, -1, -2, -2]
