@@ -20,7 +20,8 @@ package Leetcode_Java.arrays_medium;
  */
 public class MaxProfit {
     // find all of ranges: which start a trough with the nearest peak after
-    // add their difference together 
+    // add their difference together
+ 
     static int maxProfit(int[] prices) {
         if(prices == null || prices.length < 2) {
             return 0;
