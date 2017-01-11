@@ -1,9 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package arrays_easy;
+// Source : https://oj.leetcode.com/problems/best-time-to-buy-and-sell-stock/
+// Date   : 01/10/2017
+
+/********************************************************************************** 
+* 
+* Say you have an array for which the ith element is the price of a given stock on day i.
+* 
+* If you were only permitted to complete at most one transaction (ie, buy one and sell one share of the stock), 
+* design an algorithm to find the maximum profit.
+*               
+*********************************************************************************
+Dynamic Programming Time O(n) Space O(1)
+*/
+package Leetcode_Java.arrays_easy;
 
 import edu.princeton.cs.algs4.StdOut;
 
@@ -12,34 +20,21 @@ import edu.princeton.cs.algs4.StdOut;
  * @author Borui Wang
  */
 public class MaxProfit {
-//    public int maxProfit(int[] prices) {
-//        int n = prices.length;
-//        if(n <=1) return 0;
-//        int max = 0;
-//        for(int i = 0; i < n; i++){
-//            int dif = 0;
-//            if(i+1<n){
-//                for(int j = i+1; j < n; j++){
-//                    dif = prices[j] - prices[i];
-//                    if(dif == 6){
-//                        int a = 0;
-//                    }
-//                    if(dif >max) max = dif;
-//                }
-//            }
-//        }
-//        return max;
-//    }
-    //dynamic programming solutions 
-    public int maxProfit(int[]prices){
-        int minValue = Integer.MAX_VALUE;
-        int maxProfit = 0;
+//
+//find the largest price difference between peak price and trough price, make sure trough happens before peak price
+//traverse all price points, for each price i, assume we sell at price i, and buy at min price from prices[0:i - 1]
+//update global profit if i - min(prices[0 : i - 1])
+    public int maxProfit(int[] prices) {
+        //if we do not buy at all we get 0 dollars as profit
+        int max = 0;
+        int localMin = Integer.MAX_VALUE;
         
-        for(int i = 0; i < prices.length; i ++){
-            if(prices[i] - minValue > maxProfit) maxProfit =  prices[i] - minValue;
-            else if(prices[i] < minValue) minValue = prices[i];
+        for(int price : prices) {
+            localMin = Math.min(price, localMin);
+            max = Math.max(price - localMin, max);
         }
-        return maxProfit;
+        
+        return max;
     }
     public static void main(String[] args){
         int [] test = {7,6};
