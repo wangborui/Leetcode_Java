@@ -25,7 +25,7 @@ import java.util.Arrays;
 //solution:  http://en.wikipedia.org/wiki/3SUM
 //the idea as blow:
 //  1) sort the array.
-//  2) take the element one by one, calculate the two numbers in sorted array.
+//  2) take the element one by one, calculate the two sum closest in sorted array.
 //
 //notes: be careful the duplication number.
 //
