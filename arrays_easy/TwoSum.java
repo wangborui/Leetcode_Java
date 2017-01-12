@@ -1,56 +1,47 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+Source: https://leetcode.com/problems/two-sum/
+Date  : 01/12/2017
+********************************************************************************
+Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+
+You may assume that each input would have exactly one solution.
+
+Example:
+Given nums = [2, 7, 11, 15], target = 9,
+
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].
+********************************************************************************
  */
-package arrays_easy;
+package Leetcode_Java.arrays_easy;
 
 import edu.princeton.cs.algs4.StdOut;
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
  * @author Borui Wang
  */
 public class TwoSum {
-    public TwoSum(){
-        
-    }
+    //use hashmap, time O(n), space O(n)
     public int[] twoSum(int[] nums, int target) {
-        int [] result = new int[2];
-        int [] origin = new int[nums.length];
-        for(int i = 0; i < nums.length; i++){
-            origin[i]= nums[i];
-        }
-        Arrays.sort(nums);
-           
-        for(int i = 0; i < nums.length; i++){
-            int temp = nums[i];
-            int tempC = target - temp;
-            if(biS(tempC, nums, i+1)){
-                int indexOne = findIndex(origin, temp, -1);
-                int indexTwo = findIndex(origin, tempC,indexOne);
-                result[0] = Math.min(indexOne, indexTwo);
-                result[1] = Math.max(indexOne, indexTwo);
+        Map<Integer, Integer> map = new HashMap();
+        int [] res = new int[2];
+        for(int i = 0; i < nums.length; i++) {
+            int diff = target - nums[i];
+            //see if diff already exists in hashmap
+            if(map.containsKey(diff)) {
+                res[0] = map.get(diff);
+                res[1] = i;
+                return res;
+            } else {
+                //stores number into hashmap
+                map.put(nums[i], i);
             }
         }
-        return result;
-    }
-    public boolean biS(int counter, int[] nums, int start){
-        int lo = start; int hi = nums.length-1;
-        while(lo <= hi){
-            int mid = (lo+hi)/2;
-            if(nums[mid] == counter) return true;
-            else if(nums[mid] > counter) hi = mid -1;
-            else lo = mid + 1;
-        }
-        return false;
-    }
-    public int findIndex(int [] nums, int toFind, int repeat){
-       for(int i = 0; i < nums.length; i++){
-           if(nums[i] == toFind && i != repeat) return i;
-       }
-       return -1;
+        
+        return res;
     }
     public static void main(String []args){
         //{-1,-2,-3,-4,-5};-8
