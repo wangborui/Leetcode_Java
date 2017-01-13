@@ -1,15 +1,23 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+Source : https://leetcode.com/problems/power-of-three/
+Date   : 01/13/2017
+********************************************************************************** 
+Given an integer, write a function to determine if it is a power of three.
+
+Follow up:
+Could you do it without using any loop / recursion?
+********************************************************************************** 
+
  */
-package math_easy;
+package Leetcode_Java.math_easy;
 
 /**
  *
  * @author Borui Wang
  */
 public class IsPowerOfThree {
+//if a number is a power of three, we can write it as 3^x = n or take log on both side
+//log_3 n = x, using properties of log, we have log_a n / log_a 3 = x
       static boolean isPowerOfThree(int n) {
         if(n <= 0) return false;
         int base3 = (int)(Math.log(n)/Math.log(3.0));
