@@ -13,7 +13,7 @@ return 1->2->2->4->3->5.
 ********************************************************************************
 
 Solution:
-Develop 2 separate linked list left < target value, right >= target value
+Develop 2 separate linked lists left and right, where left < target value, right >= target value
 traverse head when head.val < target value, left.next = head, else right.next = head
 after finished, connect left and right linkedlist
  */
