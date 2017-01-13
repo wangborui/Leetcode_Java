@@ -59,10 +59,7 @@ public class PartitionArray {
 	        while(i != j && nums[i] < k) {
 	            i++;
 	        }
-	         
-	       
 	       exch(nums, i, j);
-	        
 	    }
 	    
 	    return nums[j] >= k ? j : j + 1;
