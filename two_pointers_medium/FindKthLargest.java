@@ -18,6 +18,7 @@
  */
 package Leetcode_Java.two_pointers_medium;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -30,33 +31,42 @@ import java.util.Random;
 //after partition, if index of p = length - index = k, return p
 //if length - index > k, partition index 
 public class FindKthLargest {
-    //randomize pivot 
+    //O(n log n) sorting algo
+    public int findKthLargestSort(int[] nums, int k) {
+        Arrays.sort(nums);
+        int N = nums.length;
+        return nums[N - k];
+    }
+
+    //randomize pivot with partition O(n)
     private static Random rand = new Random();
-    static int findKthLargest (int[] nums, int k) {
+
+    static int findKthLargest(int[] nums, int k) {
         //this case is undefined!
         if (nums == null || nums.length == 0) {
             return -1;
         }
         k = nums.length - k;
-        int res = partition (nums, k, 0, nums.length - 1);
+        int res = partition(nums, k, 0, nums.length - 1);
         return res;
     }
-    static int partition (int [] nums, int target, int start, int end) {
-         
+
+    static int partition(int[] nums, int target, int start, int end) {
+
         int position = start;
-        if(end - start > 0) {
+        if (end - start > 0) {
             position = start + rand.nextInt(end - start);
         }
         int pivot = nums[position];
         int i = start;
         int k = start;
         int j = end;
-        
+
         //uses three way partition
         while (i <= j) {
-            if(nums[i] == pivot) {
+            if (nums[i] == pivot) {
                 i++;
-            } else if(nums[i] < pivot) {
+            } else if (nums[i] < pivot) {
                 swap(nums, i++, k++);
             } else {
                 swap(nums, i, j--);
@@ -71,13 +81,15 @@ public class FindKthLargest {
             return partition(nums, target, start, j - 1);
         }
     }
-    static void swap(int [] nums, int i, int j) {
+
+    static void swap(int[] nums, int i, int j) {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
     }
-    public static void main(String[] args){
-        findKthLargest(new int[]{1},1);
+
+    public static void main(String[] args) {
+        findKthLargest(new int[]{1}, 1);
         //findKthLargest(new int[]{3,2,1,5,6,4},2);
     }
 }
