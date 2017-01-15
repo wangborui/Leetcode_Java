@@ -1,5 +1,7 @@
 /*
 Source:https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+
+********************************************************************************
 Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
 
 Do not allocate extra space for another array, you must do this in place with constant memory.
@@ -15,8 +17,10 @@ use a pointer j to represent 0- - (unique vals) - - j - - (duplicate) - - i - (n
 check if  nums[i] != nums[i - 1] for duplicates
 
 Follow up: what if we allow up to 2 duplicates in the array
-
-Watch out: j starts out 1, because we do not ever remove the first element, if the second element is duplicate of 1st, we remove the second, otherwise we do not remove anything
+********************************************************************************
+invariant: [<- - - single element - - ->j<-removed elements->i<-unexplored area->]
+Watch out: j starts out 1, because we do not ever remove the first element, 
+if the second element is duplicate of 1st, we remove the second, otherwise we do not remove anything
  */
 package Leetcode_Java.arrays_easy;
 
