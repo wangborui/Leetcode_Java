@@ -15,7 +15,7 @@ You should do really partition in array nums instead of just counting the number
 If all elements in nums are smaller than k, then return nums.length
 ********************************************************************************
  */
-package Leetcode_Java.arrays_medium;
+package Leetcode_Java.two_pointers_medium;
 
 /**
  *
