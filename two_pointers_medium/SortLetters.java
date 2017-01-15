@@ -13,7 +13,7 @@ Example
 For "abAcD", a reasonable answer is "acbAD"
 ********************************************************************************
  */
-package Leetcode_Java.arrays_medium;
+package Leetcode_Java.two_pointers_medium;
 
 /**
  *
