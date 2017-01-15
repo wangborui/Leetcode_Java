@@ -31,9 +31,8 @@ public class SubarraySum {
         int sum = 0;
         Map<Integer, Integer> map = new HashMap();
         ArrayList<Integer> res = new ArrayList();
-        
-        //addresses for test case [1,-1], and set index -1 to be 0
-        //also where sum starts at index -1 with value 0
+        //assume prefix sum start with value 0 at index -1
+        //this setting helps addresses for edge test case [1,-1] or [0], where prefix sum starts at 0
         map.put(0, -1);
         for(int i = 0; i < nums.length; i++) {
             sum += nums[i];
