@@ -23,7 +23,7 @@ import java.util.Arrays;
  */
 public class Rerange {
 
-    //brute force
+    //brute force, sort the array and use O(n log n) time
     static void rerange(int[] A) {
         // write your code here
 
@@ -72,47 +72,55 @@ public class Rerange {
         }
     }
     //using two pointers
+
     public void rerangeTwoPointers(int[] A) {
-        // write your code here
-        if(A == null || A.length < 2) {
+        if (A == null || A.length == 0) {
             return;
         }
-        int posCount = 0; 
-        int negCount = 0;
-        //assuming more positive numbers than negative numbers
-        int posIdx = 0;
-        int negIdx = 1;
-        
-        for(int i = 0; i < A.length; i++) {
-            if(A[i] > 0) {
-                posCount++;
+
+        int n = A.length;
+        int pos = 0;
+        int neg = 0;
+        //find total counts of positive and negative numbers
+        for (int num : A) {
+            if (num > 0) {
+                pos++;
             } else {
-                negCount++;
+                neg++;
             }
         }
-        
-        if(negCount > posCount) {
-            negIdx = 0;
-            posIdx = 1;
+        //start with positive number
+        if (pos >= neg) {
+            pos = 0;
+            neg = 1;
+        } else {
+            pos = 1;
+            neg = 0;
         }
-        
-        while(posIdx < A.length && negIdx < A.length) {
-            while(posIdx < A.length && A[posIdx] > 0) {
-                posIdx += 2;
+        while (pos < n || neg < n) {
+            //pos pointer will stop on negative number
+            while (pos < n && A[pos] > 0) {
+                pos += 2;
             }
-            while(negIdx < A.length && A[negIdx] < 0) {
-                negIdx += 2;
+            //negative pointer will stop on positive number
+            while (neg < n && A[neg] < 0) {
+                neg += 2;
             }
-            if(posIdx < A.length && negIdx < A.length) {
-                exch(A, posIdx, negIdx);
+
+            if (pos < n && neg < n) {
+                //swap
+                int temp = A[pos];
+                A[pos] = A[neg];
+                A[neg] = temp;
             }
         }
-   }
-   private void exch(int []A, int i, int j) {
-       A[i] ^= A[j];
-       A[j] ^= A[i];
-       A[i] ^= A[j];
-   }
+    }
+
+    private void exch(int[] A, int i, int j) {
+        A[i] ^= A[j];
+        A[j] ^= A[i];
+        A[i] ^= A[j];
+    }
 
     public static void main(String[] args) {
         //-33 -19 -9 21 26 30
