@@ -29,6 +29,10 @@ import java.util.List;
  *
  * @author Borui Wang
  */
+
+//remember the starting position, then add the next charracter to create a new subset and do DFS, 
+//remove the last element in list before next backtracking
+//when list size reaches k, return recursion
 public class Combination {
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> lists = new ArrayList();
