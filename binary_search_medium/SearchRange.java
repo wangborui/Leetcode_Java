@@ -81,7 +81,7 @@ public class SearchRange {
             }
         }
 
-        //after loop termination
+        //after loop termination, we know target must exist in the array now
         //left pointer last val less than or equal T, which is the right range index
         //right pointer first val greater than to T
         //handle special case where last index of array is T, 2. <T, <T, [T,...T, T]
@@ -111,54 +111,5 @@ public class SearchRange {
         result = searchRange(new int[]{1, 1, 2}, 8);
         System.out.println(result[0] + ":" + result[1]);
     }
-    //old solution: following just jiuzhang template without understanding its meaning
-//    static int[] searchRange(int[] nums, int target) {
-//        if(nums == null || nums.length == 0) return new int[]{-1,-1};
-//        int s = 0, e = nums.length - 1, left = -1, right = -1;
-//        //find left start
-//        while(s + 1 < e){
-//            int mid = (s + e) >>> 1;
-//            if(nums[mid] == target) {
-//                e = mid;
-//            }
-//            else if(nums[mid] > target) { 
-//                e = mid;
-//            }
-//            else {
-//                s = mid;
-//            }
-//        }
-//        //when searching for left index compare end first, ex: 4,8,8 t = 8 e = 2, s = 1, so we need e first then s
-//        if(nums[e] == target) {
-//            left = e;
-//        }
-//        if(nums[s] == target){
-//            left = s;
-//        }
-//         
-//        s = 0;
-//        e = nums.length - 1;
-//        //find right index
-//        while(s + 1 < e){
-//            int mid = (s + e) >>> 1;
-//            if(nums[mid] == target) {
-//                s = mid;
-//            }
-//            if(nums[mid] > target) {
-//                e = mid;
-//            }
-//            else {
-//                s = mid;
-//            }
-//        }
-//        //when searching for right index compare end first, ex: 4,8,8,9 t = 8 e = 2, s = 3, so we need e first then s
-//        if(nums[s] == target){
-//            right = s;
-//        }
-//        if(nums[e] == target) {
-//            right = e;
-//        }
-//        return new int[]{left, right};
-//    }
 
 }
