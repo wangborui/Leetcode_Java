@@ -25,6 +25,7 @@ package Leetcode_Java.binary_search_medium;
  * @author Borui Wang
  */
 public class SearchInsert {
+    //jiuzhang template
     public int searchInsert(int[] nums, int target) {
         if(nums == null || nums.length == 0) {
             return 0;
