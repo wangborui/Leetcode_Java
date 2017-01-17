@@ -28,7 +28,7 @@ public class FirstMissingPositive {
     /*
  *  Idea:
  * 
- *    We can move the num to the place whcih the index is the num. 
+ *    We can move the num to the place which the index is the num. 
  *   
  *    for example,  (considering the array is zero-based.
  *       1 => A[0], 2 => A[1], 3=>A[2]
@@ -70,6 +70,7 @@ public class FirstMissingPositive {
  *    2) start iterating nums.length times at 0, check for first missing positive number(the first missing number could be 1)
             a.) for each i, make sure i + 1 exists in the set, if not return i + 1
  *    3) during the iteration process, if some number cannot be found, which means it's missed.
+      4) if missing number is not found in iteration, return n + 1
  *
  *    considering a case [-2, -1, 4,5,6], 
  *        [-2, -1] => missed 1
