@@ -20,7 +20,7 @@ Find the minimum element.
 The array may contain duplicates.
 *********************************************************************************
  */
-package Leetcode_Java.binary_search_medium;
+package Leetcode_Java.binary_search_hard;
 
 /**
  *

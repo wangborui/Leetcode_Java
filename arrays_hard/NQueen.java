@@ -1,5 +1,7 @@
 /*
 Source: https://leetcode.com/problems/n-queens/
+Date  : 01/18/2017
+
 ********************************************************************************
 The n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.
 Given an integer n, return all distinct solutions to the n-queens puzzle.
@@ -22,7 +24,7 @@ There exist two distinct solutions to the 4-queens puzzle:
 ]
 ********************************************************************************
  */
-package Leetcode_Java.binary_search_hard;
+package Leetcode_Java.arrays_hard;
 
 import java.util.ArrayList;
 import java.util.List;
