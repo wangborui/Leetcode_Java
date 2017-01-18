@@ -15,7 +15,7 @@
 * 
 *               
 **********************************************************************************/
-package Leetcode_Java.binary_search_medium;
+package Leetcode_Java.arrays_medium;
 
 /**
  *
