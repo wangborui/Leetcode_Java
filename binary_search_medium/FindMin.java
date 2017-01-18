@@ -1,4 +1,17 @@
 /*
+Source : https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+Date   : 01/17/2017
+
+*********************************************************************************
+Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
+
+(i.end., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
+
+Find the minimum element.
+
+You may assume no duplicate exists in the array.
+*********************************************************************************
+
 These are arrays without duplicate element, this can be done with binary search
 O(log n)
 
@@ -22,21 +35,21 @@ package Leetcode_Java.binary_search_medium;
  */
 public class FindMin {
     public int findMin(int[] nums) {
-        int s = 0, e = nums.length - 1, target = nums[e];
-        while(s + 1 < e) {
-            int mid = (s + e) >>> 1;
+        int start = 0, end = nums.length - 1, target = nums[end];
+        while(start + 1 < end) {
+            int mid = (start + end) >>> 1;
             if(nums[mid] >= target) {
-                s = mid;
+                start = mid;
             } else { //nums[mid] < target
-                e = mid;
+                end = mid;
             }
         }
-        //all vals >=,>=,>= [s,e] <, <, < target, value of s could be >= target, which >= e
-        //or vals[s,e] <, <, <, <, < target 
-        if(nums[s] < nums[e]) {
-            return nums[s];
+        //invariant:  all vals >=,>=,>= [start,end] <, <, < target, value of start could be >= target, which >= end
+        //or if we do not rotate array , after while loop we get vals[start,end] <, <, <, <, < target 
+        if(nums[start] < nums[end]) {
+            return nums[start];
         } else {
-            return nums[e];
+            return nums[end];
         }
     }
 }
