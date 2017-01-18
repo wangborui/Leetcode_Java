@@ -23,18 +23,18 @@ package Leetcode_Java.binary_search_medium;
  */
 public class removeDuplicates {
         public int removeDuplicates(int[] nums) {
-        //initialize i = -1, j = 0
-        //use two pointers i and j, from 0:i are all non-duplicate elements, from i + 1:j are all removed duplications, from j + 1:n are unknown areas
+        //initialize i = 0, j = 1
+         //use two pointers i and j, from 0:i - 1 are all non-duplicate elements, from i:j are all removed duplications, from j + 1:n are unknown areas
         if(nums == null || nums.length == 0) {
             return 0;
         }
         
-        int i = -1;
-        int j = 0;
+        int i = 0;
+        int j = 1;
         int n = nums.length;
         
         while(j < n) {
-            if(j < n - 1 && nums[j] == nums[j + 1]) {
+            if(j < n && nums[j] == nums[j - 1]) {
                 j++;
             } else {
                 nums[++i] = nums[j++];
