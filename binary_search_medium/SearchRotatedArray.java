@@ -44,6 +44,12 @@ package Leetcode_Java.binary_search_medium;
  * @author Borui Wang
  */
 public class SearchRotatedArray {
+    /**
+     * 
+     * @param nums
+     * @param target
+     * @return Integer
+     */
     public int search(int[] nums, int target) {
         int s = 0, e = nums.length - 1;
         while(s + 1 < e) {
