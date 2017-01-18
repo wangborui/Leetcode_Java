@@ -21,7 +21,7 @@ package Leetcode_Java.binary_search_medium;
  *
  * @author Borui Wang
  */
-public class removeDuplicates {
+public class RemoveDuplicates {
         public int removeDuplicates(int[] nums) {
         //initialize i = 0, j = 1
          //use two pointers i and j, from 0:i - 1 are all non-duplicate elements, from i:j are all removed duplications, from j + 1:n are unknown areas
