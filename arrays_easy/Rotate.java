@@ -45,10 +45,10 @@ public class Rotate {
         
         //reverse 0 : split - 1, and split : n - 1
         int n = nums.length;
-        int split = n - k % n;
-        reverse(nums, 0, split - 1);
-        reverse(nums, split, n - 1);
+        k = k % n;
         reverse(nums, 0, n - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, n - 1);
     }
     private void reverse(int[] nums, int start, int end) {
         while(start < end) {

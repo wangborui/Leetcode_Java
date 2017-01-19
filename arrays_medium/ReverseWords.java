@@ -19,7 +19,7 @@ How about multiple spaces between two words?
 Reduce them to a single space in the reversed string.
 *********************************************************************************
  */
-package Leetcode_Java.arrays_easy;
+package Leetcode_Java.arrays_medium;
 
 /**
  *
