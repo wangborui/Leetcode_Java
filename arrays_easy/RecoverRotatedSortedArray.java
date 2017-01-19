@@ -17,6 +17,7 @@ Example
 package Leetcode_Java.arrays_easy;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -58,5 +59,10 @@ public class RecoverRotatedSortedArray {
             start ++;
             end--;
         }
+    }
+    public static void main(String [] args) {
+        String s = "aa   ";
+        String [] a = s.split(" ");
+        System.out.println(a.length);
     }
 }
