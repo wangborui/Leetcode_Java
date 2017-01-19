@@ -30,7 +30,9 @@ import java.util.Stack;
  * @author Borui Wang
  */
 public class InorderTraversal {
+
     static class TreeNode {
+
         int val;
         TreeNode left;
         TreeNode right;
@@ -39,13 +41,15 @@ public class InorderTraversal {
             val = x;
         }
     }
-     public List<Integer> inorderTraversalRecursive(TreeNode root) {
+
+    public List<Integer> inorderTraversalRecursive(TreeNode root) {
         List<Integer> list = new ArrayList();
         helper(list, root);
         return list;
     }
+
     private void helper(List<Integer> list, TreeNode root) {
-        if(root == null) {
+        if (root == null) {
             return;
         }
         //add left
@@ -54,28 +58,30 @@ public class InorderTraversal {
         helper(list, root.right);
         //add right
     }
+
     static ArrayList<Integer> inorderTraversalIterative(TreeNode root) {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         ArrayList<Integer> result = new ArrayList<Integer>();
-        TreeNode curt = root;
-        while (curt != null || !stack.empty()) {
+        while (!stack.isEmpty() || root != null) {
             //keep going down left sub-tree until null
             //this means left node is null
-            while (curt != null) {
-                stack.add(curt);
-                curt = curt.left;
+            if (root != null) {
+                stack.push(root);
+                root = root.left;
+            } else {
+                // the root is empty, pop its parent;
+                //now go to "mid" node
+                //get last inserted left sub-tree node
+                TreeNode p = stack.pop();
+                result.add(p.val);
+                root = p.right;
             }
-            //now go to "mid" node
-            //get last inserted left sub-tree node
-            curt = stack.pop();
-            result.add(curt.val);
-            //check "right" node
-            curt = curt.right;
         }
         return result;
     }
+
     public List<Integer> inorderTraversalDivideNConquer(TreeNode root) {
-         ArrayList<Integer> result = new ArrayList<Integer>();
+        ArrayList<Integer> result = new ArrayList<Integer>();
         // null or leaf
         if (root == null) {
             return result;
@@ -91,7 +97,8 @@ public class InorderTraversal {
         result.addAll(right);
         return result;
     }
-     public static void main(String[] args) {
+
+    public static void main(String[] args) {
         /*create tree
          *      1
          *     / \
@@ -99,14 +106,14 @@ public class InorderTraversal {
          *  /   /  \
          * 6   8    10
          *
-        */
+         */
         TreeNode a = new TreeNode(1);
         TreeNode b = new TreeNode(3);
         TreeNode c = new TreeNode(7);
         TreeNode d = new TreeNode(6);
         TreeNode e = new TreeNode(8);
         TreeNode f = new TreeNode(10);
-        
+
         a.left = b;
         a.right = c;
         b.left = d;
