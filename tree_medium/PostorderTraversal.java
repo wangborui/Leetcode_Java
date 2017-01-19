@@ -80,6 +80,7 @@ public class PostorderTraversal {
         //stack is empty in the beginning of traversal
         //cur is null after traversing all left nodes 
         while(!stack.isEmpty() || cur != null) {
+            // keep going the left
             if(cur != null) {
                 if(cur.right != null) {
                     stack.push(cur.right);
