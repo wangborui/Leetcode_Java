@@ -12,7 +12,7 @@ Note: next() and hasNext() should run in average O(1) time and uses O(h) memory,
 
 Solution: using inorder traversal
  */
-package Leetcode_Java.tree_medium;
+package Leetcode_Java.tree_hard;
 
 import java.util.Stack;
 
