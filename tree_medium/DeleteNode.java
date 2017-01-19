@@ -46,8 +46,10 @@ first find the node that needs to be deleted, if not found return the tree as is
 after finding the node to be deleted, find its left sub-tree max value or right sub-tree min value as temp
 switch deleting node value with temp, then recursively delete temp from left or right sub-tree
 
-Note: if node -> 2, doing node =  null; would change node to null but 2 still exists and is the children of its parent
-need to find parent of node, and set parent.right = null or parent.left = null to delete desired node
+Note: inorder to delete a node, we must find the node's parent, then do parent.node = null to delete it
+For example,
+        if node -> 2, doing node =  null; would change node to null but 2 still exists and is the children of its parent
+        need to find parent of node, and set parent.right = null or parent.left = null to delete desired node
  */
 package Leetcode_Java.tree_medium;
 
