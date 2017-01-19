@@ -116,7 +116,8 @@ public class DeleteNode {
           1   4  ==>            2 4
            \   
             2   
-    Solution: find either the max value in left tree or min value in right tree, change deleting node value to that value, then delete either the min value in right subtree or max value in left tree
+    Solution: find either the max value in left tree or min value in right tree,
+    change deleting node value to that value, then delete either the min value in right subtree or max value in left tree
     */
     static TreeNode deleteNode2(TreeNode root, int key) {
         if(root == null) {
