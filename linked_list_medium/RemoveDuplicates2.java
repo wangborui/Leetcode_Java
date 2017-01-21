@@ -21,7 +21,7 @@ package Leetcode_Java.linked_list_medium;
  * @author Borui Wang
  */
 public class RemoveDuplicates2 {
-     public class ListNode {
+     static class ListNode {
 
         int val;
         ListNode next;
@@ -30,7 +30,7 @@ public class RemoveDuplicates2 {
             val = x;
         }
     }
-    public ListNode deleteDuplicates(ListNode head) {
+    static ListNode deleteDuplicates(ListNode head) {
         ListNode dummy = new ListNode(-1);
         dummy.next = head;
         head = dummy;
@@ -46,5 +46,10 @@ public class RemoveDuplicates2 {
             }
         }
         return dummy.next;
+    }
+    public static void main(String[] args) {
+        ListNode a = new ListNode(1);
+        a.next = new ListNode(1);
+        deleteDuplicates(a);
     }
 }
