@@ -16,6 +16,7 @@ Make sure walker is not null. if walker is null, then walker.val and walker.next
  */
 package Leetcode_Java.linked_list_medium;
 
+
 /**
  *
  * @author Borui Wang
@@ -32,7 +33,31 @@ public class RemoveDuplicates {
         }
     }
 
+    //uses two pointers like in remove duplicates from sorted arrays
+    //invariant head->unique elements -> i -> duplicates -> j -> unknown
+
     public ListNode deleteDuplicates(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+         ListNode i = head;
+         ListNode j = head;
+
+        while (j != null) {
+            //record current value
+            int val = j.val;
+            //j stops on the first different element
+            while (j != null && j.val == val) {
+                j = j.next;
+            }
+            i.next = j;
+            i = i.next;
+        }
+        return head;
+    }
+    //this solution only keeps one pointer, if that is equal to its next, 
+    public ListNode deleteDuplicatesOnePointer(ListNode head) {
         if (head == null) {
             return head;
         }
