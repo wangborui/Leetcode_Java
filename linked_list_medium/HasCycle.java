@@ -20,7 +20,7 @@ fast and slow pointers will eventually meet
 
 Space complexity : O(1). We only use two nodes (slow and fast) so the space complexity is O(1)O(1).
  */
-package Leetcode_Java.linked_list_easy;
+package Leetcode_Java.linked_list_medium;
 
 /**
  *
