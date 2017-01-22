@@ -25,36 +25,35 @@ public class MergeKSortedLists {
             val = x;
         }
     }
-    private Comparator<ListNode> comparator = new Comparator<ListNode>() {
-        public int compare(ListNode left, ListNode right) {
-            //if left is null left is Integer.MAX_VALUE same for right
-            return left.val - right.val;
-        }
-    };
-
-    public ListNode mergeKLists(ListNode[] lists) {
-        if (lists == null || lists.length == 0) {
+     static ListNode mergeKLists(ListNode[] lists) {
+        if(lists == null || lists.length == 0) {
             return null;
         }
+        
         ListNode dummy = new ListNode(-1);
         ListNode tail = dummy;
-        PriorityQueue<ListNode> heap = new PriorityQueue(lists.length, comparator);
-
-        for (ListNode node : lists) {
-            if (node != null) {
-                heap.add(node);
+        int n = lists.length;
+        
+        PriorityQueue<ListNode> pq = new PriorityQueue(n, new Comparator<ListNode>() {
+           @Override
+           public int compare(ListNode a, ListNode b) {
+               return a.val - b.val;
+           } 
+        });
+        for(ListNode list : lists) {
+            if(list != null) {
+                pq.add(list);
             }
         }
-
-        while (!heap.isEmpty()) {
-            ListNode node = heap.poll();
-            tail.next = node;
+        
+        while(!pq.isEmpty()) {
+            ListNode smallest = pq.poll();
+            tail.next = smallest;
             tail = tail.next;
-            if (node.next != null) {
-                heap.add(node.next);
+            if(smallest.next != null) {
+                pq.add(smallest.next);
             }
         }
-
         return dummy.next;
     }
 }
