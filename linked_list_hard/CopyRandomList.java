@@ -15,6 +15,9 @@ separate original node from copy node and return copy node
  */
 package Leetcode_Java.linked_list_hard;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author Borui Wang
@@ -30,16 +33,18 @@ public class CopyRandomList {
             this.label = x;
         }
     };
-public RandomListNode copyRandomList(RandomListNode head) {
-        if(head == null) {
+
+    public RandomListNode copyRandomList(RandomListNode head) {
+        if (head == null) {
             return head;
         }
         copyNext(head);
         copyRandom(head);
         return separateCopy(head);
     }
+
     private void copyNext(RandomListNode head) {
-        while(head != null) {
+        while (head != null) {
             RandomListNode nextNode = head.next;
             RandomListNode copyNode = new RandomListNode(head.label);
             head.next = copyNode;
@@ -47,24 +52,26 @@ public RandomListNode copyRandomList(RandomListNode head) {
             head = nextNode;
         }
     }
+
     private void copyRandom(RandomListNode head) {
-        while(head != null) {
+        while (head != null) {
             RandomListNode randomNode = head.random;
             RandomListNode copyNode = head.next;
-            if(randomNode != null) {
+            if (randomNode != null) {
                 copyNode.random = randomNode.next;
             } else {
                 copyNode.random = randomNode;
             }
-             
+
             head = head.next.next;
         }
     }
+
     //separate original list and deep copy list into two different lists
     private RandomListNode separateCopy(RandomListNode head) {
         RandomListNode dummy = new RandomListNode(-1);
         RandomListNode tail = dummy;
-        while(head != null) {
+        while (head != null) {
             RandomListNode nextNode = head.next.next;
             RandomListNode copyNode = head.next;
             tail.next = copyNode;
@@ -73,5 +80,34 @@ public RandomListNode copyRandomList(RandomListNode head) {
             tail = tail.next;
         }
         return dummy.next;
+    }
+
+    public RandomListNode copyRandomListHashMap(RandomListNode head) {
+        if (head == null) {
+            return head;
+        }
+        Map<RandomListNode, RandomListNode> map = new HashMap();
+        RandomListNode walker = head;
+        while (walker != null) {
+            map.put(walker, new RandomListNode(walker.label));
+            walker = walker.next;
+        }
+
+        //copy next pointer
+        walker = head;
+        while (walker != null) {
+            RandomListNode copy = map.get(walker);
+            copy.next = map.getOrDefault(walker.next, null);
+            walker = walker.next;
+        }
+
+        //copy random pointer
+        walker = head;
+        while (walker != null) {
+            RandomListNode copy = map.get(walker);
+            copy.random = map.getOrDefault(walker.random, null);
+            walker = walker.next;
+        }
+        return map.get(head);
     }
 }
