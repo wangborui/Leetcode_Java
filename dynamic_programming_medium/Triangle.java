@@ -91,8 +91,8 @@ public class Triangle {
     }
     /*
 ********************************************************************************
-    n is the number of levels, there are n^2 number of nodes, and we visit node
 3. Bottom up memoization Time(n^2) unoptimized space O(n^2)
+    n is the number of levels, there are n^2 number of nodes, and we visit node
 ********************************************************************************
      */
     
@@ -128,8 +128,21 @@ static int minimumTotalBottomUp(List<List<Integer>> triangle) {
  }
  /*
 ********************************************************************************
+4. Bottom up memoization Time(n^2) optimized space O(n)
+    n is the number of levels, there are n^2 number of nodes, and we visit node
 ********************************************************************************
      */
+static int minimumTotalBottomUpOptimized(List<List<Integer>> triangle) {
+        int size = triangle.size();
+        int [] min = new int[size+1];
+        for(int i = size -1; i>=0;i--){
+            List<Integer> level = triangle.get(i);
+            for(int j = 0; j < level.size();j++){
+                min[j] = Math.min(min[j],min[j+1]) + level.get(j);
+            }
+        }
+        return min[0];
+    }
 
  /*
 ********************************************************************************
