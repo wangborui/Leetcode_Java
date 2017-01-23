@@ -72,7 +72,7 @@ public class SortedListToBST {
         root.left = sortedListToBST(head);
         return root;
     }
-   //Time O(1), saves time from finding mid node 
+   //Time O(n log n), saves time from finding mid node 
     private static ListNode current;
     static TreeNode sortedListToBSTWOMID(ListNode head) {
         if(head == null) {
