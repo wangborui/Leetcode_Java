@@ -1,5 +1,6 @@
 /*
 Source:https://leetcode.com/problems/unique-dp/
+Date  : 01/24/2017
 ********************************************************************************
 A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
 
@@ -34,7 +35,7 @@ public class UniquePaths {
  /*
  * Dynamic Programming
  *
- * We have a dp[i][j] represents  how many dp from [0][0] to here. So, we have the following DP formula:
+ * We have a dp[i][j] represents  how many unique ways dp from [0][0] to position i, j. So, we have the following DP formula:
  *
  *    dp[i][j] =  1  if i==0 || j==0        //the first row/column only have 1 uniqe path.
  *             =  dp[i-1][j] + dp[i][j-1]   //the path can be from my top cell and left cell.
