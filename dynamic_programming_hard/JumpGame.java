@@ -22,7 +22,7 @@ Solutions:
 2. Dynamic programming Time O(n^2) space O(n)
 */
 
-package Leetcode_Java.dynamic_programming_medium;
+package Leetcode_Java.dynamic_programming_hard;
 
 /**
  *
@@ -45,11 +45,18 @@ public class JumpGame {
          return farthest >= n - 1;
     }
     //O(n^2) time complexity dynamic programming, exceeds time limit
+    //f[i] means can we jump from 0 to ith position, we must check if we can
+    //reach any position from 0 to i - 1 and at that position we can jump to greater distance than i
+    //f[..........?............]
+    //  0     i-1 i           n 
     public boolean canJumpDP(int[] nums) {
         int n = nums.length;
         boolean [] reachable = new boolean[n];
+        //Initialization
         reachable[0] = true;
         
+        //f[i] = true: if f[0 : i - 1] is true and nums[j] + j >= i
+        //       false: otherwize
         for(int i = 1; i < n; i++) {
             for(int j = 0; j < i; j++) {
                 if(reachable[j] && nums[j] + j >= i) {
