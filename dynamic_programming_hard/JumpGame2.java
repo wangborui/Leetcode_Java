@@ -50,7 +50,21 @@ public class JumpGame2 {
 
         return minJump[n - 1];
     }
-
+    /**
+     * 
+     * @param nums
+     * @return Integer
+     * define variables 
+     * farthest = 0
+     * jump = 0
+     * last = 0
+     *Index           0  1  2  3  4   
+     *                i 
+     * Given array   [2, 3, 1, 1, 4]
+     *                f
+     *                j
+     *                l
+     */
     public int jumpGreedy(int[] nums) {
         //farthest distance current range can cover
         int farthest = 0;
