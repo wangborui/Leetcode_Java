@@ -34,7 +34,24 @@ import java.util.List;
  * @author Borui Wang
  */
 public class NQueen {
-
+    /**
+     * 
+     * @param n
+     * @return all possible board combinations of n by n board
+     * Analysis:
+     *      initialize a result arraylist called res to keep track of all possible board combinations
+     *      initialize an array list called queenCols to keep track of all valid queen column numbers, the index of each value is the row number of that queen
+     *      
+     *      1.) we iterate through first row of n rows to find a valid position for adding one Queen, 
+     *      2.) check if we find a valid position, then add its column number into queenCols and continue dfs and backtrack
+     *      3.) once we queenCols size is n, we find one valid board composition, draw the entire board and add result to res
+     * 
+     * Pitfalls: we checking if a board is valid we need to check the following: if new queen has row, column and diagonal conflicts with other queens
+     * we do not need to check row conflict, because new queen must be on the new row no other queens have been. why? DFS to new row everytime
+     * we do have to iterate queenCols to see if other queens have column conflict with current queen
+     * to check for diagonal conflict, we just check |x'-x| == |y'-y|, (x',y') is a new queen position will be placed
+     * 
+     */
     public List<List<String>> solveNQueens(int n) {
         List<List<String>> res = new ArrayList();
         if (n <= 0) {
