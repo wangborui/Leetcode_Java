@@ -104,7 +104,8 @@ public class CombinationSum4 {
                 count += dfsHelperTopDown(nums, sums, target - nums[i]);
             }
         }
-
+        //remember already calculated sum
+        sums[target] = count;
         return count;
     }
       /**
@@ -113,10 +114,11 @@ public class CombinationSum4 {
      * @param target
      * @return number of ways to get to target
      * This approach uses top down dp approach, which uses memoization to remember calculated results
+     * This question is similar to climbing staircase problem, f[i] = all ways sum(f[j]) for j < i
      * optimal function is the following:
-     *  Initialization: f[0] = 1, there is only one way to get to value 0, by using 0      
-     *          f[i] = f[i] + f[i - nums[0...n]] if i - nums[0...n] >= 0
-     *          f[i - nums[0...n]] means all possible ways before i, f[0:i]       
+     *  Initialization: f[0] = 1, there is only one way to get to value 0, by not choosing anything from array, because array only has positive numbers      
+     *                  f[i] = f[i] + f[i - nums[0...n]] if i - nums[0...n] >= 0
+     *  f[i - nums[0.j.n]] means there is a precaculated sum [i - nums[j]], that contains the total combinations for its value   
      */
     static int combinationSum4BottomUp(int[] nums, int target) {
          if(nums == null || nums.length == 0) {
@@ -124,7 +126,8 @@ public class CombinationSum4 {
          }
          //how many times sums 0, 1 ... target appears
          int [] sums = new int[target + 1];
-         //only one way to get sum 0, which is 0
+         //only one way to get sum 0, when we dont choose anything from the array
+         //because array contains only positive numbers
          sums[0] = 1;
          
          for(int i = 1; i < sums.length; i++) {
