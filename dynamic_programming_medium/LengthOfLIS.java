@@ -19,6 +19,7 @@ Solution:
 Time O(n^2): double for loop to iterate nums array 
 Space O(n): assistant dp with size equal to nums array
 dp[i] means the length of longeset increasing subsequence from index 0 to i
+Initialization: dp[0 : n] = 1, each word is its own longest increasing subsequence
 --------------------------------------------------------------------------------
 For example, given nums = [4,10,5,6]
 index 0 1 2 3
@@ -79,14 +80,15 @@ public class LengthOfLIS {
         }
         return maxLength;
     }
-    
      static int lengthOfLISBinarySearchWithFunction(int[] nums) {            
         int[] dp = new int[nums.length];
         int len = 0;
 
         for(int x : nums) {
             int i = Arrays.binarySearch(dp, 0, len, x);
-            if(i < 0) i = -(i + 1);
+            if(i < 0) {
+                i = -i - 1;
+            }
             dp[i] = x;
             if(i == len) len++;
         }
@@ -96,6 +98,8 @@ public class LengthOfLIS {
      static int lengthOfLISBinarySearch(int[] nums) {
         int [] LIS = new int[nums.length];
         int length = 0; 
+        //LIS cannot start at zero, because if the first number coming in is greater than 0,
+        //it could be put at the last index of the LIS array
         for(int i = 0; i < nums.length; i++) {
             LIS[i] = Integer.MAX_VALUE;
         }
@@ -133,7 +137,7 @@ public class LengthOfLIS {
         return end;
     }
      public static void main(String[] args) {
-         System.out.println(lengthOfLISBinarySearch(new int[]{10, 9, 2, 5, 5, 3, 7, 101, 18,1}));
+         System.out.println(lengthOfLISBinarySearchWithFunction(new int[]{10, 9, 2, 5, 5, 3, 7, 101, 18,1}));
       }
     
 }
