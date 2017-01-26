@@ -82,12 +82,13 @@ public class CopyRandomList {
         return dummy.next;
     }
 
-    public RandomListNode copyRandomListHashMap(RandomListNode head) {
+    private RandomListNode copyRandomListHashMap(RandomListNode head) {
         if (head == null) {
             return head;
         }
         Map<RandomListNode, RandomListNode> map = new HashMap();
         RandomListNode walker = head;
+        //make copy of old nodes
         while (walker != null) {
             map.put(walker, new RandomListNode(walker.label));
             walker = walker.next;
