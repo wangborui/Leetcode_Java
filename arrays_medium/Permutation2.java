@@ -24,7 +24,20 @@ import java.util.List;
 public class Permutation2 {
 // To deal with the duplication number, we need do those modifications:
 //    1) sort the array [pos..n].
-//    2) skip the same number.
+//    2) skip the same number. How?
+//      everytime we do dfs on the array, we need to choose a UNIQUE number as the start of dfs recursion
+//      we know that if a number is the same as its previous number, and the previous number is not marked(not choosen as start of a dfs recursion)
+//      this number then must be unique, because previous number must have been choosen in previous dfs recursion stack, so we can skip current number
+//    for example we have nums{1,1,2}, [x] means x is already chosen, {y} means y can be viable candidate for next dfs
+//                                                {1,1,2}
+//                                             /         |    
+//                                          /            |     
+//                                     [1]{1,2}       [2]{1,1}    
+//                                      /    \           |   
+//                                    /       \          |    
+//                                 [1,1]{2}[1,2]{1}   [2,1]{1} 
+//    Therefore, we have answers
+//    we have [1,1,2],[1,2,1],[2,1,1]
     static List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> lists = new ArrayList();
         List<Integer> list = new ArrayList();
