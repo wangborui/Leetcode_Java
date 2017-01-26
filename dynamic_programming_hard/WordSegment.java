@@ -20,7 +20,7 @@ f[i + 1] = true : wordDict contains substring(0, i+1)
          = true : 0 <= j < i, f[j] = true and wordDict contains substring(j + 1, i + 1)
          = false: none of the above
  */
-package Leetcode_Java.dynamic_programming_medium;
+package Leetcode_Java.dynamic_programming_hard;
 
 import java.util.HashSet;
 import java.util.Set;
