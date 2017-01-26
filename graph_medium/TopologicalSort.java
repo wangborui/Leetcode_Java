@@ -1,5 +1,7 @@
 /*
 Source: http://www.lintcode.com/en/problem/topological-sorting/
+Date  : 01/26/2017
+
 ********************************************************************************
 Given an directed graph, a topological order of the graph nodes is defined as follow:
 
@@ -29,7 +31,7 @@ The topological order can be:
 
 Solution:
 find indegree of each node, then find nodes with 0 indegree, and remove nodes with 0
-indegrees and add to results, subtract the number of indegrees from node's neighbor
+indegrees and add to results. Before removing the node, subtract the number of indegrees from node's neighbor
 repeat the process until no more nodes left in queue
 
  */
