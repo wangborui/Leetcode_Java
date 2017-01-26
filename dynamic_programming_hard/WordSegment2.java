@@ -20,9 +20,7 @@ package Leetcode_Java.dynamic_programming_hard;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 /**
  *
@@ -38,6 +36,10 @@ public class WordSegment2 {
 //          words = {"cat sand dog", "cats and dog"}
 //              Note the word "dog" is DFSed twice in this case, but if we use a hashmap to store substrings already visited
 //              We can retrive all valid words formed by that substring and just return 
+//     iterate each word in dictionary to find out if current string s starts with the dictionary word
+//     if current word s starts with one dictionary word, use dfs to recursively find all other valid words starting at substring(dictWord.length), why?
+//     because we can exclude this dictionary word and search the rest of the possible substrings
+//     Additionally, like example above, we need to use hashmap to keep track of all visited substring and not DFS visit them again
     static List<String> wordBreak(String s, List<String> wordDict) {
 
         return dfsHelper(wordDict, s, new HashMap());
