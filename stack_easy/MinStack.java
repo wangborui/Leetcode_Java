@@ -23,85 +23,29 @@ import java.util.Stack;
 /**
  *
  * @author Borui Wang
+ * Analysis:
+ * We are asked to design a min stack to perform every element in constant time. 
+ * Therefore, we need to keep track of everything top and min element, 
+ * because min element is dynamic and changing with push and pop operations we need to keep track of min for each element pushed
+ * Therefore, we use 2 stack structures.
+ *          
+ *          1.) first stack keeps track of the real elements pushed and popped
+ *          2.) second stack keeps track of min element for each element in first stack
+ * 
+ *          for example,
+ *              if we push the following element 5,6,1,2,3...
+ *                      1) 5->6->1->2->3...
+ *                      2) 5->5->1->1->1...
+ * 
+ *then, when we push elements into stack, we need to compare current element x to top element in min stack,
+ * if it is smaller than top element in min stack, we push x into min stack, else push top of min stack into min stack
+ * the normal stack does push and pop regularly
+ * 
+ * 
  */
 public class MinStack {
-    /*********************
-     * using linked list to implement a stack
-      
-    private Node min;
-    private Node head;
-    private int N;
-    
-    private class Node{
-        private int val;
-        private Node next;
-    }*/
-    /** initialize your data structure here. */
-     /*
-    public MinStack() {
-        head = null;
-        min = new Node();
-        min.val = Integer.MAX_VALUE;
-        N = 0;
-
-    }
-    
-    public void push(int x) {
-        Node temp = new Node();
-        temp.val = x;
-        temp.next = head;
-        if(min.val > temp.val) min = temp;
-        head = temp;
-        N++;
-         
-    }
-    
-    public void pop() {
-        if(N>0){
-            if(head == min){
-                Node walker = head.next;
-                int minVal = Integer.MAX_VALUE;
-                min = new Node();
-                min.val = minVal;
-                while(walker != null){
-                    if(walker.val < minVal){
-                        min = walker;
-                        minVal = walker.val;
-                    }
-                    walker = walker.next;
-                }
-            }
-            head = head.next;
-            N--;
-        }  
-         
-    }
-    
-    public int top() {
-        return head == null?0:head.val;
-    }
-    
-    public int getMin() {
-        return (min.val == Integer.MAX_VALUE && N == 0)?0:min.val;
-    }
-    */
-    /**
-     *Implementations:
-     * 
-     * use a stack to keep track of the numbers pushed in
-     * use a min stack to keep track of current min value
-     *  
-     *  for example:
-     *      push      5,7,1,10,9
-     *      stack   : 5,7,1,10,9
-     *      minStack: 5,5,1,1, 1  <== push numbers in min stack that are smaller than top of min stack
-     * 
-     * pop()   : pop number out of stack and min stack
-     * getMin(): return the top of min stack 
-     */
-    
-    Stack<Integer> stack;
-    Stack<Integer> minStack;
+    private Stack<Integer> stack;
+    private Stack<Integer> minStack;
 
     public MinStack() {
         stack = new Stack();
