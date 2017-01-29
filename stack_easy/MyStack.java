@@ -39,6 +39,19 @@ import java.util.Queue;
 /**
  *
  * @author Borui Wang
+ * Analysis:
+ * We know that stack is first in last out but queue is first in first out,
+ * so, in order to maintain order of stack using queue, when we add an element into queue.
+ * we first add the new element into queue, then poll() old element from queue then add old element back into queue.
+ * repeat the entire process until all old elements are "reversed"
+ * 
+ * for example,
+ *          
+ *          if we push elements 3,5,6,2...
+ *          queue head: 3
+ *          queue head: 3 -> 5                   reversed queue: 5 -> 3
+ *          queue head: 5 -> 3 -> 6              reversed queue: 6 - > 5 -> 3
+ *          queue head: 5 -> 3 -> 6 -> 2         reversed queue: 2 -> 5 -> 3 -> 6
  */
 public class MyStack {
     Queue<Integer> q = new LinkedList();
@@ -47,6 +60,7 @@ public class MyStack {
         q.add(x);
         int size = q.size();
         // "-- >" is not a new operator, meaning size minus minus greater than 1
+        //same as for (i = 0; i < size - 1; i++)
         while(size-- > 1) {
             q.add(q.poll());
         }
