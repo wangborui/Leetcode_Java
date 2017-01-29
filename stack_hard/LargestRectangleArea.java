@@ -118,26 +118,32 @@ import java.util.Stack;
  */
 public class LargestRectangleArea {
     static int largestRectangleArea(int[] heights) {
-        if(heights == null || heights.length == 0) {
+        if (heights == null || heights.length == 0) {
             return 0;
         }
-        //stack stores the index of the number
+
+        int maxArea = 0;
+        int n = heights.length;
+        //stack of indexes
         Stack<Integer> stack = new Stack();
-        int maxArea = Integer.MIN_VALUE;
-        for(int i = 0; i <= heights.length; i++) {
-            //after we reach the end of the stack, use imaginery height -1 to calculate remaining bars in stack
-            int height = (i == heights.length ? -1 : heights[i]);
-            
-            //found right boundry of the element on top of the stack
-            while(!stack.isEmpty() && heights[stack.peek()] > height) {
-                int h = heights[stack.pop()];
-                //if stack is empty, it means 0 to i-1 has at least height h
-                int w = stack.isEmpty()? i : i - stack.peek() - 1;
-                maxArea = Math.max(maxArea, h*w);
+        int rightBound = 0;
+        while (rightBound <= n) {
+            int curHeight = (rightBound == n) ? -1 : heights[rightBound];
+            //If stack is empty or current height is higher than the bar at top of stack, push index "i" to stack
+            if (stack.isEmpty() || curHeight >= heights[stack.peek()]) {
+                stack.push(rightBound++);
+            } else {
+            //If bar is smaller than top of stack, then keep removing top of stack while top of the stack is greater.
+            //let the removed bar be minHeight, calculate area of rectangle with minHeight as smallest bar
+            //for minHeight, the "left index" is previous (previous to top) item in the stack, or -1 if stack is empty
+            //"right index" is right bound
+                int minHeight = heights[stack.pop()];
+                int leftBound =  stack.isEmpty() ? -1 : stack.peek();
+                maxArea = Math.max(minHeight * (rightBound - leftBound - 1), maxArea);
+
             }
-            stack.push(i);
-            
         }
+
         return maxArea;
     }
     public static void main(String[] args) {
