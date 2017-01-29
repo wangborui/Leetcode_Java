@@ -82,6 +82,7 @@ public class MyStack {
         return q.isEmpty();
     }
     public static void main(String args){
-        System.out.println(2&3);
+        MyStack ms = new MyStack();
+        
     }
 }
