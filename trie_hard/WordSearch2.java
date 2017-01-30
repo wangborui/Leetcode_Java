@@ -47,6 +47,9 @@ import java.util.Map;
 /**
  *
  * @author Borui Wang
+ * Problem overview:
+ *      1. build a trie tree with every word in the dictionary
+ *      2. starting at each position of the board, use bfs search to find matching words in trie tree
  */
 public class WordSearch2 {
      private class TrieNode {
@@ -85,7 +88,7 @@ public class WordSearch2 {
     //down, left, and right share the same rational
     int [] dx = new int[] {0, 0,-1, 1};
     int [] dy = new int[] {1,-1, 0, 0};
-    private void dfsSearch(int row, int col, List<String> found, TrieNode root, char[][] board) {
+    private void bfsSearch(int row, int col, List<String> found, TrieNode root, char[][] board) {
         /**
          * 1.Word Check: Check if current root is word before check loop termination conditions due to the structure of trie
          * 2.Loop Termination Conditions: do not search.
@@ -124,7 +127,7 @@ public class WordSearch2 {
                 char current = board[row][col];
                 //marks the board as visited
                 board[row][col] = 0;
-                dfsSearch(x, y, found, root.subtree.get(current), board);
+                bfsSearch(x, y, found, root.subtree.get(current), board);
                 //unmark the board back to its original writing
                 board[row][col] = current;
             } 
@@ -143,7 +146,7 @@ public class WordSearch2 {
         for(int i = 0; i < board.length; i++) {
             for(int j = 0; j < board[0].length; j++) {
                 //dfs search up, down, left, right from position i, j
-                dfsSearch(i, j, found, tree.root, board);
+                bfsSearch(i, j, found, tree.root, board);
             }
         }
         return found;
