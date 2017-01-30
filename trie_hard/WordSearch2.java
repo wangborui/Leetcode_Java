@@ -19,14 +19,23 @@ Return ["eat","oath"].
 Note:
 You may assume that all inputs are consist of lowercase letters a-z.
 
-click to show hint.
+********************************************************************************
+
+Problem Anaylsis:
 
 You would need to optimize your backtracking to pass the larger test. Could you stop backtracking earlier?
+yes, if we search a position out of bound of the board, or if we search a visited position
 
-If the current candidate does not exist in all words' prefix, you could stop backtracking immediately. 
+If the current candidate does not exist in all words' prefix, you could stop backtracking immediately?
+no, because there may be more nodes down the trie tree path, we need to keep searching
+
 What kind of data structure could answer such query efficiently? Does a hash table work? 
+because we need to find a data structure with O(1) search time, it could be a hash table or a trie
+hash table does not work in this case because we need to search one character at a time, hashtable does not allow us to do so
+Trie tree saves space, because in hash table, we need to store every possible substring of every word in order to make sure it exists in the dictionary. too much space
+for example, for word "pea", we need to store in hash table p : "pea", pe : "pea" pea : "pea"
+
 Why or why not? How about a Trie? If you would like to learn how to implement a basic trie, please work on this problem: Implement Trie (Prefix Tree) first.
-********************************************************************************
  */
 package Leetcode_Java.trie_hard;
 
@@ -91,16 +100,15 @@ public class WordSearch2 {
          *                                 /       \
          *                          isString['a']  ['b']
          * if we have loop termination condition before word check:
-         *      
+         *      Search Steps:
          *      1. walker = [root], row = 0, col = 0, board[0][0] is valid
          *         does not trigger loop termination conditions, and is not a word, so we keep going
          *      2. walker = ['a'], row = 1, col = 0, board[1][0] is not valid
          *          triggers loop termination condition, but it is a word, and we skipped
          */
-        if(root.isString) {
-            if(!found.contains(root.word)) {
-                found.add(root.word);
-            }
+        if(root.isString && !found.contains(root.word)) {
+            //we do not return after finding a word, because there may be lots of words on the same path
+            found.add(root.word);
         }
          
         if(row < 0 || row >= board.length || col < 0 || col >= board[0].length || board[row][col] == 0) {
@@ -114,8 +122,10 @@ public class WordSearch2 {
                 int x = row + dx[i];
                 int y = col + dy[i];
                 char current = board[row][col];
+                //marks the board as visited
                 board[row][col] = 0;
                 dfsSearch(x, y, found, root.subtree.get(current), board);
+                //unmark the board back to its original writing
                 board[row][col] = current;
             } 
         }
