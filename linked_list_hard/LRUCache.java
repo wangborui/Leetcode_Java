@@ -49,7 +49,7 @@ public class LRUCache {
 //    2) A List to sort the cache data by accessed time. O(1) delete and insert time
 // 
 //  Considering there are too many insert/delete opreations for the List, 
-//  The ouble linked list is the good data structure to performance it.
+//  The doubly linked list is the good data structure to performance it.
     public LRUCache(int capacity) {
         map = new HashMap();
         //head.next is Least Recently used node
@@ -68,7 +68,7 @@ public class LRUCache {
         //first delete the node
         Node node = map.get(key);
         delete_node(node);
-        //move the node to tail
+        //move the node to tail, node becomes LRU element
         move_to_tail(node);
         return map.get(key).val;
     }
@@ -88,7 +88,7 @@ public class LRUCache {
     public void set(int key, int value) {
         //insert the value when it does not exist
         if (get(key) == -1) {
-            //invalidate LRU node
+            //invalidate LRU node, when cache capacity is reached
             if (map.size() == capacity) {
                 map.remove(head.next.key);
                 delete_node(head.next);
