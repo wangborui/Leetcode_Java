@@ -62,9 +62,12 @@ import java.util.Stack;
  * 2) A bar is popped from stack when a bar of smaller height than top of the stack is seen.
  * 3) When a bar is popped, we calculate the area with the popped bar as the smallest bar.
  * 4) How do we get the left and right boundaries of the popped bar -
- *  the current index tells us the "right index" and the index of the previous item in stack is the "left index'.
+ *  the current index tells us the "right index" and the index of the previous item in stack is the "left index".
  * 
- * In other word, stack only stores bars with increasing heights, let's see some examples
+ * In other word, stack only stores bars with increasing heights, and all bars in stack have found their "left index" but not their "right index"
+ * the "left index" of a bar is either the -1(stack is empty after popping bar) or stack top after popping bar
+ * 
+ * let's see some examples
  * 
  * Example 1
  * ------------
