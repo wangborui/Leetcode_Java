@@ -145,7 +145,7 @@ public class WordSearch2 {
         
         for(int i = 0; i < board.length; i++) {
             for(int j = 0; j < board[0].length; j++) {
-                //dfs search up, down, left, right from position i, j
+                //bfs search up, down, left, right from position i, j
                 bfsSearch(i, j, found, tree.root, board);
             }
         }
