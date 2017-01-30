@@ -48,8 +48,13 @@ public class MaxTree {
      * @return TreeNode
      * Analysis:
      * 
-     * Iterate the array from left to right. Assume that every element we take is the current right most element
-     * Goal: find the left child of this element, and find parent of this element
+     * Iterate the array from left to right. push the element into stack
+     * pop elements from stack if current element c is larger than top of stack, meaning that each smaller element can be left child of x
+     * after finding the largest element smaller than x, if there are still elements left in stack, this element y must have x as right child. why?
+     * because all elements smaller than y have become the left child of y and y is the "left-largest" element of x.
+     * we now have y, x on the stack, because both elements haven't found the "right-largest" element larger than them both
+     * we keep repeating this process till the end of iteration
+     *
      * We push every element into stack during iteration
      * 
      *      1.) left-child: using while loop to find the largest element in the stack that is smaller than current element, and set that element as left child of current element
