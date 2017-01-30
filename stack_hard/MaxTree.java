@@ -61,11 +61,24 @@ public class MaxTree {
      *      2.) if there are still elements left in stack, that element must be the parent of current element, current element must be right child of that element 
      *      3.) after iterating all element, the last element in stack must be the root of all elements, therefore, we pop all elements in stack to get that last element
      * 
+     * for example, given array [2, 5, 6, 0, 3, 1]
+     * 
+     *      stack = [2], because 5 > 2, so 2 is left child of 5, pop 2
+     *      stack = [], push 5
+     *      stack = [5], because 6 > 5，so 5 is left child of 6, pop 5
+     *      stack = [], push 6(right-largest element hasn't been found)
+     *      stack = [6], because 0 less than 6, stack = [6], set 0 to be the right child of 6, also push 0(right-largest element hasn't been found)
+     *      stack = [6, 0] because 3 > 0, so 0 is left child of 3， pop 0
+     *      stack = [6], push 3(right-largest element hasn't been found)
+     *      stack = [6, 3], push 1, because 1 is less than 3, so set 3 right child to be 1
+     * 
      * Note: Interesting behavior:
      * Stack: always stores the largest value at bottom. In above example, when 6 gets in stack, it will never come back.
      * All smaller element (smaller than current point) will be popped out, 
      * and of course, the last-possible-smaller element will be the largest smaller point on stack, then we attach it to current node.
      * These behavior keeps larger value on upper level of the tree
+     * 
+     * Therefore, the number is the stack is in descending order 
      */
     static TreeNode maxTree(int[] A) {
         if(A == null || A.length == 0) {
