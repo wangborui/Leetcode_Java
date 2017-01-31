@@ -38,20 +38,18 @@ package Leetcode_Java.dynamic_programming_medium;
 public class LongestCommonSubstring {
 
     public int longestCommonSubstring(String A, String B) {
-        // write your code here
         if (A.length() == 0 || B.length() == 0) {
             return 0;
         }
+        //Initialization
         int[][] f = new int[A.length() + 1][B.length() + 1];
-        int maxLength = Integer.MIN_VALUE;
-
+        int maxLength = 0;
+        
+        //optimal function
         for (int i = 1; i <= A.length(); i++) {
             for (int j = 1; j <= B.length(); j++) {
                 if (A.charAt(i - 1) == B.charAt(j - 1)) {
                     f[i][j] = f[i - 1][j - 1] + 1;
-
-                } else {
-                    f[i][j] = 0;
                 }
                 maxLength = Math.max(maxLength, f[i][j]);
             }
