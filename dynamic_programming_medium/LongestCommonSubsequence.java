@@ -24,14 +24,17 @@ public class LongestCommonSubsequence {
      * @return: The length of longest common subsequence of A and B.
      * use double for loop to iterate A and B
      * 
+     * Initialization:
      * f[0][j] = 0 means choose a = "" to match any b.substring(0, j), which is always 0 LCS
      * f[i][0] = 0 means choose b = "" to match any a.substring(0, i), which is always 0 LCS
+     * 
+     * 
      * f[i][j] means the longest common subsequence between previous i from string a[0...i - 1] and previous j from string b[0...j - 1]
      * 
      * So, the optimal function is the following
      *      f[i][j] = f[i - 1][j - 1] + 1           : a.charAt(i - 1) == b.charAt(j - 1)
      *              = max(f[i - 1][j], f[i][j - 1]) : a.charAt(i - 1) != b.charAt(j - 1)
-     *                                                this chooses max LCS from not choosing a[i - 1] or b[j - 1]
+     *                                                this chooses max LCS from not choosing character a[i - 1] or b[j - 1]
      */
     public int longestCommonSubsequence(String A, String B) {
         // write your code here
