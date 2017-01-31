@@ -40,10 +40,10 @@ public class DistinctSubsequence {
 //        a) Target-len > Source-len cannot found any substring
 //           i > j : m[i][j] = 0;   
 //
-//        b) if not equal, take the value of T[i] => S[j-1] (e.g. ["ra" => "rabb"] =["ra" => "rab"] )
+//        b) if S[j] != T[i], take the value of T[i] => S[j-1] (e.g. ["ra" => "rabb"] =["ra" => "rab"] )
 //           S[j] != T[i] :  m[i][j] = m[i][j-1]
 //
-//        c) if equal. (e.g.  ["rab" => "rabb"] = ["rab" =>"rab"] + ["ra" => "rab"] ) 
+//        c) if equal S[j] == T[i]. (e.g.  ["rab" => "rabb"] = ["rab" =>"rab"] + ["ra" => "rab"] ) 
 //           S[j] == T[i] :  m[i][j] = m[i][j-1] + m[i-1][j-1]
 //
 //  1) Initialize a table as below   
