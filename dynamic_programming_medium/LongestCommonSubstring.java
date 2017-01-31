@@ -7,6 +7,10 @@ Given two strings, find the longest common substring.
 
 Return the length of it.
 ********************************************************************************
+Analysis:
+f[i][j] means the longest common substring for string a ending at index i and string b ending at index j
+
+
 for example a = "abcd" b="bceh"
    |"" | a | b | c | d
 "" | 0 | 0 | 0 | 0 | 0 |
@@ -15,7 +19,13 @@ c  | 0 | 0 | 0 | 2 | 0 |
 e  | 0 | 0 | 0 | 0 | 0 |
 h  | 0 | 0 | 0 | 0 | 0 |
 
-optimal function
+
+Initialization:
+
+      f[0][j] = 0 means choose a = "" to match any b.substring(0, j), which is always 0 LCS
+      f[i][0] = 0 means choose b = "" to match any a.substring(0, i), which is always 0 LCS
+
+Optimal function:
 f[i][j] = f[i - 1][j - 1] + 1  if a[i - 1] == b[i - 1]
         = 0                    if a[i - 1] != b[i - 1]
  */
