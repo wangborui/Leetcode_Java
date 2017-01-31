@@ -31,7 +31,7 @@ public class DistinctSubsequence {
 //
 //  The idea as below:
 //
-//     Considering m[i][j] means the distance from T[i] to S[j], and add the empty "" case, then,
+//     we will build an array mem where m[i+1][j+1] means that S[0..j] contains T[0..i] that many times as distinct subsequences. Therefor the result will be mem[T.length()][S.length()].
 //
 //     A) Initialization for empty case:  m[0][j] = 1;
 //
