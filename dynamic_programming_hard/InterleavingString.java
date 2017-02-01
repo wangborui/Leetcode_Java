@@ -41,6 +41,7 @@ public class InterleavingString {
  * Defined 
  * 
  *      dp[i][j] means s1[0..i] and s2[0..j] are interleaved with s3[0...i + j - 1]
+ *      s3[0...i + j - 1] is either s1[i] or s2[j]
  * 
  * Initialization
  *      
