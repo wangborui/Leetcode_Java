@@ -63,7 +63,8 @@ public class Backpack {
         }
 
         int n = A.length;
-
+        //keep a max weight variable to keep track of the max weight we can put into the back pack
+        int maxWeight = 0;
         //dp[i][j] means for the first i items, can we take out a few to sum to total weight of j
         boolean[][] dp = new boolean[m + 1][n + 1];
         //initialization: for the first i items, can we take out a few to sum to total weight of 0? yes, we dont take any
@@ -73,19 +74,17 @@ public class Backpack {
 
         for (int i = 1; i <= m; i++) {
             for (int j = 1; j <= n; j++) {
+                //if we do not take current item, can we sum up to total of i?
                 boolean notTake = dp[i][j - 1];
+                //if we take current item, can we sum up to total of i?
+                //meaning we we take j - 1 items, to sum to to total weight of i - A[j - 1]
                 boolean take = (i - A[j - 1] >= 0) ? dp[i - A[j - 1]][j - 1] : false;
                 dp[i][j] = take || notTake;
+                maxWeight = dp[i][j] == true ? Math.max(maxWeight, i) : maxWeight;
             }
         }
-        for (int i = m; i >= 0; i--) {
-            for (int j = n; j >= 0; j--) {
-                if (dp[i][j]) {
-                    return i;
-                }
-            }
-        }
-        return 0;
+ 
+        return maxWeight;
     }
     static void printArray(boolean [][] a) {
         for(boolean []x : a) {
