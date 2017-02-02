@@ -78,9 +78,9 @@ public class Backpack {
                 boolean notTake = dp[i][j - 1];
                 //if we take current item, can we sum up to total of i?
                 //meaning we we take j - 1 items, to sum to to total weight of i - A[j - 1]
-                boolean take = (i - A[j - 1] >= 0) ? dp[i - A[j - 1]][j - 1] : false;
+                boolean take = (i >= A[j - 1])  && dp[i - A[j - 1]][j - 1];
                 dp[i][j] = take || notTake;
-                maxWeight = dp[i][j] == true ? Math.max(maxWeight, i) : maxWeight;
+                maxWeight = dp[i][j] ? Math.max(maxWeight, i) : maxWeight;
             }
         }
  
