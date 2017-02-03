@@ -32,7 +32,7 @@ public class Backpack2 {
      * Time O(n * m) n is the number of items, m is total weight 
      * Space (n * m)
      */
-    public int backPackII(int m, int[] A, int V[]) {
+    static int backPackII(int m, int[] A, int V[]) {
         // write your code here
         if (m == 0 || A == null || V == null || A.length == 0 || V.length == 0) {
             return 0;
@@ -52,7 +52,7 @@ public class Backpack2 {
                 maxVal = Math.max(maxVal, dp[i][j]);
             }
         }
-
+        printArray(dp);
         return maxVal;
     }
     /**
@@ -63,7 +63,7 @@ public class Backpack2 {
      * @return int
      * Time O(n * m) Space (m) n is the number of items, m is total weight 
      */
-    public int backPackIIOptimizedSpace(int m, int[] A, int V[]) {
+    static int backPackIIOptimizedSpace(int m, int[] A, int V[]) {
         // write your code here
         if (m == 0 || A == null || V == null || A.length == 0 || V.length == 0) {
             return 0;
@@ -85,5 +85,16 @@ public class Backpack2 {
         }
 
         return maxVal;
+    }
+    static void printArray(int [][] dp) {
+        for(int [] nums : dp) {
+            for(int n : nums) {
+                System.out.print(n + " ");
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) {
+        System.out.println(backPackII(10, new int[]{2,3,5,7}, new int [] {1,5,2,4}));
     }
 }
