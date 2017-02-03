@@ -43,47 +43,49 @@ public class Backpack {
      * 
      * Defined
      * 
-     *      dp[i][j] means we can take out all or a few of the first j items and have them sum to a total weight of exactly i
+     *      dp[i][j] means we can take out all or a few of the first i items, not including the ith item, and have them sum to a total weight of exactly j
      * 
      * Initialization
      * 
-     *      all values in dp are false initially except the first row dp[0][j] are all true
-     *      because if our backpack carries 0 weight, then we can take no items out of the back to fulfill it, therefore, all items are possible candidates
+     *      all values in dp are false initially except the first value dp[0][0] is true
+     *      because if our backpack carries 0 weight, then we can take no items out of the back to fulfill it, therefore, first item is possible candidate
      * 
      * Optimal function:
      *      
-     *      dp[i][j] = dp[i - A[j - 1]][j - 1]  || dp[i][j - 1]
-     *      if we take the first j items to sum to weight i, or we do not take the first j items to sum to weight i
+     *     $Take the (i - 1)th item     : dp[i - 1][j - A[i - 1]]
+     *      if we take the (i - 1)th item, we need to know the first (i - 1)th items, 0 ... i - 2 can sum to a total weight of j - A[i - 1](current item weight)
      * 
-     * Pitfalls : we have to make sure i - A[j - 1] >= 0 to make sure if we take the j - 1 th item, we dont exceed bag weight limit
+     *     $Not take the (i - 1)th item : dp[i - 1][j]
+     *     if we dont take the (i - 1)th item, we need to know the first (i - 1)th items, 0...i - 2 can sum to a total weight of j
+     * 
+     * 
+     *      dp[i][j] = Take the (i - 1)th item || Not take the (i - 1)th item
+     * 
+     * Pitfalls : we have to make sure j - A[j - 1] >= 0 to make sure if we take the i - 1 th item, we dont exceed bag weight limit
      */
     static int backPack(int m, int[] A) {
         if (m == 0 || A.length == 0 || A == null) {
             return 0;
         }
-
+        
         int n = A.length;
-        //keep a max weight variable to keep track of the max weight we can put into the back pack
         int maxWeight = 0;
-        //dp[i][j] means for the first i items, can we take out a few to sum to total weight of j
-        boolean[][] dp = new boolean[m + 1][n + 1];
-        //initialization: for the first i items, can we take out a few to sum to total weight of 0? yes, we dont take any
-        for(int i = 0; i <= n; i++) {
-            dp[0][i] = true;
-        }
-
-        for (int i = 1; i <= m; i++) {
-            for (int j = 1; j <= n; j++) {
-                //if we do not take current item, can we sum up to total of i?
-                boolean notTake = dp[i][j - 1];
-                //if we take current item, can we sum up to total of i?
-                //meaning we we take j - 1 items, to sum to to total weight of i - A[j - 1]
-                boolean take = (i >= A[j - 1])  && dp[i - A[j - 1]][j - 1];
+        //dp[i][j] means for the first i items, not including the ith item, can we take out a few to sum to total weight of j
+        boolean[][] dp = new boolean[n + 1][m + 1];
+        //initialization: for the first 0 items, can we take out a few to sum to total weight of 0? yes, we dont take any
+        dp[0][0] = true;
+        for (int i = 1; i <= A.length; i++) {
+            for (int j = 0; j <= m; j++) {
+                //if we take current item, can we sum up to total of j?
+                //meaning we we take first i - 1 items, to sum to to total weight of i - A[j - 1]
+                boolean take = (j - A[i - 1] >= 0 && dp[i - 1][j - A[i - 1]]);
+                //if we do not take current item, can we sum up to total of j?
+                boolean notTake = dp[i][j] = dp[i - 1][j];
                 dp[i][j] = take || notTake;
-                maxWeight = dp[i][j] ? Math.max(maxWeight, i) : maxWeight;
+                maxWeight = dp[i][j] ? Math.max(j, maxWeight) : maxWeight;
             }
         }
- 
+
         return maxWeight;
     }
     static void printArray(boolean [][] a) {
