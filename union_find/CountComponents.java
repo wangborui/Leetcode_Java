@@ -1,5 +1,5 @@
-//Source :
-//Date   :
+//Source : https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
+//Date   : 02/05/2017
 /**
  * *****************************************************************************
  * Total Accepted: 20754
@@ -24,9 +24,6 @@
  * Note:
  * You can assume that no duplicate edges will appear in edges. Since all edges are undirected, [0, 1] is the same as [1, 0] and thus will not appear together in edges.
  *
- * Show Company Tags
- * Show Tags
- * Show Similar Problems
  *
  *******************************************************************************
  */
