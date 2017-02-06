@@ -86,7 +86,22 @@ public class CountComponents {
         }
         return connectedC;
     }
-    //Time O(n^2) Space O(n)
+    /**
+     * 
+     * @param n
+     * @param edges
+     * @return int
+     */
+//******************************************************************************
+//                               Regular Union Find
+//      when encounters an edge, union two sides of the edges
+//      when union two nodes, find their ancestors O(n) time complexity, if ancestors are not the same,
+//      union both ancestors, otherwise do nothing.
+//      Time O(n^2) Space O(n)
+//******************************************************************************
+      
+     
+    
     public int countComponentsUnionFind(int n, int[][] edges) {
         int[] roots = new int[n];
 
@@ -114,5 +129,69 @@ public class CountComponents {
             node = roots[node];
         }
         return node;
+    }
+    /**
+     * 
+     * @param n
+     * @param edges
+     * @return int
+     */
+//******************************************************************************
+//                          Path Compression Union Find
+//      when encounters an edge, union two sides of the edges
+//      when union two nodes, find their ancestors O(1) time complexity, if ancestors are not the same,
+//      union both ancestors, otherwise do nothing.
+//        Path compression happens at the find operation, at one point find operation
+//        may need to do O(n) operations to compression path, but find will have amortized O(1) time
+//        
+//        for example,
+//        
+//            1->2->3->4->5         find(1) returns 5 and compresses path
+//               
+//               2 
+//               |
+//               V 
+//         1 - > 5 < - 3
+//               ^
+//               |
+//               4
+//      Time O(n) Space O(n)
+//******************************************************************************
+    public int countComponentsPathCompressionUnionFind(int n, int[][] edges) {
+        int [] ancestor = new int[n];
+
+        //initalize each node to be its own root
+        for(int i = 0; i < n; i++) {
+            ancestor[i] = i;
+        }
+
+        //union each nodes with given edges
+        for(int [] edge : edges) {
+            int root1 = compressed_find(ancestor, edge[0]);
+            int root2 = compressed_find(ancestor, edge[1]);
+
+            //union
+            if(root1 != root2) {
+                ancestor[root1] = root2;
+                n--;
+            }
+        }
+        return n;
+    }
+    private int compressed_find(int [] ancestors, int node) {
+        //find the ancestor of the node
+        int ancestor = node;
+        while(ancestor != ancestors[ancestor]) {
+            ancestor = ancestors[ancestor];
+        }
+        int parent = ancestors[node];
+        //compressing each node path
+        while(parent != ancestor) {
+            ancestors[node] = ancestor;
+            node = parent;
+            parent = ancestors[parent];
+
+        }
+        return ancestor;
     }
 }
