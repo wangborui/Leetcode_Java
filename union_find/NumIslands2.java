@@ -54,7 +54,50 @@ import java.util.List;
  */
 public class NumIslands2 {
     
-
+//    Analysis:
+//    
+//    We should use union find to solve this question.
+//    We are initially given an m * n matrix, and each element in the matrix has a parent which is itself,
+//    we use a roots array to represent root of each element, root[i] means the root of element i, i = row * n + col
+//    We use visited array to represent if a position has been added into the matrix, 
+//    visited[i] = 0 is not visited, visited[i] = 1 is visited. To calculate i, i = row * n + col
+//    When we add a position, we first increase islands count by 1, then reduce islands number if we can merge neighboring islands
+//            
+//    for example, m = 3, n = 3
+//                        Index  0 1 2 3 4 5 6 7 8 9
+//               0 0 0   visited[0 0 0 0 0 0 0 0 0 0]       
+//               0 0 0     roots[0 1 2 3 4 5 6 7 8 9]
+//               0 0 0    islands: 0
+//               
+//    addLand(0, 0):
+//                        Index  0 1 2 3 4 5 6 7 8 9
+//               1 0 0   visited[1 0 0 0 0 0 0 0 0 0]       
+//               0 0 0     roots[0 1 2 3 4 5 6 7 8 9]
+//               0 0 0    islands: 1
+//            
+//    addLand(0, 2):
+//                        Index  0 1 2 3 4 5 6 7 8 9
+//               1 0 1   visited[1 0 1 0 0 0 0 0 0 0]       
+//               0 0 0     roots[0 1 2 3 4 5 6 7 8 9]
+//               0 0 0    islands: 2
+//    
+//    addLand(0, 1):
+//                        Index  0 1 2 3 4 5 6 7 8 9
+//               1[1]1   visited[1 1 1 0 0 0 0 0 0 0]       
+//               0 0 0     roots[0 0 0 3 4 5 6 7 8 9]
+//               0 0 0    islands: 1
+//    Note that at this position, we are merging islands. for our position at 0, 1, 
+//    find 4 of its neighbors, up, down, left, right: 
+//            neighbor:(-1,1) this element is out of bound, we discard it
+//            neighbor:(1,1), this is a valid neighbor, and it has already been visited
+//                            we find neighbor's ancestor and compare with our current node's ancestor
+//                            if the two ancestors are different, we union them, islands reduce 1
+//            neighbor:(0,0), this is a valid neighbor, and it has already been visited
+//                            we find neighbor's ancestor and compare with our current node's ancestor
+//                            if the two ancestors are different, we union them, islands reduce 1
+//            neighbor:(0,2), this element hasn't been visited yet, we don't count it.
+//  Bonus: we can use path compression union find
+// Time O(m * n * 4k), k is the number of position additions
     static class UnionFind {
 
         private static final int VISITED = 1;
