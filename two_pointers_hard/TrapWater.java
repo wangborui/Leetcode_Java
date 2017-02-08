@@ -32,7 +32,7 @@
  *    2) traverse the left pointer from left toward right,
  *       when find a bar lower than height of leftHeight, add the difference in height to total height, this is where water can be trapped in the graph
  *       when find a bar heigher than height of leftHeight, set leftHeight to the new height.  
- *    3) Compare current leftHeight and rightHeight, move the smaller pointer towards the larget one. do the same process for right pointer and rightHeight until "left" meets "right"
+ *    3) Compare current leftHeight and rightHeight, move the smaller pointer towards the larget one. do the same process for smaller pointer and height until "left" meets "right"
  *       
  *
  * The code below is quite clear!
