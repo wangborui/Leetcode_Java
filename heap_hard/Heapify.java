@@ -93,7 +93,7 @@ public class Heapify {
             if (idx * 2 + 2 < size && A[idx * 2 + 2] < A[child]) {
                 child = idx * 2 + 2;
             }
-            if (A[idx] >= A[child]) {
+            if (A[idx] <= A[child]) {
                 break;
             }
 
