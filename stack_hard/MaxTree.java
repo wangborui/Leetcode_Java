@@ -19,7 +19,9 @@ O(n) time and memory.
 ********************************************************************************
 
 Solutions:
-Recursion: Time O(n^2) worst case O(n log n) average case
+Recursion: 
+Time O(n^2) worst case number[1,2,3,4,5,6,7]
+Time O(n log n) average case
 Iteration: Time O(n) Space O(n)
  */
 package Leetcode_Java.stack_hard;
