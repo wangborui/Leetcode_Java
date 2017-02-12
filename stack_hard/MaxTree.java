@@ -73,7 +73,7 @@ public class MaxTree {
      *      stack = [5], because 6 > 5，so 5 is left child of 6, pop 5
      *      stack = [], push 6(right-largest element hasn't been found)
      *      stack = [6], because 0 less than 6, stack = [6], set 0 to be the right child of 6, also push 0(right-largest element hasn't been found)
-     *      stack = [6, 0] because 3 > 0, so 0 is left child of 3， pop 0
+     *      stack = [6, 0] because 3 > 0, so 0 is left child of 3， pop 0, because 6 > 3, make 3 the right child of 6
      *      stack = [6], push 3(right-largest element hasn't been found)
      *      stack = [6, 3], push 1, because 1 is less than 3, so set 3 right child to be 1
      * 
