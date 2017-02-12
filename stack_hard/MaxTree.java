@@ -50,6 +50,9 @@ public class MaxTree {
      * @return TreeNode
      * Analysis:
      * 
+     * Given an element, we need to find that element's first left or right that are larger/smaller than this element,
+     * therefore, we can use stack 
+     * 
      * Iterate the array from left to right. push the element into stack
      * pop elements from stack if current element c is larger than top of stack, meaning that each smaller element can be left child of x
      * after finding the largest element smaller than x, if there are still elements left in stack, this element y must have x as right child. why?
