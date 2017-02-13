@@ -26,6 +26,8 @@ Iteration: Time O(n) Space O(n)
  */
 package Leetcode_Java.stack_hard;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -110,7 +112,57 @@ public class MaxTree {
         }
         return res;
     }
+    //Analysis:
+    //Elements in stack have not yet found their parent, they only have "left parent" identified, but not "right" parent
+
+    static TreeNode maxTreeLintCode(int [] A) {
+        Stack<TreeNode> stack = new Stack();
+        TreeNode root = null;
+        
+        for(int i = 0; i <= A.length; i++) {
+            TreeNode right = i == A.length ? new TreeNode(Integer.MAX_VALUE) : new TreeNode(A[i]);
+            
+            while(!stack.isEmpty() && right.val > stack.peek().val) {
+                TreeNode nodeNow = stack.pop();
+                if(stack.isEmpty()) {
+                    right.left = nodeNow;
+                } else {
+                    TreeNode left = stack.peek();
+                    if(left.val > right.val) {
+                        right.left = nodeNow;
+                    } else {
+                        left.right = nodeNow;
+                    }
+                }
+            }
+            stack.push(right);
+        }
+        return stack.peek().left;
+    }
+    static void levelOrderPrint(TreeNode root) {
+        Queue<TreeNode> q = new LinkedList();
+        q.add(root);
+        
+        while(!q.isEmpty()) {
+            int size = q.size();
+            for(int i = 0; i < size; i++) {
+                TreeNode temp = q.poll();
+                System.out.print(temp.val + " ");
+                if(temp.left != null) {
+                    q.add(temp.left);
+                }
+                if(temp.right != null) {
+                    q.add(temp.right);
+                }
+            }
+            System.out.println();
+        }
+    }
     public static void main(String [] args) {
-        maxTree(new int[]{2, 5, 6, 0, 3, 1});
+        TreeNode root = maxTree(new int[]{2, 5, 6, 0, 3, 1});
+         root = maxTreeLintCode(new int[]{2, 5, 5, 6, 0, 3, 1});
+         root = maxTreeLintCode(new int[]{-100, 1, -100, 11, -100, 11, -100, 2, -100});
+         levelOrderPrint(root);
+         System.out.println();
     }
 }
