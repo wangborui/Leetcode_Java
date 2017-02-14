@@ -41,7 +41,8 @@ public class ConvertToRPN {
     private static final int MULTDIVID = 2;
     private static final int NUMBER = Integer.MAX_VALUE;
     private static int base = 0;
-
+/*******************************************************************************
+ * Solution 1
 //    Analysis:
 //    
 //    if we define priority of each operator 
@@ -58,7 +59,8 @@ public class ConvertToRPN {
 //    Pitfalls: 
 //    
 //            1.)if a number is in a stack, then all numbers <= this number to its right and left can be its parent
-//            2.)when a number is in a stack, its left number = its right number, and they are both less than current number, add current to left number's right child
+//          2.)when a number is in a stack, its left number = its right number, and they are both less than current number, add current to left number's right child
+*******************************************************************************/
     static ArrayList<String> convertToRPN(String[] expression) {
         ArrayList<String> res = new ArrayList();
         if (expression == null || expression.length == 0) {
@@ -96,13 +98,14 @@ public class ConvertToRPN {
                 right = new TreeNode(PLUSMINUS + base, curS);
             } else if (curS.equals("*") || curS.equals("/")) {
                 right = new TreeNode(MULTDIVID + base, curS);
+            } else if(curS.equals(" ")) {
+                continue;
             } else {
                 right = new TreeNode(NUMBER, curS);
             }
 
             while (!stack.isEmpty() && right.priority <= stack.peek().priority) {
                 TreeNode nodeNow = stack.pop();
-                res.add(nodeNow.val);
                 if (stack.isEmpty()) {
                     right.left = nodeNow;
                 } else {
@@ -118,8 +121,53 @@ public class ConvertToRPN {
         }
         return stack.peek().left;
     }
+    static ArrayList<String> convertToRPN2(String[] expression) {
+        ArrayList<String> res = new ArrayList();
+        Stack<String> stack = new Stack();
+        
+        for(String s : expression) {
+            if(Character.isDigit(s.charAt(0))) {
+                res.add(s);
+            } else if(s.equals(" ")) {
+                continue;
+            } else if(s.equals("(")) {
+                stack.push(s);
+            } else if(s.equals(")")) {
+                while(!stack.isEmpty() && !stack.peek().equals("(")) {
+                    res.add(stack.pop());
+                }
+                //pop out "("
+                stack.pop();
+            } else {
+                while(!stack.isEmpty() && getPriority(stack.peek()) >= getPriority(s)) {
+                    res.add(stack.pop());
+                }
+                //add the current character
+                stack.add(s);
+            }
+        }
+        while(!stack.isEmpty()) {
+            res.add(stack.pop());
+        }
+        return res;
+    }
+    static int getPriority(String s) {
+        if(s.equals("(")) {
+            return 0;
+        } else if(s.equals("+") || s.equals("-")) {
+            return 1;
+        } else {
+            return 2;
+        }
+    }
     public static void main(String[] args) {
-        String [] input = {"3","-","4","+","5"};
-        System.out.println(convertToRPN(input));
+        String [][] inputs = {{"3","-","4","+","5"},
+                             {"1","+","1"},
+                             {" ", "2"," ", "-","1","+"," ","2"," ",}};
+        for(String[] input : inputs) {
+            System.out.println("Solution 1: " +convertToRPN(input));
+            System.out.println("Solution 2: " +convertToRPN2(input));
+        }
+     
     }
 }
