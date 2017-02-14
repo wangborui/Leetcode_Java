@@ -1,8 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//Source : http://www.lintcode.com/en/problem/expression-evaluation/#
+//Date   : 02/14/2017
+
+/**********************************************************************************
+Given an expression string array, return the final result of this expression
+
+ Notice
+
+The expression contains only integer, +, -, *, /, (, ).
+
+Have you met this question in a real interview? Yes
+Example
+For the expression 2*6-(23+7)/(1+2),
+input is
+
+[
+  "2", "*", "6", "-", "(",
+  "23", "+", "7", ")", "/",
+  (", "1", "+", "2", ")"
+],
+return 2
+ ***********************************************************************************/
 package Leetcode_Java.stack_hard;
 
 import java.util.ArrayList;
@@ -17,6 +34,13 @@ public class EvaluateExpression {
      * @param expression: an array of strings;
      * @return: an integer
      */
+    //idea is:
+//    
+//    1.) convert expression to Reverse Polish Notation(RPN)
+//            using either min tree or stack trick, see convert to RPN
+//    2.) calculate RPN
+//    
+//    Time O(n) Space O(n)
     public int evaluateExpression(String[] expression) {
         if(expression == null || expression.length == 0) {
             return 0;
