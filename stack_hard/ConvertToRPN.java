@@ -121,6 +121,26 @@ public class ConvertToRPN {
         }
         return stack.peek().left;
     }
+/*******************************************************************************
+ * Solution 2
+ */
+//    Analysis:
+//    operator priorities:
+//    
+//        0 : ( )
+//        1 : + -
+//        2 : * /
+//    
+//    iterate expressions and create stack to hold operators : + - * / ( )
+//    
+//            1.)if current expression is number, add it to result
+//            2.)if current expression is " ", skip
+//            3.)if current expression is operator, pop from stack and add to res if stack top operator has priority greater than or equal to current operator priority
+//                    push current operator into stack
+//            4.)if currnet expression is "(", push it into stack
+//            5.)if current expression is ")", pop all elements from stack until we reach "(", add those elements into res, pop "("
+//    After iteration, if the stack is not empty, pop all elements from stack and add them into result
+//*******************************************************************************/
     static ArrayList<String> convertToRPN2(String[] expression) {
         ArrayList<String> res = new ArrayList();
         Stack<String> stack = new Stack();
