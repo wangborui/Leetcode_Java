@@ -34,25 +34,20 @@ public class MinSubArrayLen {
 //       Time O(n)  Space O(1)
 //     Pitfall, for every subarray size we calcuate, we need to make sure sum >= s, then calculate subarray size j - i
     static int minSubArrayLenTwoPointers(int s, int[] nums) {
-        if(s <= 0 || nums == null || nums.length == 0) {
-            return 0;
-        }
-        
-        int j = 1;
-        int sum = nums[0];
+        int i = 0;
+        int j = 0;
+        int sum = 0;
+        int n = nums.length;
         int min = Integer.MAX_VALUE;
         
-        for(int i = 0; i < nums.length; i++) {
-            while(j < nums.length && sum < s) {
-                sum += nums[j++];
-            }
-            //i goes from 0 to n, so we need to check if sum >= s when sum is < s for some i
-            if(sum >= s) {
+        while(j < n) {
+            sum += nums[j++];
+            
+            while(sum >= s) {
                 min = Math.min(min, j - i);
+                sum -= nums[i++];
             }
-            sum -= nums[i];
         }
-        
         return min == Integer.MAX_VALUE ? 0 : min;
     }
      public static void main(String[] args){
