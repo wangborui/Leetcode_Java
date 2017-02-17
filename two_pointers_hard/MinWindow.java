@@ -32,6 +32,15 @@ import java.util.Map;
  *
  * @author Borui Wang
  */
+//idea:
+//
+//use tMap to count all occurence of target string character, and sMap to do the same for source string
+//
+//create isValid function to see if current substring of s contains all characters of target string
+//
+//if not valid, keep adding characters from source until the source substring becomes valid
+//
+//if valid, start removing character from beginning until the substring of s becomes invalid
 public class MinWindow {
     /*
      * Declare two "hash map" for ASCII chars
