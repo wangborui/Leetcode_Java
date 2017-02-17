@@ -1,5 +1,7 @@
+//Source: https://leetcode.com/problems/climbing-stairs/
+//Date  : 02/17/2017
+
 /*
-Source: https://leetcode.com/problems/climbing-stairs/
 ********************************************************************************
 You are climbing a stair case. It takes n steps to reach to the top.
 
@@ -32,5 +34,16 @@ public class ClimbingStairs {
             return 1;
         }
         return climbStairs2(n - 1) + climbStairs2(n - 2);
+    }
+    //Time O(n) Space O(1)
+    public int climbStairsOptimizedSpace(int n) {
+        int[] dp =  new int[2];
+        dp[0] = 1;
+        dp[1] = 1;
+        
+        for(int i = 2; i <= n; i++) {
+            dp[i % 2] = dp[(i - 1) % 2] + dp[(i - 2) % 2];
+        }
+        return dp[n % 2];
     }
 }

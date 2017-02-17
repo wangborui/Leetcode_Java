@@ -20,7 +20,7 @@ package Leetcode_Java.dynamic_programming_easy;
 public class Rob {
     /*
  * Dynamic Programming
- * dp[n] means max values we can get from first i houses, not including the ith house
+ * dp[n] means max values we can get from first n houses, not including the nth house
  * We can easy find the recurive fomular:
  *
  *     dp[n] = max( 
