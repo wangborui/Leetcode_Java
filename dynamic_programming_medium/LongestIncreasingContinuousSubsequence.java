@@ -1,5 +1,6 @@
-//Source : 
-//Date   :
+//Source : http://www.lintcode.com/en/problem/longest-increasing-continuous-subsequence/
+//Date   : 02/19/2017
+
 /**
  * ******************************************************************************
  * Give an integer array，find the longest increasing continuous subsequence in this array.
