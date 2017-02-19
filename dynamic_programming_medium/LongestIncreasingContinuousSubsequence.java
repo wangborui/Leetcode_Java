@@ -10,7 +10,7 @@
  * Indices of the integers in the subsequence should be continuous.
  ******************************************************************************
  */
-package Leetcode_Java.dynamic_programming_easy;
+package Leetcode_Java.dynamic_programming_medium;
 
 import java.util.Arrays;
 
