@@ -41,7 +41,7 @@ public class FirstWillWin2 {
 //optimal function:
 //        chooseOne = min(dp[i - 2], dp[i - 3]) + coin[n - i]
 //        chooseTwo = min(dp[i - 3], dp[i - 4]) + coin[n - i] + coin[n - i + 1]
-//        dp[i] = 
+//        dp[i] = max(chooseOne, chooseTwo)
 //                             dp[i]                   first  hand
 //                            /      \
 //           coin[n - i]    /         \     coin[n - i + 1]
