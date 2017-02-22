@@ -27,7 +27,7 @@ package Leetcode_Java.dynamic_programming_medium;
  *
  * @author Borui Wang
  */
-public class FirstWillWing {
+public class FirstWillWin {
 
     /**
      * @param n: an integer
