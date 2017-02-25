@@ -76,24 +76,23 @@ public class PostorderTraversal {
     static List<Integer> inorderTraversalIterative(TreeNode root) {
         Stack<TreeNode> stack = new Stack();
         List<Integer> res = new ArrayList();
-        TreeNode cur = root;
         //stack is empty in the beginning of traversal
         //cur is null after traversing all left nodes 
-        while(!stack.isEmpty() || cur != null) {
+        while(!stack.isEmpty() || root != null) {
             // keep going the left
-            if(cur != null) {
-                if(cur.right != null) {
-                    stack.push(cur.right);
+            if(root != null) {
+                if(root.right != null) {
+                    stack.push(root.right);
                 }
-                stack.push(cur);
-                cur = cur.left;
+                stack.push(root);
+                root = root.left;
             } else {
                 // top could be left node or top node with its right node in stack top
                 TreeNode top = stack.pop();
                 //if top is the last node in stack, after pop dont peek stack top
                 if(!stack.isEmpty() && top.right == stack.peek()) {
                     //traverse right sub-tree of top 
-                    cur = stack.pop();
+                    root = stack.pop();
                     //push top into stack the second time
                     stack.push(top);
                 } else {
