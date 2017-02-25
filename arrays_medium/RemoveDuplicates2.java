@@ -38,7 +38,7 @@ public class RemoveDuplicates2 {
         int count = 1;
 
         while (j < n) {
-            if (j < n && nums[j] == nums[j - 1]) {
+            if (nums[j] == nums[j - 1]) {
                 count++;
                 if (count < 3) {
                     nums[++i] = nums[j];

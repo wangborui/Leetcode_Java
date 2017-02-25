@@ -34,7 +34,7 @@ public class RemoveDuplicates {
         int n = nums.length;
         
         while(j < n) {
-            if(j < n && nums[j] == nums[j - 1]) {
+            if(nums[j] == nums[j - 1]) {
                 j++;
             } else {
                 nums[++i] = nums[j++];
