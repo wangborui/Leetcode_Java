@@ -55,7 +55,7 @@ public class PostorderTraversal {
         //add right
     }
     
-    public List<Integer> inorderTraversalDivideNConquer(TreeNode root) {
+    public List<Integer> PostorderTraversalDivideNConquer(TreeNode root) {
          ArrayList<Integer> result = new ArrayList<Integer>();
         // null or leaf
         if (root == null) {
@@ -63,8 +63,8 @@ public class PostorderTraversal {
         }
 
         // Divide
-        List<Integer> left = inorderTraversalDivideNConquer(root.left);
-        List<Integer> right = inorderTraversalDivideNConquer(root.right);
+        List<Integer> left = PostorderTraversalDivideNConquer(root.left);
+        List<Integer> right = PostorderTraversalDivideNConquer(root.right);
 
         // Conquer
         result.addAll(left);
@@ -73,7 +73,7 @@ public class PostorderTraversal {
         return result;
     }
     
-    static List<Integer> inorderTraversalIterative(TreeNode root) {
+    static List<Integer> PostOrderTraversalIterative(TreeNode root) {
         Stack<TreeNode> stack = new Stack();
         List<Integer> res = new ArrayList();
         //stack is empty in the beginning of traversal
@@ -100,6 +100,20 @@ public class PostorderTraversal {
         }
         return res;
     }
+    static List<Integer> PostOrderTraversalIterativeOptimized(TreeNode root) {
+        Stack<TreeNode> stack = new Stack();
+        List<Integer> list = new ArrayList();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode temp = stack.pop();
+            if (temp != null) {
+                list.add(0,temp.val);
+                stack.push(temp.left);
+                stack.push(temp.right);
+            }
+        }
+        return list;
+    }
    
     /*  tree                  traverse mid, right, left using one stack and push result into postorder stack
     pop postorder stack and add results into res list
@@ -111,7 +125,7 @@ public class PostorderTraversal {
          *
       */
     
-    static List<Integer> inorderTraversalTwoStacks(TreeNode root) {
+    static List<Integer> PostOrderTraversalTwoStacks(TreeNode root) {
         List<Integer> res = new ArrayList();
         Stack<TreeNode> reverseOrder = new Stack();
         Stack<TreeNode> postOrder = new Stack();
@@ -155,7 +169,7 @@ public class PostorderTraversal {
         c.left = e;
         c.right = f;
          
-        System.out.println(inorderTraversalIterative(a));
-        System.out.println(inorderTraversalTwoStacks(a));
+        System.out.println(PostOrderTraversalIterative(a));
+        System.out.println(PostOrderTraversalTwoStacks(a));
     }
 }
