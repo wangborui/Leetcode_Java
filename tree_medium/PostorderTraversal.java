@@ -81,9 +81,7 @@ public class PostorderTraversal {
         while(!stack.isEmpty() || root != null) {
             // keep going the left
             if(root != null) {
-                if(root.right != null) {
-                    stack.push(root.right);
-                }
+                stack.push(root.right);
                 stack.push(root);
                 root = root.left;
             } else {
