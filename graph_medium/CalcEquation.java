@@ -71,7 +71,7 @@ public class CalcEquation {
     }
 
     static double dfsHelper(Map<String, Map<String, Double>> graph, Set<String> visited, String from, String to, double val) {
-        //handles case to or from does not exist
+        //handles corner case, and handle already visited nodes
         if (!graph.containsKey(from) || !graph.containsKey(to) || visited.contains(from)) {
             return -1.0;
         }
