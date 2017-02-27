@@ -1,8 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// Source : https://oj.leetcode.com/problems/subsets/
+// Date   : 02/26/2017
+
+/**********************************************************************************
+ *
+ * Given a set of distinct integers, S, return all possible subsets.
+ *
+ * Note:
+ *
+ * Elements in a subset must be in non-descending order.
+ * The solution set must not contain duplicate subsets.
+ *
+ * For example,
+ * If S = [1,2,3], a solution is:
+ *
+ * [
+ *   [3],
+ *   [1],
+ *   [2],
+ *   [1,2,3],
+ *   [1,3],
+ *   [2,3],
+ *   [1,2],
+ *   []
+ * ]
+ *
+ *
+ **********************************************************************************/
 package Leetcode_Java.arrays_medium;
 
 import java.util.ArrayList;
