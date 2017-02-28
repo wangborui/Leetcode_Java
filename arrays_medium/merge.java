@@ -23,7 +23,7 @@ import java.util.List;
  *
  * @author Borui Wang
  */
-public class merge {
+public class Merge {
 
     public class Interval {
 
@@ -57,7 +57,7 @@ public class merge {
         int prevEnd = intervals.get(0).end;
 
         for (Interval i : intervals) {
-            //if 2 intervals overlap, merge them together
+            //if 2 intervals overlap, Merge them together
             if (i.start <= prevEnd) {
                 prevEnd = Math.max(prevEnd, i.end);
             } else {
