@@ -44,7 +44,7 @@ public int findPeakElement(int[] nums) {
     }
 
  */
-package Leetcode_Java.binary_search_medium;
+package Leetcode_Java.binary_search_hard;
 
 /**
  *
