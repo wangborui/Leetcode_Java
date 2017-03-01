@@ -103,7 +103,7 @@ import java.util.TreeMap;
  */
 public class GetSkyline {
 
-static class Point {
+    static class Point {
 
         int idx;
         int height;
@@ -161,27 +161,84 @@ static class Point {
                         pq.remove(point.height);
                     }
                 }
-            } 
+            }
             //no points at the same location
             point = points.get(i);
             if (point.isStart) {
                 pq.add(point.height);
             } else {
-              pq.remove(point.height);
+                pq.remove(point.height);
             }
-
 
             if (pq.isEmpty()) {
                 res.add(new int[]{point.position, 0});
                 prevH = 0;
-            } else {
-                if (prevH != pq.peek()) {
-                    res.add(new int[]{point.position, pq.peek()});
-                    prevH = pq.peek();
-                 }
+            } else if (prevH != pq.peek()) {
+                res.add(new int[]{point.position, pq.peek()});
+                prevH = pq.peek();
             }
             i++;
         }
+        return res;
+    }
+
+    /**
+     * ********************************************************************************
+     * Use building start and end pair, start has negative height, end has
+     * positive height
+     * ********************************************************************************
+     */
+    static List<int[]> getSkyline2(int[][] buildings) {
+        List<int[]> res = new ArrayList();
+        if (buildings == null || buildings.length == 0 || buildings[0].length == 0) {
+            return res;
+        }
+
+        List<int[]> heights = new ArrayList();
+        //maintain a max priority queue
+        PriorityQueue<Integer> pq = new PriorityQueue(new Comparator<Integer>() {
+            public int compare(Integer a, Integer b) {
+                return b - a;
+            }
+        });
+
+        //scan buildings and put points into list
+        for (int i = 0; i < buildings.length; i++) {
+            int[] building = buildings[i];
+            int left = building[0];
+            int right = building[1];
+            int height = building[2];
+            heights.add(new int[]{left, -height});
+            heights.add(new int[]{right, height});
+        }
+
+        //sort points based on position
+        Collections.sort(heights, (int[] a, int[] b) -> {
+            //if positions are the same, sort height in ascending order
+            if (a[0] == b[0]) {
+                return a[1] - b[1];
+            } else {
+                //different positions, sort position in ascending order
+                return a[0] - b[0];
+            }
+        });
+        int prevH = 0;
+        pq.add(0);
+        for (int[] h : heights) {
+            //height is start
+            if (h[1] < 0) {
+                pq.add(-h[1]);
+            } else {
+                pq.remove(h[1]);
+            }
+
+            int curH = pq.peek();
+            if (prevH != curH) {
+                res.add(new int[]{h[0], curH});
+                prevH = curH;
+            }
+        }
+
         return res;
     }
 
@@ -191,46 +248,63 @@ static class Point {
      * represent height, and value to represent how many times height appears
      * ********************************************************************************
      */
- 
-
-    /**
-     * ********************************************************************************
-     * Use building start and end pair, start has negative height, end has
-     * positive height
-     * ********************************************************************************
-     */
     static List<int[]> getSkyline3(int[][] buildings) {
-        List<int[]> result = new ArrayList<>();
-        List<int[]> height = new ArrayList<>();
-        for (int[] b : buildings) {
-            height.add(new int[]{b[0], -b[2]});
-            height.add(new int[]{b[1], b[2]});
+        List<int[]> res = new ArrayList();
+        if (buildings == null || buildings.length == 0 || buildings[0].length == 0) {
+            return res;
         }
-        Collections.sort(height, (a, b) -> {
-            if (a[0] != b[0]) {
+
+        List<int[]> heights = new ArrayList();
+        //maintain a max priority queue
+        TreeMap<Integer, Integer> map = new TreeMap(Collections.reverseOrder());
+
+        //scan buildings and put points into list
+        for (int i = 0; i < buildings.length; i++) {
+            int[] building = buildings[i];
+            int left = building[0];
+            int right = building[1];
+            int height = building[2];
+            heights.add(new int[]{left, -height});
+            heights.add(new int[]{right, height});
+        }
+
+        //sort points based on position
+        Collections.sort(heights, (int[] a, int[] b) -> {
+            //if positions are the same, sort height in ascending order
+            if (a[0] == b[0]) {
+                return a[1] - b[1];
+            } else {
+                //different positions, sort position in ascending order
                 return a[0] - b[0];
             }
-            return a[1] - b[1];
         });
-        Queue<Integer> pq = new PriorityQueue<>((a, b) -> (b - a));
-        pq.offer(0);
-        int prev = 0;
-        for (int[] h : height) {
+        int prevH = 0;
+        map.put(0, 1);
+        for (int[] h : heights) {
+            //height is start
             if (h[1] < 0) {
-                pq.offer(-h[1]);
-            } else {
-                pq.remove(h[1]);
+                Integer times = map.get(-h[1]);
+                times = times == null ? 1 : times + 1;
+                map.put(-h[1], times);
+            } else {  
+                Integer times = map.get(h[1]);
+                if(times == 1) {
+                    map.remove(h[1]);
+                } else {
+                    map.put(h[1], times - 1);
+                }
             }
-            int cur = pq.peek();
-            if (prev != cur) {
-                result.add(new int[]{h[0], cur});
-                prev = cur;
+            int curH = map.firstKey();
+            if (prevH != curH) {
+                res.add(new int[]{h[0], curH});
+                prevH = curH;
             }
         }
-        return result;
-    }
 
-    static void printPoints(List<Point> l) {
+    return res ;
+}
+
+static void printPoints(List<Point> l) {
         for (Point p : l) {
             System.out.println(" height: " + p.height + " isStart: " + p.isStart + " pos: " + p.position);
         }
@@ -241,7 +315,6 @@ static class Point {
             System.out.print("[" + p[0] + "," + p[1] + "]" + " ");
         }
     }
- 
 
     public static void main(String[] args) {
         //output [ [2 10], [3 15], [7 12], [12 0], [15 10], [20 8], [24, 0] ].
@@ -250,6 +323,6 @@ static class Point {
         int[][] in2 = {{0, 2, 3}, {2, 5, 3}};
         //output
         int[][] in3 = {{1, 2, 1}, {1, 2, 2}, {1, 2, 3}};
-        printRes(getSkyline(in3));
+        printRes(getSkyline3(in3));
     }
 }
