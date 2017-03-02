@@ -30,6 +30,35 @@ import java.util.List;
  * @author Borui Wang
  */
 public class FindPeakElement2 {
+//idea is:
+//
+//similar to "find peak element 1"
+//
+//we know that all the boarder cells are smaller than their inner cells like so
+//        
+//        -------------------------
+//        |        smaller         |
+//        |   -----------------    |
+//        |   |                |   |
+//        |   |    larger      |   | 
+//        |   |                |   |
+//        |   -----------------    |
+//        |        smaller         |
+//        -------------------------
+//        
+//Therefore, the peak element must NOT be on the borders A[0][j], A[n - 1][j], A[i][0], and A[i][n - 1]
+//
+//We can then use binary search both vertically and horizontally to find the peak element
+//
+//Time Complexity:
+//
+//            T(n) = n + n/2 + T(n/2)
+//            T(n/2) n/2 + n/4 + T(n/4)
+//                    .
+//                    .
+//                    .
+//            T(n) = 3n + 1
+    
 
     static List<Integer> findPeakII(int[][] A) {
         if(A == null || A.length == 0 || A[0].length == 0) {
@@ -43,7 +72,7 @@ public class FindPeakElement2 {
         if(isVertical) {
             int mid = xStart + (xEnd - xStart) / 2;
             int maxIdx = yStart;
-            
+            //find index of max value
             for(int i = yStart; i <= yEnd; i++) {
                 if(A[mid][i] > A[mid][maxIdx]) {
                     maxIdx = i;
@@ -61,7 +90,7 @@ public class FindPeakElement2 {
         } else {
             int mid = yStart + (yEnd - yStart) / 2;
             int maxIdx = xStart;
-            
+            //find index of max value
             for(int i = xStart; i <= xEnd; i++) {
                 if(A[i][mid] > A[maxIdx][mid]) {
                     maxIdx = i;
