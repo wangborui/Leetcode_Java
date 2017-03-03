@@ -17,6 +17,8 @@
  */
 package Leetcode_Java.dynamic_programming_medium;
 
+import java.util.Arrays;
+
 /**
  *
  * @author Borui Wang
@@ -48,7 +50,44 @@ public class SubarraySum2 {
         }
         return count;
     }
+    static int subarraySumII2(int[] A, int start, int end) {
+        int len = A.length;
+        for(int i = 1; i < len; i++) {
+            A[i] += A[i - 1];
+        }
+        Arrays.sort(A);
+        
+        int count = 0;
+        for(int i  = 0; i < len; i++) {
+            if(A[i] >= start && A[i] <= end) {
+                count++;
+            }
+            int l = A[i] - end;
+            int r = A[i] - start;
+            count += find(A, len, r + 1) - find(A, len, l);
+        }
+        return count;
+    }
+    static int find(int[] A, int len, int value) {
+        if(A[len - 1] < value) {
+            return len;
+        }
+        
+        int l = 0;
+        int r = len - 1;
+        int ans = 0;
+        while(l <= r) {
+            int mid = (l + r) / 2;
+            if(value <= A[mid]) {
+                ans = mid;
+                r = mid - 1;
+            } else {
+                l = mid + 1;
+            }
+        }
+        return ans;
+    }
     public static void main(String[] args) {
-        System.out.println(subarraySumII(new int[]{1,2,3,4},1,3));
+        System.out.println(subarraySumII2(new int[]{1,2,3,4},1,3));
     }
 }
