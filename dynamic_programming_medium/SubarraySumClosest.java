@@ -22,7 +22,12 @@ import java.util.Arrays;
  * @author Borui Wang
  */
 public class SubarraySumClosest {
-
+//Pitfall: at index -1, prefix sum is 0, this is used to cover edge case
+//idea is:
+//1.) find prefix sum of the array
+//2.) sort prefix sum based on sums, while keeping track of each element index
+//3.) find the smallest value difference between each prefix sum
+//4.) find the from and to index of the subarray
     static class Pair implements Comparable<Pair> {
 
         int index;
