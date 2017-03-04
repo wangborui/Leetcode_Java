@@ -1,9 +1,38 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package bit_manipulation_easy;
+//Source : https://leetcode.com/problems/convert-a-number-to-hexadecimal/?tab=Description
+//Date   : 03/04/2017
+
+/*************************************************************************************** 
+ *
+ * Given an integer, write an algorithm to convert it to hexadecimal. For negative 
+ * integer, two’s complement method is used.
+ * 
+ * Note:
+ * 
+ * All letters in hexadecimal (a-f) must be in lowercase.
+ * The hexadecimal string must not contain extra leading 0s. If the number is zero, it 
+ * is represented by a single zero character '0'; otherwise, the first character in the 
+ * hexadecimal string will not be the zero character.
+ * The given number is guaranteed to fit within the range of a 32-bit signed integer.
+ * You must not use any method provided by the library which converts/formats the 
+ * number to hex directly.
+ * 
+ * Example 1:
+ * 
+ * Input:
+ * 26
+ * 
+ * Output:
+ * "1a"
+ * 
+ * Example 2:
+ * 
+ * Input:
+ * -1
+ * 
+ * Output:
+ * "ffffffff"
+ ***************************************************************************************/
+package Leetcode_Java.bit_manipulation_easy;
 
 /**
  *
@@ -20,41 +49,12 @@ public class ToHex {
         }
         return hex;
     }
-    //my solution
-//    static String toHex(int num) {
-//        String binary = "";
-//        String hex = "";
-//        for(int i = 0; i < 32; i++){
-//            binary = (num&1)+binary;
-//            num>>=1;
-//        }
-//        for(int i = 0; i < 8; i++){
-//            int hexNum = 0;
-//            for(int j = 0; j <4;j++){
-//                hexNum = 2*hexNum +(binary.charAt(i*4+j) - '0');
-//            }
-//            if(hexNum == 10){
-//                hex+="a";
-//            }
-//            else if(hexNum == 11){
-//                hex+="b";
-//            }else if(hexNum == 12){
-//                hex+="c";
-//            }else if(hexNum == 13){
-//                hex+="d";
-//            }else if(hexNum == 14){
-//                hex+="e";
-//            }else if(hexNum == 15){
-//                hex+="f";
-//            }else if(hexNum > 0){
-//                hex+=""+hexNum;
-//            }else if(hex.length()>0){
-//                hex+="0";
-//            }
-//        }
-//        return hex;
-//    }
+ 
       public static void main(String[] args){
-        System.out.println(toHex(-1 ));
+        //System.out.println(toHex(-1 ));
+//        for(int i = 0; i < 16; i++) {
+//            System.out.println(i & 15);
+//        }
+        System.out.println(-1 & 15);
     }
 }
