@@ -21,7 +21,7 @@ import java.util.ArrayList;
  */
 public class ContinuousSubarraySum2 {
 
-    public ArrayList<Integer> continuousSubarraySumII(int[] A) { // Write your code here 
+    static ArrayList<Integer> continuousSubarraySumII(int[] A) { // Write your code here 
         ArrayList<Integer> result = new ArrayList<Integer>();
         result.add(0);
         result.add(0);
@@ -66,5 +66,9 @@ public class ContinuousSubarraySum2 {
             }
         }
         return result;
+    }
+    public static void main(String[] args) {
+        //3, 1, -100, -3, 4
+        System.out.println(continuousSubarraySumII(new int[]{3, 1, -100, -3, 4}));
     }
 }
