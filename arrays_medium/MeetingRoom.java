@@ -10,7 +10,7 @@
  * return 2.
  *********************************************************************************
  */
-package Leetcode_Java.arrays_easy;
+package Leetcode_Java.arrays_medium;
 
 import java.util.Arrays;
 import java.util.Comparator;
