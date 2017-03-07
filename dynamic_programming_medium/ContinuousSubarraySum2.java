@@ -47,7 +47,7 @@ public class ContinuousSubarraySum2 {
         }
         local = 0;
         start = 0;
-        end = -1;
+        end = 0;
         for (int i = 0; i < len; ++i) {
             if (local > 0) {
                 local = A[i];
