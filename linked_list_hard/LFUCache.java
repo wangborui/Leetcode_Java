@@ -210,6 +210,8 @@ public class LFUCache {
 //        System.out.println(cache.get(2));   //return 2
 //        System.out.println(cache.get(1));   //return 1
 //        System.out.println(cache.get(4));   //return 4
+
+
 //        LFUCache cache = new LFUCache(2 /* capacity */);
 //        System.out.println(cache.get(1));  //return -1 not found 
 //       // cache.printLinkedList(); 

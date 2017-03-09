@@ -1,9 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package arrays_easy;
+// Source : https://oj.leetcode.com/problems/plus-one/
+// Date   : 03/09/2017
+
+/********************************************************************************** 
+* 
+* Given a non-negative number represented as an array of digits, plus one to the number.
+* 
+* The digits are stored such that the most significant digit is at the head of the list.
+*               
+**********************************************************************************/
+package Leetcode_Java.arrays_easy;
 
 import edu.princeton.cs.algs4.StdOut;
 import java.util.Arrays;
@@ -13,66 +18,31 @@ import java.util.Arrays;
  * @author Borui Wang
  */
 public class PlusOne {
-    
-    //Simple Java Solutions
-//    public int[] plusOne(int[] digits) {
-//        
-//    int n = digits.length;
-//    for(int i=n-1; i>=0; i--) {
-//        if(digits[i] < 9) {
-//            digits[i]++;
-//            return digits;
-//        }
-//        
-//        digits[i] = 0;
-//    }
-//    
-//    int[] newNumber = new int [n+1];
-//    newNumber[0] = 1;
-//    
-//    return newNumber;
-//}
-    //int is out of bound
-//    public int[] plusOne(int[] digits) {
-//        int N = digits.length -1;
-//        int num = 0;
-//        int[]result;
-//        for(int i = 0; i <= N; i++){
-//            num+= Math.pow(10,i)*digits[N-i];
-//        }
-//        num++;
-//        String OP = Integer.toString(num);
-//        if(OP.length() == N+1) result = new int[N+1];
-//        else result = new int[N+2];
-//        for(int i = 0; i < result.length; i++){
-//            result[i] = Integer.parseInt(""+OP.charAt(i));
-//        }
-//        return result;
-//    }
-    public int[] plusOne(int[] digits) {
-        int[] result = digits;
-        boolean overflow = true;
-        int lastIndex = digits.length - 1;
-        while(overflow){
-            if(lastIndex<0) return resize(result);
-            if(result[lastIndex]+1 == 10){
-                result[lastIndex] = 0;
-            }
-            else{
-                result[lastIndex]++;
-                overflow = false;
-            }
-            lastIndex--;
+     public int[] plusOne(int[] digits) {
+        if(digits == null || digits.length == 0) {
+            return new int[0];
         }
-        return result;
-    }
-    private int[] resize(int[]num){
-        int[] p = new int[num.length+1];
-        p[0] = 1;
-        for(int i = 0; i < num.length; i++){
-            p[i+1] = num[i];
+        
+        int carry = 1;
+        int n = digits.length;
+        
+        for(int i = n - 1; i >= 0 && carry == 1; i--) {
+            int digit = digits[i];
+            if(digit + carry == 10) {
+                digits[i] = 0;
+            } else {
+                digits[i] += carry;
+                return digits;
+            }
         }
-        return p;
+        
+        if(carry == 1) {
+            int[] res = new int[n + 1];
+            res[0] = 1;
+            return res;
+        } else {
+            return digits;
+        }
     }
     public static void main(String [] args){
         int [] dig = {0};
