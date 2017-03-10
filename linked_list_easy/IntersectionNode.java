@@ -1,9 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+// Source : https://oj.leetcode.com/problems/intersection-of-two-linked-lists/
+// Date   : 03/10/2017
+/**
+ * ********************************************************************************
+ *
+ * Write a program to find the node at which the intersection of two singly linked lists begins.
+ *
+ * For example, the following two linked lists:
+ *
+ *
+ *    A:          a1 → a2
+ *                       ↘
+ *                         c1 → c2 → c3
+ *                       ↗
+ *    B:     b1 → b2 → b3
+ *
+ * begin to intersect at node c1.
+ *
+ * Notes:
+ *
+ * If the two linked lists have no intersection at all, return null.
+ * The linked lists must retain their original structure after the function returns.
+ * You may assume there are no cycles anywhere in the entire linked structure.
+ * Your code should preferably run in O(n) time and use only O(1) memory.
+ *
+ *********************************************************************************
  */
-package linked_list_easy;
+package Leetcode_Java.linked_list_easy;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,66 +35,53 @@ import java.util.Set;
  * @author Borui Wang
  */
 public class IntersectionNode {
-      static class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) { val = x; }
- }
-      //  solution found
-       public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-           if(headA == null || headB == null) return null;
-           Set<ListNode> set = new HashSet<ListNode>();
-        ListNode walkerA = headA;
-        ListNode walkerB = headB;
-        while(walkerA != null){
-            set.add(walkerA);
-            walkerA = walkerA.next;
+
+    static class ListNode {
+
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
         }
-        while(walkerB != null){
-            if(set.contains(walkerB))
-                return walkerB;
-            else{
-                walkerB = walkerB.next;
-            }
+    }
+    //首先找出A链表和B链表的长度
+    //如果两个链表长度不一样，就先把长的链表往后移动 |lenA - lenB| 步，使得两个链表长度一样
+    //用while循环让两个链表各自向后走，知道他们的值相等
+    //在循环过程中，如果两个链表的值相等了，我们会有两种可能性
+    //1.)他们没有交点，两个都走到了最后null的值
+    //2.)他们有交点，两个链表碰到了一起
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        int lenA = getLength(headA);
+        int lenB = getLength(headB);
+
+        //get 2 lists to start at the same amount of nodes away from the end
+        while (lenA > lenB) {
+            headA = headA.next;
+            lenA--;
         }
-        
-           
-           return null;
-       }
-      //my solution exceed time limit
-//      public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-//        if(headA == null || headB == null) return null;
-//        int countA, countB;
-//        countA = countB = 0;
-//        ListNode walkerA = headA;
-//        ListNode walkerB = headB;
-//        while(walkerA != null){
-//            walkerA = walkerA.next;
-//            countA++;
-//        }
-//        while(walkerB != null){
-//            walkerB = walkerB.next;
-//            countB++;
-//        }
-//        walkerA = headA;
-//        walkerB = headB;
-//        
-//        if(countA > countB){
-//            for(int i = 0; i < countA-countB; i++){
-//                walkerA = walkerA.next;
-//            }
-//        }
-//        else{
-//            for(int i = 0 ;i < countB - countA; i++){
-//                walkerB = walkerB.next;
-//            }
-//        }
-//        
-//        while(walkerA != null && walkerB != null){
-//            if(walkerA.val == walkerB.val){
-//                return walkerA;
-//            }
-//        }
-//        return null;
-//    }
+
+        while (lenB > lenA) {
+            headB = headB.next;
+            lenB--;
+        }
+
+        //either headA = headB = null
+        //or headA = headB = some node
+        while (headA != headB) {
+            headA = headA.next;
+            headB = headB.next;
+        }
+
+        return headA;
+    }
+
+    private int getLength(ListNode node) {
+        int count = 0;
+        while (node != null) {
+            count++;
+            node = node.next;
+        }
+        return count;
+    }
 }
