@@ -26,8 +26,13 @@ public class SortList {
             val = x;
         }
     }
-//{1,4,5,2,7,0,2}
-
+    
+    //使用归并排序来为链表排序
+    //首先找到原链表中间节点
+    //递归归并排序中间节点后面的所有节点，并把排好序的链表称为right
+    //把中间节点后边设置为空（切断中间节点和后边节点的连接）
+    //递归归并排序开始节点到中间节点，并把排好学的链表称为left
+    //合并已经排好顺序的left和right链表
     static ListNode sortList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
