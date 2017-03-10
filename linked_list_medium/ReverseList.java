@@ -43,8 +43,10 @@ public class ReverseList {
           if(head == null || head.next == null) {
               return head;
           }
+          //假设头后面的部分都被翻转了，并且我们拥有被翻转链表部分的头
           //assume reversed head reversed all nodes after head node, and is the head
           ListNode reversedHead = reverseListRecursive(head.next);
+          //把现在的头变成已经被翻转部分的尾部
           head.next.next = head;
           head.next = null;
           return reversedHead;
