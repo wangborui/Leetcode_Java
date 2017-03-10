@@ -34,8 +34,8 @@ public class OddEvenList {
         ListNode even = head.next;
         ListNode evenHead = even;
         //找到原链表第一个单数节点，和第一个双数节点，并记录双数开始节点
-        //把单数节点连接到下一个单数节点，双数节点连接到下一个双数节点
-        //将单数节点结尾连接到双数节点开头，并返回原链表开始节点
+        //把所有单数节点连接起来，把所有双数节点连接起来
+        //将单数节点结尾连接到双数开始节点，并返回原链表开始节点（单数开始节点）
         
         while (even != null && even.next != null) {
             odd.next = even.next;
