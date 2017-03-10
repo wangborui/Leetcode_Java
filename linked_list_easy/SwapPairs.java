@@ -1,9 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package linked_list_easy;
+// Source : https://oj.leetcode.com/problems/swap-nodes-in-pairs/
+// Date   : 03/10/2017
+
+/********************************************************************************** 
+* 
+* Given a linked list, swap every two adjacent nodes and return its head.
+* 
+* For example,
+* Given 1->2->3->4, you should return the list as 2->1->4->3.
+* 
+* Your algorithm should use only constant space. You may not modify the values in the list, 
+* only nodes itself can be changed.
+* 
+*               
+**********************************************************************************/
+
+package leetcode_Java.linked_list_easy;
 
 import edu.princeton.cs.algs4.StdOut;
 
@@ -12,66 +23,68 @@ import edu.princeton.cs.algs4.StdOut;
  * @author Borui Wang
  */
 public class SwapPairs {
-     static class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) { val = x; }
- }
-     /* solution found
-       public ListNode swapPairs(ListNode head) {
-        if(head == null || head.next == null) return head;
-        ListNode first = head.next;
-        ListNode nextSet = head.next.next;
-        first.next = head;
-        head.next = swapPairs(nextSet);
-        return first;
+
+    static class ListNode {
+
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
-     */ 
-     //iterative solutions
-    static ListNode swapPairs(ListNode head) {
-        if(head == null || head.next == null)return head;
+    //recursive solutions
+
+    static ListNode swapPairsRecursive(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        //找到第一个节点，取名叫head
+        //找到第二个节点，取名叫swappedHead
+        //再找到第三个节点，取名叫nextPair
+        //交换第一对节点，再递归交换之后成对的节点
+        ListNode swappedHead = head.next;
+        ListNode nextPair = head.next.next;
+        swappedHead.next = head;
+        head.next = swapPairsRecursive(nextPair);
+        return swappedHead;
+    }
+    //iterative solutions
+
+    static ListNode swapPairsIterative(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        //因为我们不知道所有节点对交换后的结果，我们需要设立一个虚拟节点以便处理edge case
         ListNode dummy = new ListNode(0);
         dummy.next = head;
         ListNode current = dummy;
-        
-        while(current.next != null && current.next.next != null){
-            ListNode f = current.next;
-            ListNode s = current.next.next;
-            
-            current.next = s;
-            f.next = s.next;
-            s.next = f;
-            current = f;
+        //当前节点指向虚拟节点，while 循环确保当前节点后有一对不为空的节点
+        //交换当前节点后的一对不为空的节点，并将当前节点指向交换后的节点的靠后节点
+        while (current.next != null && current.next.next != null) {
+            ListNode swappedSecond = current.next;
+            ListNode swappedFirst = current.next.next;
+
+            current.next = swappedFirst;
+            swappedSecond.next = swappedFirst.next;
+            swappedFirst.next = swappedSecond;
+            current = swappedSecond;
         }
         return dummy.next;
     }
-     //my solution
-//    static ListNode swapPairs(ListNode head) {
-//        ListNode walker = head;
-//        ListNode jumper;
-//        if(head == null || head.next == null) return head;
-//        head = head.next;
-//        
-//        while(walker.next != null){
-//            jumper = walker.next.next;
-//            walker.next.next = walker;
-//            walker.next = jumper;
-//            if(jumper != null)
-//                walker = jumper;
-//        }
-//        return head;
-//    }
-    public static void main(String[] args){
+
+
+    public static void main(String[] args) {
         ListNode head = new ListNode(1);
         head.next = new ListNode(2);
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
-        
-        ListNode result = swapPairs(head);
-        while(result != null){
+
+        ListNode result = swapPairsRecursive(head);
+        while (result != null) {
             StdOut.println(result.val);
             result = result.next;
         }
-        
+
     }
 }
