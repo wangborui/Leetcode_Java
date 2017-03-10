@@ -37,7 +37,13 @@ public class AddTwoNumbers {
             val = x;
         }
     }
-
+    //l1 和 l2 两个链表分别代表两个需要被相加的数字，而且他们的最小位都在链表开始（不然就需要反转链表了）
+    //建立虚拟链表，因为我们不确定当两个链表相加后他们的开始节点是什么
+    //用while 循环来访问l1和l2两个链表, 
+    //每次循环把两个链表当前位的数字加起来, 储存在一个sum值里面，并且把两个链表都往后推一位
+    //判断是否需要进位
+    //一直重复上面的操作直到两个都为空
+    //结束循环后如果sum值还是大于等于10，我们需要再添加一位1节点（进位）作为两个数字相加的结果
     static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(-1);
         ListNode tail = dummy;
