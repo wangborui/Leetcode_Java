@@ -27,7 +27,11 @@ public class RotateRight {
             val = x;
         }
     }
-
+    //创建虚拟节点，因为我们不确定在将链表旋转之后他的开始节点是什么。虚拟节点连接原链表开始节点
+    //首先遍历一次原链表，计算链表节点个数
+    //再将链表首尾相连组成一个环
+    //再次回到原链表开始节点，往后移动 n - k % n 步后将链表切断
+    //返回切断部分作为旋转后的链表开始
     public ListNode rotateRight(ListNode head, int k) {
         if (head == null || head.next == null) {
             return head;
