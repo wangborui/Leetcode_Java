@@ -22,7 +22,7 @@ public class MergeTwoLists {
             val = x;
         }
     }
-
+    //recursive solution
     public ListNode mergeTwoListsRecursive(ListNode l1, ListNode l2) {
         if (l1 == null) {
             return l2;
@@ -41,6 +41,11 @@ public class MergeTwoLists {
 
     public ListNode mergeTwoListsIterative(ListNode l1, ListNode l2) {
         //use dummy node because we do not know the start of the list
+        //建立虚拟节点和虚拟结尾，因为我们不知道合并后的链表开头是什么
+        //用while loop来遍历第一个链表和第二个链表，l1 和 l2，并对比当前两个链表开头节点大小
+        //将虚拟结尾指向两个链表当中较小的节点，后移虚拟结尾，后移较小节点链表
+        //当l1 和 l2 有一个为空的时候，将另一个合并到虚拟结尾后面
+        //返回虚拟节点的下一个节点
         ListNode dummy = new ListNode(-1);
         ListNode tail = dummy;
         while (l1 != null && l2 != null) {
