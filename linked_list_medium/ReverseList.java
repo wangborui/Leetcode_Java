@@ -34,7 +34,7 @@ public class ReverseList {
             head.next = prev;
             prev = head;
             head = next;
-        }
+        }//每一行后半部分是下一行前半部分， 33行到36行是核心
         //prev is the new reversed head
         return prev;
     }
