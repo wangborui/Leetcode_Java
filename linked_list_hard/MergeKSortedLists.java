@@ -25,6 +25,11 @@ public class MergeKSortedLists {
             val = x;
         }
     }
+    //1.)建立虚拟链表，因为k个链表合并后的开始节点是未知的
+    //2.)建立一个最小堆，把所有k个链表都放入堆中
+    //3.)取出堆顶最小节点，并把这个节点放在虚拟链表中。
+    //4.)如果最小节点的下一个节点不为空，把下一个节点放入堆中
+    //重复3.）和4.）直到堆为空，返回虚拟链表开头节点
      static ListNode mergeKLists(ListNode[] lists) {
         if(lists == null || lists.length == 0) {
             return null;
