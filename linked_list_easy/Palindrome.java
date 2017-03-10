@@ -1,13 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package linked_list_easy;
+// Source : https://leetcode.com/problems/palindrome-linked-list/
+// Date   : 03/10/2017
+
+/********************************************************************************** 
+ * 
+ * Given a singly linked list, determine if it is a palindrome.
+ * 
+ * Follow up:
+ * Could you do it in O(n) time and O(1) space?
+ *               
+ **********************************************************************************/
+
+package Leetcode_Java.linked_list_easy;
 
 import edu.princeton.cs.algs4.StdOut;
-import java.util.HashMap;
-import java.util.Map;
+
 
 /**
  *
@@ -24,55 +30,44 @@ public class Palindrome {
             val = x;
         }
     }
-    //my solution and solution found
-      static boolean isPalindrome(ListNode head) {
-        if(head == null || head.next == null) return true;
-        ListNode walker = head; ListNode jumper = head;
-        while(jumper.next != null && jumper.next.next != null){
-            walker = walker.next;
-            jumper = jumper.next.next;
+
+    //首先找到链表的中间位置，再反转中间节点之后的所有节点，返回反转链表的开始节点
+    //用while循环对比原链表开始节点和反转链表的开始节点是否拥有同样的值,每次对比后两个链表都往后移动一位，重复直到反转链表为空。
+    //需要注意的是如果原来链表长度为双数，则反转链表的长度正好为原长度的一半
+    //如果原来链表长度为单数，则原来链表的长度 = 反转链表长度 * 2 + 1
+    //所以我们在while循环的时候应该检查反转链表当前值是否为空，而不是原链表值是否为空
+    static boolean isPalindrome(ListNode head) {
+        if (head == null || head.next == null) {
+            return true;
         }
-        walker = reverseList(walker.next);
-        
-        while(walker!=null){
-            if(walker.val != head.val) return false;
-            else{
-                walker = walker.next;
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        slow = reverseList(slow.next);
+
+        while (slow != null) {
+            if (slow.val != head.val) {
+                return false;
+            } else {
+                slow = slow.next;
                 head = head.next;
             }
         }
         return true;
     }
-      static ListNode reverseList(ListNode head){
-          if(head == null || head.next == null) return head;
-          ListNode end  = reverseList(head.next);
-          head.next.next = head;
-          head.next = null;
-          return end;
-      }
-// my solutions, fails on elements [1,2,2,2,1]
-//    static boolean isPalindrome(ListNode head) {
-//        if(head == null || head.next == null) return true;
-//        Map<Integer,Boolean> map = new HashMap<Integer,Boolean>();
-//        ListNode walker = head;
-//        int counter =0;
-//        while(walker != null){
-//            if(map.containsKey(walker.val)){
-//                map.put(walker.val, !map.get(walker.val));
-//            }
-//            else{
-//                map.put(walker.val, false);
-//            }
-//            walker = walker.next;
-//            counter++;
-//        }
-//        int half = counter/2;
-//        walker = head;
-//        for(int i = 0; i < half; i++,walker = walker.next){
-//            if(!map.get(walker.val)) return false;
-//        }
-//        return true;
-//    }
+
+    static ListNode reverseList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode end = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
+        return end;
+    }
 
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
