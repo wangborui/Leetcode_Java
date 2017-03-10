@@ -13,9 +13,9 @@ return 1->2->2->4->3->5.
 ********************************************************************************
 
 Solution:
-Develop 2 separate linked lists left and right, where left < target value, right >= target value
-traverse head when head.val < target value, left.next = head, else right.next = head
-after finished, connect left and right linkedlist
+Develop 2 separate linked lists smallerTail and greaterEqualTail, where smallerTail < target value, greaterEqualTail >= target value
+traverse head when head.val < target value, smallerTail.next = head, else greaterEqualTail.next = head
+after finished, connect smallerTail and greaterEqualTail linkedlist
  */
 package Leetcode_Java.linked_list_medium;
 
@@ -35,23 +35,27 @@ public class Partition {
     }
     public ListNode partition(ListNode head, int x) {
         //if head is null, it will not enter while loop
-        ListNode leftDummy = new ListNode(-1);
-        ListNode rightDummy = new ListNode(-1);
-        ListNode left = leftDummy;
-        ListNode right = rightDummy;
+        //建立两个虚拟节点， smaller 和 greaterEqual 
+        //分别储存原链表里所有小于x的节点和大于等于x的节点
+        //遍历原链表，如果碰到小于x的节点，加入smaller链表中，不然加入greaterEqual节点中
+        //完成遍历原链表后，将smaller 和 greaterEqual 链表合并，返回。
+        ListNode smallerDummy = new ListNode(-1);
+        ListNode greaterEqualDummy = new ListNode(-1);
+        ListNode smallerTail = smallerDummy;
+        ListNode greaterEqualTail = greaterEqualDummy;
         while(head != null) {
             if(head.val < x) {
-                left.next = head;
-                left = left.next;
+                smallerTail.next = head;
+                smallerTail = smallerTail.next;
             } else {
-                right.next = head;
-                right = right.next;
+                greaterEqualTail.next = head;
+                greaterEqualTail = greaterEqualTail.next;
             }
             head = head.next;
         }
         
-        right.next = null;
-        left.next = rightDummy.next;
-        return leftDummy.next;
+        greaterEqualTail.next = null;
+        smallerTail.next = greaterEqualDummy.next;
+        return smallerDummy.next;
     }
 }
