@@ -60,7 +60,7 @@ public class SwapPairs {
         dummy.next = head;
         ListNode current = dummy;
         //当前节点指向虚拟节点，while 循环确保当前节点后有一对不为空的节点
-        //交换当前节点后的一对不为空的节点，并将当前节点指向交换后的节点的靠后节点
+        //交换当前节点后的一对不为空的节点，并将当前节点指向交换后节点的末尾节点
         while (current.next != null && current.next.next != null) {
             ListNode swappedSecond = current.next;
             ListNode swappedFirst = current.next.next;
