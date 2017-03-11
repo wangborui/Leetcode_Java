@@ -32,7 +32,10 @@ public class RemoveNthFromEnd {
             val = x;
         }
     }
- 
+    //使用虚拟链表，因为我们不知道在删除第n个节点后链表的开始会是什么
+    //比如说1->null, n = 1, head = null, or 1->2->null, n = 1, head = 1;
+    //创建一个快节点和一个慢节点，先把快节点往后移动n个位置，如果期间快节点变成空，则返回空
+    //再让快慢节点同步往后移动，一直到快节点移动到了原链表的最末端，则可以删除慢节点的位置的节点
     static ListNode removeNthFromEnd(ListNode head, int n) {
         //use dummy node because we are not sure what the start element is
         //1->null, n = 1, head = null, or 1->2->null, n = 1, head = 1;
