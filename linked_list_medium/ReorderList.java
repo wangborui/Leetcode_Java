@@ -29,7 +29,9 @@ public class ReorderList {
             val = x;
         }
     }
-
+    //首先知道原链表的中间节点，反转中间节点后的所有节点，返回反转后链表的开始节点
+    //切断中间节点和后面节点的连接
+    //合并切断的原链表和反转后的链表
     static void reorderList(ListNode head) {
         if (head == null || head.next == null) {
             return;
@@ -62,7 +64,7 @@ public class ReorderList {
         }
         return prev;
     }
-
+    //注意在这里我们不需要虚拟链表，因为我们确定两个链表合并后的头节点一定是原链表的开始节点
     static void merge(ListNode head, ListNode reversedHead) {
         //size diff between head and revHead is no more than 1
         ListNode tail = new ListNode(-1);
