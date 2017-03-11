@@ -29,7 +29,9 @@ public class BSTIterator {
         }
     }
     private Stack<TreeNode> stack;
-
+    //这道题需要用到中序遍历的迭代方法
+    //首先我们需要把根节点的所有左边节点都放入栈当中
+    //当用户call next的时候，我们需要弹出栈顶元素，把这个元素的右边元素都放入栈中，在返回当前元素
     public BSTIterator(TreeNode root) {
         stack = new Stack();
         TreeNode cur = root;
