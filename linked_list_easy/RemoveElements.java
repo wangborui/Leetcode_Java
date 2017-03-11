@@ -1,9 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package linked_list_easy;
+// Source : https://leetcode.com/problems/remove-linked-list-elements/
+// Date   : 03/10/2017
+
+/********************************************************************************** 
+ * 
+ * Remove all elements from a linked list of integers that have value val.
+ * 
+ * Example
+ * Given: 1 --> 2 --> 6 --> 3 --> 4 --> 5 --> 6,  val = 6
+ * Return: 1 --> 2 --> 3 --> 4 --> 5
+ * 
+ * Credits:Special thanks to @mithmatt for adding this problem and creating all test cases.
+ *               
+ **********************************************************************************/
+
+package Leetcode_Java.linked_list_easy;
 
 /**
  *
@@ -15,24 +25,9 @@ public class RemoveElements {
       ListNode next;
       ListNode(int x) { val = x; }
   }
-     /*
-     solution found
-       public ListNode removeElements(ListNode head, int val) {
-        ListNode fakeHead = new ListNode(-1);
-        fakeHead.next = head;
-        ListNode curr = head, prev = fakeHead;
-        while (curr != null) {
-            if (curr.val == val) {
-                prev.next = curr.next;
-            } else {
-                prev = prev.next;
-            }
-            curr = curr.next;
-        }
-        return fakeHead.next;
-    }
-     */
-     //my solution
+     //因为我们不知道在删除所有目标值的节点后最开始的节点是什么，所以需要建立虚拟节点
+     //用一个移动指针来遍历整个链表，如果发现移动指针的后面节点是需要删除的目标节点，把移动指针的下一个节点定为需要删除节点的下个节点
+     //一直删除，直到移动指针的下一个节点不是我们想要删除的目标节点为止，我们就可以把移动指针指向他自己的下一个节点
      public ListNode removeElements(ListNode head, int val) {
         if(head == null) return null;
         ListNode dummy = new ListNode(0);
