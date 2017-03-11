@@ -27,6 +27,8 @@ public class MaxDepth {
             val = x;
         }
     }
+    //使用分治的方法，先找到左子树的长度，再找到右子树的长度
+    //在使用两边更长的树长度加一
     public int maxDepthDivideNConquer(TreeNode root) {
         if(root == null) {
             return 0;
