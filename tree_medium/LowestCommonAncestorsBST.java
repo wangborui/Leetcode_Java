@@ -40,7 +40,11 @@ public class LowestCommonAncestorsBST {
             val = x;
         }
     }
-//this code is self explanatory
+    //我们有三颗树，需要找到他们的最近公共祖先,大树root， p树和q树
+    //首先判断他们三颗树当中有没有一个为空， 如果有的话我们直接可以返回空，不可能有哪个公共祖先是空的
+    //因为这个树是bst，所以如果p树和q树都小于当前根节点的话，我们可以递归在根节点左子树去寻找
+    //如果p树和q树都大于当前根节点的话，我们可以递归在根节点右子树去寻找
+    //不然的话当前根节点就是最近公共祖先
     static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || q == null || p == null) {
             return null;
