@@ -30,6 +30,11 @@ public class RemoveDuplicates2 {
             val = x;
         }
     }
+     //我们需要使用虚拟链表，因为在删除后我们不知道开始节点是什么
+     //我们用walker 节点指向虚拟节点，注意walker节点总是指向不会被删除的节点
+     //每次遍历的时候，我们需要查看walker节点下面的两个节点，如果这两个节点其中一个是空，结束访问返回
+     //如果两个节点的值都是一样的话，我们需要记录下这个值，然后移动walker的下一个指针到不是这个值的节点
+     //如果walker的下两个节点值不一样的话，我们需要把walker向后移动一位
     static ListNode deleteDuplicates(ListNode head) {
         ListNode dummy = new ListNode(-1);
         dummy.next = head;
