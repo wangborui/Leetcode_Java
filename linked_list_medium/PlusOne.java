@@ -33,7 +33,9 @@ public class PlusOne {
             val = x;
         }
     }
-
+    //需要反转链表，因为数字的最高位在链表开始节点
+    //反转之后，用数字最低位加一来记录，遍历完成确认是否需要补位（最高位在加1后变成10了）
+    //再次反转链表
     static ListNode plusOne(ListNode head) {
         if (head == null) {
             return head;
