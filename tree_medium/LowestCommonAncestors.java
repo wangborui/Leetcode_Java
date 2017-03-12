@@ -61,34 +61,35 @@ public class LowestCommonAncestors {
             val = x;
         }
     }
-
+//    我们需要先判定当前根节点是否为空，如果是空的话，说明我们肯定没有公共祖先，那么直接返回根
+//    再次判断如果当前的根是p树或者q树的根，那么我们就找到了p和q树的最近公共祖先，返回根
+//    不然的话通过分治的方法来
+//            递归地寻找找这棵树的左子树看有没有包括p和q树的最近公共祖先， 并返回查找结果
+//            递归地寻找找这棵树的右子树看有没有包括p和q树的最近公共祖先， 并返回查找结果
+//    如果左子树查找结果为空的话，那么说明左子树既没有p也没有q
+//    如果右子树查找结果为空的话，那么说明右子树既没有p也没有q
+//    如果两边查找结果都不为空的话，p和q树分散在当前根的两边
+ 
+                    
     static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        //if root is null return null, if root is either p or q return root, node can be its own LCA
-        if (root == null || root == p || root == q) {
+        if(root == null || root == p || root == q) {
             return root;
         }
-
+        
         //divide
         TreeNode left = lowestCommonAncestor(root.left, p, q);
         TreeNode right = lowestCommonAncestor(root.right, p, q);
-
+        
         //possible outcomes
-        /*
-        1. left is null, right is null: no common ancestors from left or right, return null
-        2. left is null, right is not null: right node containing p, q, or both, return right
-        3. left is not null, right is null: left node containing p, q, or both, return left
-        4. left is not null, right is not null: left and right each contains one node, return root
-         */
+        
         //conquer
-        if (left == null && right == null) {
-            return null;
-        } else if (left == null && right != null) {
+        if(left == null) {
             return right;
-        } else if (left != null && right == null) {
-            return left;
-        } else {
-            return root;
         }
+        if(right == null) {
+            return left;
+        }
+        return root;
     }
     
     static TreeNode createTree(Integer[] nodes) {
@@ -114,8 +115,9 @@ public class LowestCommonAncestors {
         return root;
     }
     public static void main(String[] args){
-        TreeNode root = createTree(new Integer[]{3,5,1,6,33,0,5,null,null,7,9});
-        TreeNode res = lowestCommonAncestor(root,root.right, root.right.right);
+        //TreeNode root = createTree(new Integer[]{3,5,1,6,33,0,5,null,null,7,9});
+        TreeNode root = createTree(new Integer[]{1,2,3});
+        TreeNode res = lowestCommonAncestor(root,new TreeNode(2), root.right);
         System.out.println(res.val);
      }
 }
