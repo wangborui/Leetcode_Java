@@ -60,20 +60,26 @@ public class PreorderTraversal {
         helper(root.left, list);
         helper(root.right, list);
     }
-
+    //递归的前序遍历
     public List<Integer> preorderTraversalIterative(TreeNode root) {
-        List<Integer> list = new ArrayList();
+        List<Integer> res = new ArrayList();
+        if(root == null) {
+            return res;
+        }
         Stack<TreeNode> stack = new Stack();
         stack.push(root);
-        while (!stack.isEmpty()) {
+        
+        while(!stack.isEmpty()) {
             TreeNode temp = stack.pop();
-            if (temp != null) {
-                list.add(temp.val);
+            res.add(temp.val);
+            if(temp.right != null) {
                 stack.push(temp.right);
+            }
+            if(temp.left != null) {
                 stack.push(temp.left);
             }
         }
-        return list;
+        return res;
     }
     static ArrayList<Integer> preorderTraversalDivideNConquer(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<Integer>();
