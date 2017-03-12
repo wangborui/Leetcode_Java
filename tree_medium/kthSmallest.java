@@ -1,7 +1,6 @@
+//Source : https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+//Date   : 01/14/2017
 /*
-Source : https://leetcode.com/problems/kth-smallest-element-in-a-bst/
-Date   : 01/14/2017
-
 ********************************************************************************
 Given a binary search tree, write a function kthSmallest to find the kth smallest element in it.
 
@@ -41,7 +40,7 @@ public class kthSmallest {
             val = x;
         }
     }
-//iterative traversal
+    //iterative traversal
     static int kthSmallest(TreeNode root, int k) {
         int count = 0;
         Stack<TreeNode> stack = new Stack();
@@ -64,7 +63,28 @@ public class kthSmallest {
         }
         return -1;
     }
-
+    
+    private int count = 0;
+    private int res = 0;
+//    我们可以用用中序遍历来访问整个BST，用一个count来记录已经访问过的节点
+//    然后每次访问到“中间”节点的时候把count的个数加一
+//    当count的值等于k的时候，返回当前节点值
+    public int kthSmallestRecursive(TreeNode root, int k) {
+        inorder(root, k);
+        return res;
+    }
+    private void inorder(TreeNode root, int k) {
+        if(root == null) {
+            return;
+        }
+        inorder(root.left, k);
+        count++;
+        if(count == k){
+            res = root.val;
+        }
+        inorder(root.right, k);
+    }
+    
     static TreeNode createTree(Integer[] nodes) {
         Queue<TreeNode> q = new LinkedList();
         int index = 0;
