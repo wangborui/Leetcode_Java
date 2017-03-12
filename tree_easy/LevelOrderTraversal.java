@@ -1,5 +1,7 @@
+//Source: https://leetcode.com/problems/binary-tree-level-order-traversal/
+//Date  : 03/12/2017
+
 /*
-Source: https://leetcode.com/problems/binary-tree-level-order-traversal/
 
 ********************************************************************************
 Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
@@ -65,8 +67,13 @@ public class LevelOrderTraversal {
         }
     }
 
+    //把二叉树的第一层放在队列里面，然后从队列里面取出所有的节点
+    //在每次取出节点的时候，先把这个节点记录在那一层的数组中，再看看这个节点的左右子树是否为空，如果不为空的话就放入队列作为下层需要访问的节点
     static List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> levels = new ArrayList();
+        if(root == null) {
+            return levels;
+        }
         Queue<TreeNode> queue = new LinkedList();
         queue.add(root);
 
@@ -76,16 +83,39 @@ public class LevelOrderTraversal {
             List<Integer> level = new ArrayList();
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
-                if (node != null) {
-                    level.add(node.val);
+                level.add(node.val);
+                if (node.left != null) {
                     queue.add(node.left);
+                }
+                if (node.right != null) {
                     queue.add(node.right);
                 }
             }
-            if (!level.isEmpty()) {
-                levels.add(level);
-            }
+            levels.add(level);
         }
         return levels;
+    }
+
+    private TreeNode addNodes(Integer[] nodes) {
+        Queue<TreeNode> q = new LinkedList<TreeNode>();
+        int index = 0;
+        TreeNode root = new TreeNode(nodes[index++]);
+        q.add(root);
+
+        while (!q.isEmpty() && index < nodes.length) {
+            TreeNode temp = q.poll();
+
+            TreeNode left = nodes[index++] == null ? null : new TreeNode(nodes[index - 1]);
+            TreeNode right = nodes[index++] == null ? null : new TreeNode(nodes[index - 1]);
+            temp.left = left;
+            temp.right = right;
+            if (left != null) {
+                q.add(left);
+            }
+            if (right != null) {
+                q.add(right);
+            }
+        }
+        return root;
     }
 }
