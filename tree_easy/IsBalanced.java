@@ -71,10 +71,10 @@ public class IsBalanced {
 //    首先我们找到左右子树的最大深度，如果他们的最大深度差大于1，那么我们肯定这个树不是平衡的，返回-1
 //    或者左右子树本身得到的值是-1，他们已经告诉我们他们不是平衡，那么同理整棵树也不是平衡的，我们可以返回-1
 //    最后，如果左右子树最大深度差小于等于1，他们彼此都是平衡，我们就需要返回当前根节点的最大长度
-    public boolean isBalanced(TreeNode root) {
+    static boolean isBalancedDivideNConquer(TreeNode root) {
         return helper(root) != -1;
     }
-    private int helper(TreeNode root) {
+    static int helper(TreeNode root) {
         if(root == null) {
             return 0;
         }
