@@ -43,6 +43,7 @@ public class MaxPathSum {
     }
 
     //global sum variable
+    //全局最大长度，可以是横跨根节点的，也可以是不横跨根节点的，初始化为负无穷，因为二叉树存在负数
     static int maxSum = Integer.MIN_VALUE;
     static int maxPathSum(TreeNode root) {
         //if the tree is null return Integer.MIN_VALUE
@@ -55,12 +56,15 @@ public class MaxPathSum {
     //maximum single local path sum starting with current root
     //3 possible outcome, root, root + left, or root + right
     //cannot be left or right alone, because we assume the single local path starts at current node
+    //辅助函数，用来计算从当前节点出发，能够得到的最大路径长度并且此路径不能横跨当前节点
     static int helper(TreeNode root) {
         if(root == null) {
             return 0;
         }
         //divide
+        //计算左子树不横跨根节点的最大路径大长度
         int leftBranch = helper(root.left);
+        //计算右子树不横跨根节点的最大路径长度
         int rightBranch = helper(root.right);
         
         //conquer
@@ -72,13 +76,17 @@ public class MaxPathSum {
         4. leftBranch + rightBranch + root.val has max value
         */
         //condition 1.2.3
+        //找到以当前节点作为根节点的最大路径长度，此路径不横跨当前节点
         int singlePathMax = Math.max(root.val, Math.max(leftBranch, rightBranch) + root.val);
         //condition 4.
+        //找到以当前节点作为根节点的全局最大路径长度，此路径可以横跨当前节点，或者是之前计算的不横跨最大路径长度
         int crossPathMax = Math.max(singlePathMax, leftBranch + rightBranch + root.val);
          
         //global max path
+        //更新全局最大路径长度值
         maxSum = Math.max(maxSum, crossPathMax);
         
+        //返回非横跨当前节点的最大路径值
         return singlePathMax;
     }
 
