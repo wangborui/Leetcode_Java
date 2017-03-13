@@ -58,7 +58,7 @@ public class InorderTraversal {
         helper(list, root.right);
         //add right
     }
-
+    //中序遍历迭代写法
     static ArrayList<Integer> inorderTraversalIterative(TreeNode root) {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         ArrayList<Integer> result = new ArrayList<Integer>();
