@@ -1,6 +1,6 @@
+//Source: https://leetcode.com/problems/binary-tree-inorder-traversal/
+//Date  : 03/13/2017
 /*
-Source: https://leetcode.com/problems/binary-tree-inorder-traversal/
-
 ********************************************************************************
 Given a binary tree, return the inorder traversal of its nodes' values.
 
