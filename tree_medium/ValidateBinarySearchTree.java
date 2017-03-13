@@ -1,5 +1,4 @@
 // Source : https://oj.leetcode.com/problems/validate-binary-search-tree/
-// Author : Borui Wang
 // Date   : 2016-12-21
 
 /********************************************************************************** 
@@ -55,7 +54,8 @@ public class ValidateBinarySearchTree {
             val = x;
         }
     }
-
+    //首先用中序遍历访问整个二叉查找树，记录访问结果
+    //检查访问的结果是否已排好序
     public boolean isValidBST(TreeNode root) {
         List<Integer> list = new ArrayList();
         Stack<TreeNode> stack = new Stack();
