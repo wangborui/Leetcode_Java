@@ -56,7 +56,10 @@ public class Flatten {
             val = x;
         }
     }
-
+//    首先先序遍历整个二叉树，并且把遍历结果储存到preorder数组里面
+//    在preorder最后加一个null作为最后一个节点的右边节点
+//    遍历所有在preorder里面的元素，把元素的左边设置成空，右边节点设置成下一个节点
+            
     public void flatten(TreeNode root) {
         if (root == null) {
             return;
