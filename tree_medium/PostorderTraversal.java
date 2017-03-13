@@ -72,7 +72,7 @@ public class PostorderTraversal {
         result.add(root.val);
         return result;
     }
-    
+    //后续遍历迭代做法
     static List<Integer> PostOrderTraversalIterative(TreeNode root) {
         Stack<TreeNode> stack = new Stack();
         List<Integer> res = new ArrayList();
