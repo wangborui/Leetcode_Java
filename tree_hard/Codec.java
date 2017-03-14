@@ -33,7 +33,7 @@
  *               
  ***************************************************************************************/
 
-package Leetcode_Java.trie_hard;
+package Leetcode_Java.tree_hard;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -59,6 +59,7 @@ public class Codec {
 //    用递归前序遍历的方法我们可以把原二叉树串行化成一个字符串
 //    在解串行化的时候，因为我们可以确定之前做的二叉树串行化一定是合法的
 //    我们可以先把串行化的字符串用队列存储成之前的前序遍历，因为我们可以确定所有的原二叉树空节点都用了“#”来表示，再次使用递归的方法前序遍历队列即可返回原二叉树
+//    这个题的思路也可以用来序列化二叉查找树
     private static final String SPLITTER = ",";
     private static final String NN = "#";
     
