@@ -72,53 +72,16 @@ public class DeleteNode {
             val = x;
         }
     }
-    
-    //find the node
-    //if node.left is null node = node.right
-    //else node.val = node.left.val, delete(node.left);
-    //fails test case [5,3,6,2,4,null,7], key 3
-    static TreeNode deleteNode(TreeNode root, int key) {
-        //find node
-        TreeNode node = findNode(root, key);
-        if (node != null) {
-            delete(node);
-        }
-        return root;
-    }
-
-    static TreeNode findNode(TreeNode root, int key) {
-        if (root == null) {
-            return null;
-        } else if (root.val == key) {
-            return root;
-        } else if (root.val < key) {
-            return findNode(root.right, key);
-        } else {
-            return findNode(root.left, key);
-        }
-    }
-
-    static void delete(TreeNode node) {
-        if (node.left == null) {
-            //sets pointer of node to null, but the original values pointed by node does not change
-            //if node -> 2, doing node =  null; would change node to null but 2 still exists and is the children of its parent
-            node = null;
-        } else {
-            node.val = node.left.val;
-            delete(node.left);
-        }
-    }
-    //errors out under the following condition
-    //tree becomes, and we delete node 3
     /*
-            3                  1 
-           / \                 \ \
-          1   4  ==>            2 4
-           \   
-            2   
     Solution: find either the max value in left tree or min value in right tree,
     change deleting node value to that value, then delete either the min value in right subtree or max value in left tree
     */
+//    这里我们有还几个点需要注意的
+//    首先，如果在二叉树中删除一个点，不能直接把这个点设置成空，因为这个点还是被他的父亲节点所指向的，所以其实没有删除
+//    第二，我们在找寻和删除一个节点的时候，可以一边搜索一边删除
+//    第三，当我们在删除某个节点的时候，如果其左子树是空的，就返回右子树，如果其右子树是空的，返回左子树
+//            如果两个子树都不为空，找到左子树的最大值（或者右子树的最小值），储存为val，把要删除的节点的值换成val
+//            然后再从左子树递归的删除这个最大值
     static TreeNode deleteNode2(TreeNode root, int key) {
         if(root == null) {
             return null;
