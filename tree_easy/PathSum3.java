@@ -52,11 +52,11 @@ public class PathSum3 {
             val = x;
         }
     }
-    我们需要计算prefix sum， 访问每个节点的时候计算这个节点的prefix sum
-    在计算完当前节点的prefix Sum之后，把这个数字加到哈希表当中表示这个prefix sum出现的次数
-    并且在访问某个节点的时候需要查看当前prefix sum - targetSum 是否也在哈希表中，如果有的话那么我们就加上prefix sum - targetSum 出现过的次数
-    递归的访问当前节点的左子树和右子树，看看target sum在这些子树中出现的次数
-    最后在访问完成当下节点的时候我们需要把当下节点的prefix sum从哈希表当中取掉，因为我们的计算路径只能是从上到下，从根节点到子树节点，不能横跨根部节点
+//    我们需要计算prefix sum， 访问每个节点的时候计算这个节点的prefix sum
+//    在计算完当前节点的prefix Sum之后，把这个数字加到哈希表当中表示这个prefix sum出现的次数
+//    并且在访问某个节点的时候需要查看当前prefix sum - targetSum 是否也在哈希表中，如果有的话那么我们就加上prefix sum - targetSum 出现过的次数
+//    递归的访问当前节点的左子树和右子树，看看target sum在这些子树中出现的次数
+//    最后在访问完成当下节点的时候我们需要把当下节点的prefix sum从哈希表当中取掉，因为我们的计算路径只能是从上到下，从根节点到子树节点，不能横跨根部节点
     public int pathSum(TreeNode root, int sum) {
         Map<Integer, Integer> map = new HashMap();
         map.put(0, 1);
