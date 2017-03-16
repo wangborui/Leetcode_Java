@@ -1,7 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+// Source : https://leetcode.com/problems/find-leaves-of-binary-tree/#/description
+// Date   : 03/15/2017
+/**
+ * *************************************************************************************
+You need to find the largest value in each row of a binary tree.
+
+Example:
+Input: 
+
+          1
+         / \
+        3   2
+       / \   \  
+      5   3   9 
+
+Output: [1, 3, 9]
+ **************************************************************************************
  */
 package Leetcode_Java.tree_medium;
 
@@ -24,7 +37,7 @@ public class LargestValues {
             val = x;
         }
     }
-    
+    //就是level order traversal的思路
     public List<Integer> largestValues(TreeNode root) {
         List<Integer> res = new ArrayList();
         if (root == null) {
