@@ -34,6 +34,9 @@ public class SingleNumber2 {
      * 
      * This solution can be easy to extend to "every element appears k times except for one."
      */
+//    integer 在 java 里面有三十二位， 把每个数的[0:31]位都亦或起来
+//    当第i位被亦或完毕后，看这一位在原来的数组中出现了多少次 然后再 % 3，可能的结果有 0（出现三次的数第i位）， 或者1（出现1次数的第i位）
+//    再把这一位加到我们之前的结果当中 res = res | bit （往左移i次）
     public int singleNumber(int[] nums) {
         if(nums == null || nums.length == 0) {
             return 0;
