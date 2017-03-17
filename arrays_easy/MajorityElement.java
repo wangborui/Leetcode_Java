@@ -19,20 +19,20 @@ public class MajorityElement {
 // Refer to: 
 // http://www.cs.utexas.edu/~moore/best-ideas/mjrty/index.html
     static int majorityElement(int[] nums) {
-        int major = 0;
+        int majorityElement = 0;
         int count = 0;
         
         for(int num : nums) {
             if(count == 0) {
-                major = num;
+                majorityElement = num;
                 count++;
-            } else if(num == major) {
+            } else if(num == majorityElement) {
                 count++;
             } else {
                 count--;
             }
         }
-        return major;
+        return majorityElement;
     }
     
     public static void main(String[] args){
