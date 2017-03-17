@@ -29,6 +29,11 @@ import java.util.Map;
  */
 public class MajorityElement3 {
         //uses hashmap with O(n) complexity
+//    建立一个哈希表来储存所有的k - 1 个元素
+//    遍历数组里面所有的数字，如果数字已经在哈希表当中了，把他在哈希表中的出现次数加一
+//    如果当前数字不在哈希表中，把数字加到哈希表当中标记其出现次数为1。
+//    检查哈希表储存数字的个数是否大于等于k，如果是的话先把哈希表所有数字出现次数减一，在删除那些出现0次的数字
+//    最后再从头遍历一次整个数组，验证哈希表当中的数字确实是出现了大于n/k次
     public int majorityElement(ArrayList<Integer> nums, int k) {
          if(nums == null || nums.size() == 0) {
             return Integer.MIN_VALUE;
