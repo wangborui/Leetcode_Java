@@ -58,7 +58,11 @@ package Leetcode_Java.bit_manipulation_medium;
 //                group[1] = {0110}
 //________________________________________________________________________________
 public class SingleNumber3 {
-
+//    把所有数字亦或起来，这样的话所有出现两次的数字就会被抵消掉变成0
+//    亦或起来的结果就是两个不同的数字的亦或，因为两个数字不同，所有他们的32位bit当中，必定有一位不一样，一个数的第i位为1，另一个数的第i位为0
+//    我们可以通过亦或结果xor = xor & -xor 来找到两个不同的数字32位中从右到左（最低位到最高位）第一位不一样的（xxx00000[1]000000xxxx)，called diffBit，出现在第i位
+//    找到这个之后我们可以把原数组的数字再分成两部分，一部分是num & diffBit = 0（数字的第i位不为1）, 另外一部分是num & diffBit ！= 0（数字的第i位为1）
+//    把分好的两组数字再亦或起来就得到了我们想找的两个数字
     static int[] singleNumber(int[] nums) {
         //find XOR of all numbers in nums
         int xor = 0;
