@@ -18,6 +18,10 @@ public class MajorityElement {
 // Moore Voting Algorithm
 // Refer to: 
 // http://www.cs.utexas.edu/~moore/best-ideas/mjrty/index.html
+//    建立两个变量，majority element和count = 0，表示我们当前没有找到majority element
+//    遍历整个数组， 如果当前访问的数字等于majority element， count + 1
+//    如果count = 0， 把当前的访问的元素设置为majority element，count + 1
+//    不然我们就把count - 1
     static int majorityElement(int[] nums) {
         int majorityElement = 0;
         int count = 0;
