@@ -48,6 +48,10 @@ import java.util.List;
  *
  */
 public class ThreeSum {
+//    为了去除重复的答案，先把整个数组排序
+//    遍历整个数组，选择当前元素为元素i，如果i - 1的元素等于i的元素，跳过（因为我们已经计算过了以i为开头的三元组元素了）
+//    再找出i + 1的元素为j， n - 1的元素为k，while 循环查找 nums[i] + nums[j] + nums[k] 为0的三个元素
+//    这里需要注意的是一旦找到了nums[i] + nums[j] + nums[k] 为0的三个元素，我们要跳过所有没有访问过的值为 nums[j] 或者 nums[k]的元素，不然答案就重复了
     static List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> res = new ArrayList();
         Arrays.sort(nums);
