@@ -33,6 +33,10 @@ package Leetcode_Java.arrays_medium;
 //We can calculate lefts and rights in 2 loops. The time complexity is O(n).
 //
 //We store lefts in result array. If we allocate a new array for rights. The space complexity is O(n). To make it O(1), 
+
+//先从左往右扫描一遍，计算出每个数除了自己以外所有左边数的乘积，注意第一个数左边数的乘积是1
+//从右往左扫面一遍，计算出每个数除了自己以外所有右边数的乘积，注意最后一个数右边数乘积是1
+//在扫描一遍数组，把每个数左边的乘积乘以其右边数的乘积，就得到了我们的答案了
 public class ProductExceptSelf {
     public int[] productExceptSelf(int[] nums) {
         int [] res = new int[nums.length];
