@@ -25,6 +25,9 @@ import java.util.Map;
  */
 public class TwoSum {
     //use hashmap, time O(n), space O(n)
+//    遍历整个数组，将每个元素记录到哈希表，并且记录元素下标
+//    当我们遍历第i个数字时，计算target 和元素i的差，然后检查这个差是否已经存在哈希表中
+//    如果有的话，我们就找到了两个元素他们的和为target，输出他们的下标
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap();
         int [] res = new int[2];
