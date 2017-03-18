@@ -19,6 +19,7 @@ package Leetcode_Java.math_easy;
  * @author Borui Wang
  */
 public class IsPowerOfTwo {
+    //确定数字n大于等于0，并且这个数字里面的二进制代码只有一位是1
     //if n is power of two, then in binary form it must be 00000010000000..., with only one 1
     //we notice: n - 1 in binary always be 1111111...
     //so, (n) & (n-1) always be zero 000000...
@@ -30,12 +31,19 @@ public class IsPowerOfTwo {
     }
     // count the number fo bits 1, if it only has one, then return true
     public boolean isPowerOfTwoCount(int n) {
-        int count = 0;
-        for(;n > 0; n >>= 1) {
-            if((n & 1) == 1) {
-                count++;
-            }
+        if(n <= 0) {
+            return false;
         }
-        return count == 1;
+        int oneBits = 0;
+        
+        while(n != 0) {
+            int lastBit = n & 1;
+            oneBits += lastBit;
+            n >>= 1;
+        }
+        return oneBits == 1;
+    }
+    public static void main(String[] args) {
+ 
     }
 }
