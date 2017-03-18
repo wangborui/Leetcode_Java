@@ -5,10 +5,10 @@
 /********************************************************************************** 
 * 
 * Find the contiguous subarray within an array (containing at least one number) 
-* which has the largest sum.
+* which has the largest localMax.
 * 
 * For example, given the array [−2,1,−3,4,−1,2,1,−5,4],
-* the contiguous subarray [4,−1,2,1] has the largest sum = 6.
+* the contiguous subarray [4,−1,2,1] has the largest localMax = 6.
 * 
 * More practice:
 * 
@@ -30,39 +30,40 @@ public class MaxSubArray {
         if (nums == null || nums.length == 0) {
             return -1;
         }
-        //maxSum is global sum
-        int maxSum = Integer.MIN_VALUE;
-        //sum is local sum
-        int sum = 0;
+        //maxSum is global localMax
+        int globalMax = Integer.MIN_VALUE;
+        //sum is local localMax
+        int localMax = 0;
 
         for (int num : nums) {
-            sum += num;
-            maxSum = Math.max(maxSum, sum);
-            //assume local sum is always greater than 0
-            //only keep sum value if it is greater than 0
-            sum = Math.max(sum, 0);
+            localMax += num;
+            globalMax = Math.max(globalMax, localMax);
+            //assume local localMax is always greater than 0
+            //only keep localMax value if it is greater than 0
+            localMax = Math.max(localMax, 0);
 
         }
 
-        return maxSum;
+        return globalMax;
     }
-
+//    用两个变量当地最大值和全局最大值
+//    遍历整个数组，当碰到一个新的数时，更新当地最大值，再更新全局最大值
     public int maxSubArrayDP(int[] nums) {
         if (nums == null || nums.length == 0) {
             return -1;
         }
-        //maxSum is global sum
-        int maxSum = nums[0];
-        //sum is local sum
-        int sum = nums[0];
+        //maxSum is global localMax
+        int globalMax = nums[0];
+        //sum is local localMax
+        int localMax = nums[0];
 
         for (int i = 1; i < nums.length; i++) {
-            //find max local sum, either current element or previous sum plus current element
-            sum = Math.max(nums[i], sum + nums[i]);
-            maxSum = Math.max(maxSum, sum);
+            //find max local localMax, either current element or previous localMax plus current element
+            localMax = Math.max(nums[i], localMax + nums[i]);
+            globalMax = Math.max(globalMax, localMax);
         }
 
-        return maxSum;
+        return globalMax;
     }
 
     public int maxSubArrayDivideNConquer(int[] nums) {
@@ -90,9 +91,9 @@ public class MaxSubArray {
             return A[left];
         }
         int mid = left + (right - left) / 2;
-        int leftsum = subArray(A, left, mid); //left part of the subarray sum, condition 1
-        int rightsum = subArray(A, mid + 1, right); //right part of the subarray sum, condition 2
-        int middlesum = midSubArray(A, left, mid, right); //cross part of the subarray sum, condition 3
+        int leftsum = subArray(A, left, mid); //left part of the subarray localMax, condition 1
+        int rightsum = subArray(A, mid + 1, right); //right part of the subarray localMax, condition 2
+        int middlesum = midSubArray(A, left, mid, right); //cross part of the subarray localMax, condition 3
 
         //following if condition will return middlesum if lost the "=" under the conditon of leftsum = rightsum, which may be problematic if leftsum = rightsum < middlesum.
         //for example: [-1, -1, -2, -2]
