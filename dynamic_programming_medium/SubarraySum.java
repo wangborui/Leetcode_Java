@@ -27,6 +27,10 @@ public class SubarraySum {
      *      we know that sum[i + 1...j] must be 0
      *      therefore, the start index of array is i + 1, and end index j
      */
+//    首先计算整个数组的prefix sum， 并且用哈希表储存每个元素prefix sum的下标
+//    注意在访问前先在哈希表中插入（0，-1）意思是prefix sum为0的元素在-1下标出现了
+//    在遍历数组，如果找到了哈希表中已经有的数字，那么我们就找到了subarray sum 为0的一段数字
+            
     public ArrayList<Integer> subarraySum(int[] nums) {
         int sum = 0;
         Map<Integer, Integer> map = new HashMap();
