@@ -42,6 +42,7 @@ import java.util.Arrays;
 //    [-4,-1,(-1),1,2]  target=2  distance=1
 //                ^ ^ 
 public class ThreeSumClosest {
+//    这个题的做法和3 sum 类似，不同的是找到一个三元组nums[i] + nums[j] + nums[k] 他们和target 的差最小
      static int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);
         int n = nums.length;
