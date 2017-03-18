@@ -36,6 +36,11 @@ public class FourSum {
  * 2) traverse the array, and solve the problem by using "3Sum" soultion.
  * Time O (n^3) Space O(1)
  */
+//    为了去除重复答案，先将数组排序
+//    遍历每个元素，当我们遍历到重复元素的时候就跳到下一个元素
+//    在遍历每个元素i的时候，计算从i + 1 开始的3 sum， target = target - nums[i]
+    
+          
     public List<List<Integer>> fourSum(int[] nums, int target) {
         List<List<Integer>> res = new ArrayList();
         Arrays.sort(nums);
