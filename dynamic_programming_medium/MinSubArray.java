@@ -29,6 +29,8 @@ public class MinSubArray {
      * @return: A integer indicate the sum of minimum subarray
      * use greedy algo for maximum subarray and invert all values in nums array
      */
+//    先把整个数组乘以-1，再到数组里面用maxsubarray的方法找到最大subarray sum
+//    然后把找到的值再乘以-1，就算出了我们原来数组中最小subarray sum值
     public int minSubArray(ArrayList<Integer> nums) {
         // write your code
         if(nums == null || nums.size() == 0) {
