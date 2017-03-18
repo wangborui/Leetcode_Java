@@ -44,6 +44,11 @@ public class KSum {
 //        2.) We take the A[i - 1]th value, dp[i - 1][j - 1][t - A[i - 1]]:
 //                first make sure t - A[i - 1] >= 0, target is greater than the number we are taking, or we cant take this number
 //                if the number A[i - 1] is smaller than target, we find the ways to get to this target t - A[i - 1], from the previous i - 1 numbers choosing exactly j - 1 numbers
+//    动态规划定义dp[i][j][t] 的意思是从前i个数字中选出j个数字他们的和是t，可以选出多少种组合达到这个标准
+//    初始化
+//            dp[x][0][0] = 1 如果我们选择0个数字使得他们的和为0，我们可以有多少种组合达到这个标准？1种，那就是我们什么都不取
+//            dp[x][0][y] = 0 如果我们选出0个数字使得他们的和为y，我们可以有多少种组合达到这个标准？0种，如果我们一个数字都没有，可能使得其和为y
+                    
     public int kSum(int A[], int k, int target) {
         if (k > A.length || target <= 0 || A == null || A.length == 0) {
             return 0;
