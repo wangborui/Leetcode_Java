@@ -38,6 +38,9 @@ package Leetcode_Java.arrays_medium;
 //                backward  = [7 , 2, 2, 2, 0]
 //                globalMax = [7,  7, 9, 9, 9]
 public class MaxProfit3 {
+//    先从左往右扫描一遍，在扫描第i天的时候算出在第i天卖股票的最大盈利（假设在第i 天前就买进了股票），储存结果到left
+//    再从右往左扫描一遍，在扫描第i天的时候算出在第i天买进股票的最大盈利（假设在第i天后卖出股票），储存结果到right
+//    再扫描一次，算出第left[i] + right[i] 的最大值，代表在第i天卖出前i天买的一只股票最大盈利和在第i天买进一只股票在第i天后卖出的最大盈利
     static int maxProfit(int[] prices) {
         if(prices == null || prices.length < 2) {
             return 0;
