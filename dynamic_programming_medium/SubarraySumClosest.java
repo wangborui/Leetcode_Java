@@ -43,7 +43,9 @@ public class SubarraySumClosest {
             return this.value - that.value;
         }
     }
-
+//    计算整个数组的prefix sum值，把prefix sum 0 放在下标为-1的地方
+//    根据prefix sum值来排序，并且记录每个prefix sum的下标（用pair class 来记录）
+//    找到两个差最接近0的prefix sum，输出他们的下标
     static int[] subarraySumClosest(int[] nums) {
         // write your code here
         if (nums == null || nums.length == 0) {
