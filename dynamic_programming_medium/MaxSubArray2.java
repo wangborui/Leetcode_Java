@@ -28,7 +28,9 @@ public class MaxSubArray2 {
 //find max subarray values from left to right, forward[i] means the max subarray value at ith index from 0 ... i
 //find max subarray values from right to left, backward[i] means the max subarray value at ith index from i ... n
 //scan from left to right to find max values between each pair forward[i] and backward[i + 1];
-        
+//    先从左往右扫描一次数组，当扫描到第i个数字的时候，计算从[0:i]数组的最大subarray sum是多少，记录到forward数组里面
+//    再从右往左扫描一次数组，当扫描到第i个数字的时候，计算从[i:n - 1]数组的最大subarray sum是多少，记录到backward数组里面
+//    再遍历一次数组，算出forward[i] + backward[i + 1]的最大值
     public int maxTwoSubArrays(ArrayList<Integer> nums) {
         if (nums.isEmpty()) {
             return 0;
