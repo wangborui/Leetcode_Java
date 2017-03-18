@@ -64,6 +64,19 @@ package Leetcode_Java.math_easy;
  * @author Borui Wang
  */
 public class TrailingZeroes {
+//    每次我们增加一个10就会在阶层里面多增加一个0，其实1个2和一个5的乘积就是10
+//    我们需要找到有多少个2和5的组合就知道在阶层尾部有多少个0了
+//    但是细细再想，在阶层运算中2的个数远远超过5的个数，所以我们只需要知道有多少个5的倍数就知道了有多少个0
+//    我们需要知道有多少个5的1次方，有多少个5的2次方，有多少个5的三次方...存在于n的阶层里面
+//            
+//    * 5^1 :  4617 ÷ 5 = 923.4, so we get 923 factors of 5
+//    * 5^2 :  4617 ÷ 25 = 184.68, so we get 184 additional factors of 5
+//    * 5^3 :  4617 ÷ 125 = 36.936, so we get 36 additional factors of 5
+//    * 5^4 :  4617 ÷ 625 = 7.3872, so we get 7 additional factors of 5
+//    * 5^5 :  4617 ÷ 3125 = 1.47744, so we get 1 more factor of 5
+//    * 5^6 :  4617 ÷ 15625 = 0.295488, which is less than 1, so stop here.
+//            
+//    Then 4617! has 923 + 184 + 36 + 7 + 1 = 1151 trailing zeroes.
     static int trailingZeroes(int n) {
         //this soluiton naturally avoids integer overflow
         int res = 0;
