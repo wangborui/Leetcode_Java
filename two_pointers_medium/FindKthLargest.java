@@ -32,14 +32,14 @@ public class FindKthLargest {
      * @param nums
      * @param k
      * @return kth largest element
-     * Analysis:
-     * 
-     * This problem is asking us to find the kth largest element in the array if the array is sorted.
-     * this is the same as finding the element with index n - k, why?
-     * 
-     *      if k = 1, meaning find the largest number, which is the last number after sorting array
-     *      we can also look at k = length - k smallest number, if k = 1, length = 6, then length - 1 = 5, which is the last number in the sorted array
-     *      choose a random pivot number, partition the array with p, <= p to the left, > p to the right
+ Analysis:
+ 
+ This problem is asking us to find the kth largest element in the array if the array is sorted.
+ this is the same as finding the element with index n - greater, why?
+ 
+      if greater = 1, meaning find the largest number, which is the last number after sorting array
+      we can also look at greater = length - greater smallest number, if greater = 1, length = 6, then length - 1 = 5, which is the last number in the sorted array
+      choose a random pivot number, partition the array with p, <= p to the left, > p to the right
      *
      * Because there are duplicates in the array, we choose a 3 way partition method with this invariant, based on the following methodology
      * A number is less than pivot, 
@@ -48,16 +48,16 @@ public class FindKthLargest {
      *      
      *      During partition:
      *      <,<,<,=,=,=,{..unknown..},>,>,>
-     *             i      j            k
-     *  
-     *      After partition:
-     *      <,<,<,=,=,=,=,=,=,>,>,>,>,>,>,
-     *             i           k j
-     * 
-     * Pitfalls:
-     * 
-     *      1.) pointer k will always point to the pivot element 
-     *      2.) we need to use random generator to choose pivot number randomly every time
+             smaller      j            greater
+  
+      After partition:
+      <,<,<,=,=,=,=,=,=,>,>,>,>,>,>,
+             smaller           greater j
+ 
+ Pitfalls:
+ 
+      1.) pointer greater will always point to the pivot element 
+      2.) we need to use random generator to choose pivot number randomly every time
      */
     public int findKthLargestSort(int[] nums, int k) {
         Arrays.sort(nums);
@@ -68,7 +68,7 @@ public class FindKthLargest {
     //randomize pivot with partition O(n)
 
     //invariant <<<< | ====== | unknown | >>>>>>
-    //                 i       j       k
+    //                 smaller       j       greater
     //快速排序，3 way 和 2 way partition
     private static final Random rand = new Random();
     static int findKthLargest(int[] nums, int k) {
@@ -81,31 +81,31 @@ public class FindKthLargest {
         return partition(nums, 0, n - 1, k);
     }
     static int partition(int[] nums, int start, int end, int target) {
-        int i = start; 
+        int smaller = start; 
         int j = start; 
-        int k = end;
+        int greater = end;
         int bound = start;
         if(end - start != 0) {
             bound = start + rand.nextInt(end - start);
         }  
         int pivot = nums[bound];
         
-        while(j <= k) {
+        while(j <= greater) {
             if(nums[j] < pivot) {
-                swap(nums, i++, j++);
+                swap(nums, smaller++, j++);
             } else if(nums[j] == pivot) {
                 j++;
             } else {
-                swap(nums, j, k--);
+                swap(nums, j, greater--);
             } 
         }
-        
-        if(k == target) {
-            return nums[k];
-        } else if(k < target) {
-            return partition(nums, k + 1, end, target);
+        //注意这里我们用greater 指针作为对比标准，因为greater指针永远不会out of bound
+        if(greater == target) {
+            return nums[greater];
+        } else if(greater < target) {
+            return partition(nums, greater + 1, end, target);
         } else {
-            return partition(nums, start, k - 1, target);
+            return partition(nums, start, greater - 1, target);
         }
     }
     static void swap(int[]nums, int i, int j) {
