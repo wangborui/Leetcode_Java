@@ -54,6 +54,9 @@ import java.util.Queue;
  *          queue head: 5 -> 3 -> 6 -> 2         reversed queue: 2 -> 5 -> 3 -> 6
  */
 public class MyStack {
+//    建立一个队列，
+//    为了模仿栈的功能，我们必须在每次新加一个元素进入队列后都把队列里原有的东西出队列再入队列
+//    这样可以保证队列的top就是刚刚加入的元素
     Queue<Integer> q = new LinkedList();
     // Push element x onto stack.
     public void push(int x) {
@@ -83,6 +86,5 @@ public class MyStack {
     }
     public static void main(String args){
         MyStack ms = new MyStack();
-        
     }
 }
