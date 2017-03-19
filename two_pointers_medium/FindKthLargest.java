@@ -69,6 +69,7 @@ public class FindKthLargest {
 
     //invariant <<<< | ====== | unknown | >>>>>>
     //                 i       j       k
+    //快速排序，3 way 和 2 way partition
     private static final Random rand = new Random();
     static int findKthLargest(int[] nums, int k) {
         //this case will not happen
@@ -112,7 +113,47 @@ public class FindKthLargest {
         nums[i] = nums[j];
         nums[j] = temp;
     }
-
+    public int findKthLargestTwoWayPartition(int[] nums, int k) {
+        int n = nums.length;
+        k = n - k;
+        return find(nums, 0, n - 1, k);
+    }
+    private int find(int[] nums, int start, int end, int targetIndex) {
+        if(start == end) {
+            return nums[start];
+        }
+        int pivotIndex = start + (end - start) / 2;
+        int pivot = nums[pivotIndex];
+        swap(nums, start, pivotIndex);
+        
+        int i = start + 1;
+        int j = end;
+        
+        while(i < j) {
+            while(i < j && nums[i] <= pivot) {
+                i++;
+            }
+            while(i < j && nums[j] > pivot) {
+                j--;
+            }
+            if(i < j) {
+                swap(nums, i, j);
+            }
+        }
+        if(nums[i] > pivot) {
+            i--;
+        }
+        swap(nums, i, start);
+        
+        if(i == targetIndex) {
+            return nums[i];
+        } else if(i < targetIndex) {
+            return find(nums, i + 1, end, targetIndex);
+        } else {
+            return find(nums, start, i - 1, targetIndex);
+        }
+    }
+ 
     public static void main(String[] args) {
         findKthLargest(new int[]{1}, 1);
         //findKthLargest(new int[]{3,2,1,5,6,4},2);
