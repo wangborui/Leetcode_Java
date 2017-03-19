@@ -72,7 +72,10 @@ public class Rerange {
         }
     }
     //using two pointers
-
+//    先扫描一般数组统计一下正数个数和负数个数，较大个数的数作为结果数组开始元素
+//    在用两个指针分别从做到右找正数和负数
+//    用quick sort 的方法交换位置错误的正数和负数
+    
     public void rerangeTwoPointers(int[] A) {
         if (A == null || A.length == 0) {
             return;
