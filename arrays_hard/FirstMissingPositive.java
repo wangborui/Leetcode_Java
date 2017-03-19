@@ -38,6 +38,13 @@ public class FirstMissingPositive {
  *    This solution comes from Github
  *    https://github.com/HaochenLiu/LeetCode-haoel/blob/master/algorithms/firstMissingPositive/firstMissingPositive.cpp
      */
+//    假设数组里面只有正数，他们应该按照下面的顺序来排列
+//    1 => A[0], 2 => A[1], 3=>A[2]
+//    我们可以遍历一次未排序的原数组，把正数都放回他们本来应该在的位置
+//    如果当前元素是负数，或者大小超过了原数组长度了，我们就跳过
+//    如果数组里面只有正数，我们可以遍历整个数组来检查A[i] 是否等于 i + 1
+//    发现的第一个A[i] != i +１，那么i + 1第一个不存在的数，即是我们想找的结果
+//    如果都遍历完成了，我们就返回n + 1，why？
     static int firstMissingPositive(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 1;
