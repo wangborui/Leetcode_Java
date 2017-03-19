@@ -22,6 +22,8 @@ package Leetcode_Java.two_pointers_medium;
 public class SortLetters {
     //same idea as partition array
     //loop invariant[lowercase,lowercase,lowercase,i..unknown..j,UPPERCASE,UPPERCASE,UPPERCASE,UPPERCASE,]
+//    这个问题的关键在于Character.isLowerCase 和 Character.isUpperCase 函数
+//    用两个指针i（初始化为 0） 和j （初始化为n - 1） 来做partition
     static void sortLetters(char[] chars) {
         if(chars == null || chars.length == 0) {
             return;
