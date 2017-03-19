@@ -46,7 +46,7 @@ import java.util.Stack;
 public class MinStack {
     private Stack<Integer> stack;
     private Stack<Integer> minStack;
-
+    //使用两个栈，一个用来记录每次入栈的元素，另外个记录当前栈内最小的元素，入栈
     public MinStack() {
         stack = new Stack();
         minStack = new Stack();
