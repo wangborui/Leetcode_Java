@@ -99,9 +99,6 @@ public class WiggleSort2 {
         int[] nums1 = {1, 5, 1, 1, 6, 4};
         int[] nums2 = {1, 3, 2, 2, 3, 1};
          int[] nums3 = {4,6};
-        int[] nums4 = {2,3,3,2,2,2,1,1};
-        //System.out.println("median: " + partition(nums4, 0, nums4.length - 1, (nums4.length % 2 == 0) ? nums4.length / 2 - 1 : nums4.length / 2));
-        wiggleSort(nums4);
         printArray(nums4);
     }
 }
