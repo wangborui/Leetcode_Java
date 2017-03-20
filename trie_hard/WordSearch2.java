@@ -51,6 +51,9 @@ import java.util.Map;
  *      1. build a trie tree with every word in the dictionary
  *      2. starting at each position of the board, use bfs search to find matching words in trie tree
  */
+//首先把字典里的所有词语都用trie树保存起来，我们要建立2个单独class，一个叫trie node，另外一个叫trie tree
+//再遍历2D的矩阵每一个节点，当访问节点的时候，用深度优搜索查找当前节点的上，下，左，右，四个方向的节点，并查找trie 树的子树看看有没有找到字典里的单词
+
 public class WordSearch2 {
      private class TrieNode {
         private boolean isString;
