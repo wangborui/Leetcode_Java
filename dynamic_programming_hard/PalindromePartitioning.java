@@ -27,6 +27,9 @@ import java.util.List;
  * @author Borui Wang
  */
 public class PalindromePartitioning {
+//    用深度优先搜索遍历整个需要切割的单词
+//    用for循环找出从0到n - 1单词的子串，如果子串是回文串，再次递归的深度优先搜索后边的剩余部分
+//    当我们遍历到需要切割单词的尾部时，我们就找到了一个可行解，把这个可行解加入到最后结果中
     public List<List<String>> partition(String s) {
         List<List<String>> res = new ArrayList();
         dfsHelper(res, new ArrayList(), s, 0);
