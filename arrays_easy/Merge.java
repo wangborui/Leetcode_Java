@@ -29,6 +29,10 @@ package Leetcode_Java.arrays_easy;
  * @author Borui Wang
  */
 public class Merge {
+//    找到第一个数组的最后一个数字和第二个数组的最后一个数字
+//    建立一个变量来记录合并后的最后一个下标
+//    每次遍历两个数组的最后一个数字，比较大的放在合并数组的最后一个下标位置
+//    移动合并数组下标和数组一或者数组二的下标
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         //j is the last element in nums1, k is the last element in nums2
         int j = m - 1, k = n - 1;
