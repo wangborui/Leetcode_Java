@@ -25,7 +25,12 @@ package Leetcode_Java.dynamic_programming_medium;
  * @author Borui Wang
  */
 public class MaxSubArray {
-
+//    贪心算法
+//    建立一个全局变量和局部变量
+//    全局变量初始化为负无穷，局部变量初始化为0。
+//    把局部变量加上当前遍历数组里的数字
+//    更新并对比局部变量于全局变量值
+//    局部变量如果小于0就把局部变量设置为0
     public int maxSubArrayGreedy(int[] nums) {
         if (nums == null || nums.length == 0) {
             return -1;
@@ -41,7 +46,6 @@ public class MaxSubArray {
             //assume local localMax is always greater than 0
             //only keep localMax value if it is greater than 0
             localMax = Math.max(localMax, 0);
-
         }
 
         return globalMax;
