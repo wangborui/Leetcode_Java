@@ -16,7 +16,10 @@ package Leetcode_Java.string_easy;
  * @author Borui Wang
  */
 public class RomanToInt {
-
+//首先把末尾字母转换成数字
+//使用两个变量记录当前值和之前值
+//如果当前值小于之前值，就把的当前值从结果中减去
+//不然把当前值加入到结果中
     static int romanToInt(String s) {
         int n = s.length();
         if (n == 0) {
