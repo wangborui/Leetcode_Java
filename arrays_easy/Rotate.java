@@ -38,6 +38,9 @@ public class Rotate {
  *    
  *
  */
+//    三部反转法，先把整个数组反转
+//    把0到k-1的位置反转，再把k到n-1的地方反转
+//    注意的是k的值需要%n，因为k的值可能远远大于n
     public void rotate(int[] nums, int k) {
         if(nums == null || nums.length < 2 || k == 0) {
             return;
