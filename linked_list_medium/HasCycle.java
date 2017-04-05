@@ -38,6 +38,12 @@ public class HasCycle {
             next = null;
         }
     } 
+    
+//    初始化的时候建立两个指针，一个快指针一个慢指针
+//    两个指针最开始都放在开头位置
+//    把慢指针每次向后移动一位，直到指针为空
+//    把快指针每次向后移动两位，直到指针为空
+//    如果最后快指针和慢指针相等，我们找到了环
     public boolean hasCycle(ListNode head) {
         if(head == null || head.next == null) {
             return false;
