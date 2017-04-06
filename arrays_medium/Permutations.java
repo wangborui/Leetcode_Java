@@ -21,6 +21,7 @@ import java.util.List;
  * @author Borui Wang
  */
 public class Permutations {
+//    time complexity is O(n!)
 //    for example we have nums{1,2,3}, [x] means x is already chosen, {y} means y can be viable candidate for next dfs
 //                                                {1,2,3}
 //                                              /    |    \
@@ -31,7 +32,7 @@ public class Permutations {
 //                           [1,2]{3}[1,3]{2} [2,1]{3}[2,3]{1}  [3,1]{2}[3,2]{1}
 //    Therefore, we have answers
 //    we have [1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]
-    static List<List<Integer>> permutations(int[] nums) {
+    static List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> lists = new ArrayList();
         List<Integer> list = new ArrayList();
         //adding new boolean array variable to keep track of marked 
@@ -57,6 +58,6 @@ public class Permutations {
         }
     }
     public static void main(String[] args){
-        System.out.println(permutations(new int[]{1,2,3}));
+        System.out.println(permute(new int[]{1,2,3}));
     }
 }
