@@ -33,7 +33,7 @@ package Leetcode_Java.trie_hard;
  */
 public class WordSearch {
     //访问一个2D 矩阵的所有节点，在每次访问节点的时候，用深度优先搜索查找四个方向是否有需要查找的关键词
-    
+    //特别需要注意的是，怎么标记已经访问过的位置，如果一个位置已经被访问过了，我们可以把他的char标记为0，因为char = 0不是任何字母
     public boolean exist(char[][] board, String word) {
         if (board == null || board.length == 0 || board[0].length == 0) {
             return false;
@@ -44,8 +44,7 @@ public class WordSearch {
 
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                boolean isFound = dfsSearch(i, j, board, word);
-                if (isFound) {
+                if (dfsSearch(i, j, board, word)) {
                     return true;
                 }
             }

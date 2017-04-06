@@ -32,6 +32,11 @@ package Leetcode_Java.union_find;
  */
 public class NumIslands {
 //DFS traversal, traverse each node in the grid, if this node is land, change it to water, and DFS traverse its 4 neighbors
+//    首先遍历一次整个2D 数组，再创建一个变量记录我们所有的岛屿
+//    在遍历的时候如果碰到一个陆地，就把我们岛屿数量加一
+//    然后再深度优先的从上，下，左，右四个方向把该岛屿附近的陆地全部变成海洋
+//    这样的话我们相当于是把整个独立的陆地全部变成了海洋
+//    继续遍历整个数组，最后返回岛屿个数
     static int numIslands(char[][] grid) {
         if (grid == null || grid.length == 0 || grid[0].length == 0) {
             return 0;
