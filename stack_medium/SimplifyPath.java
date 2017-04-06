@@ -43,7 +43,9 @@ public class SimplifyPath {
 //简化的核心是要找出所有的目录，并且如果遇到".."，需要删除上一个目录。
 //把字符串先由"/"分开来，分成很多token
 //如果一个token是"..",".","" 这三种情况的话，我们就不入栈
+//如果当前的token是".."的话，我们还要考虑是否把栈顶元素弹出
 //不然就把当前token入栈
+//最后把栈里的元素依次弹出构成路径图
     public String simplifyPath(String path) {
         Stack<String> stack = new Stack();
 
