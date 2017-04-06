@@ -82,6 +82,9 @@ public class CopyRandomList {
         return dummy.next;
     }
     //遍历整个链表，把每个节点存到哈希表里面，并且在哈希表里加入另外一个深度复制的节点
+    //再次遍历整个整个链表，深度复制next指针
+    //最后遍历整个链表，深度复制random指针
+    //放回深度复制链表的头
     private RandomListNode copyRandomListHashMap(RandomListNode head) {
         if (head == null) {
             return head;
