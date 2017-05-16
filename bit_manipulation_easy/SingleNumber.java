@@ -28,13 +28,15 @@
 // So, XOR all of numbers, the result is the number which only appears once. 
 package Leetcode_Java.bit_manipulation_easy;
 
+import java.util.Arrays;
+
 /**
  *
  * @author Borui Wang
  */
 //把所有的数字亦或起来，最后剩下的就是答案了
 public class SingleNumber {
-    public int singleNumber(int[] nums) {
+    static int singleNumber(int[] nums) {
         if(nums.length == 0) {
             return 0;
         }
@@ -44,5 +46,10 @@ public class SingleNumber {
             res ^= nums[i];
         }
         return res;
+    }
+    
+    public static void main(String[] args) {
+        int[] test = {1,2,3,3,2};
+        singleNumber(test);
     }
 }
