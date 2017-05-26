@@ -1,18 +1,28 @@
 // Source : https://leetcode.com/problems/repeated-substring-pattern/#/description
 // Date   : 05/26/2017
-
-/********************************************************************************** 
-* 
-* Given an unsorted array of integers, find the length of the longest consecutive elements sequence.
-* 
-* For example,
-* Given [100, 4, 200, 1, 3, 2],
-* The longest consecutive elements sequence is [1, 2, 3, 4]. Return its length: 4.
-* 
-* Your algorithm should run in O(n) complexity.
-* 
-*               
-**********************************************************************************/
+/**
+ * ********************************************************************************
+ * Given a non-empty string check if it can be constructed by taking a substring of it and appending multiple copies of the substring together.
+ * You may assume the given string consists of lowercase English letters only and its length will not exceed 10000.
+ *
+ * Example 1:
+ * Input: "abab"
+ *
+ * Output: True
+ *
+ * Explanation: It's the substring "ab" twice.
+ * Example 2:
+ * Input: "aba"
+ *
+ * Output: False
+ * Example 3:
+ * Input: "abcabcabcabc"
+ *
+ * Output: True
+ *
+ * Explanation: It's the substring "abc" four times. (And the substring "abcabc" twice.)
+ *********************************************************************************
+ */
 package Leetcode_Java.string_easy;
 
 /**
