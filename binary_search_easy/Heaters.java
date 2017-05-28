@@ -25,6 +25,8 @@
  */
 package Leetcode_Java.binary_search_easy;
 
+import java.util.Arrays;
+
 /**
  *
  * @author Borui Wang
@@ -32,6 +34,43 @@ package Leetcode_Java.binary_search_easy;
 public class Heaters {
 
     public int findRadius(int[] houses, int[] heaters) {
+        Arrays.sort(houses);
+        Arrays.sort(heaters);
 
+        int res = 0;
+
+        for(int house : houses) {
+            int j = 0;
+            while(j < heaters.length - 1 && Math.abs(house - heaters[j]) >= Math.abs(house - heaters[j + 1])) {
+                j++;
+            }
+            res = Math.max(res, Math.abs(house - heaters[j]));
+        }
+        return res;
+    }
+    public static int findRadius2(int[] houses, int[] heaters) {
+        Arrays.sort(heaters);
+        
+        int res = 0;
+        
+        for(int house : houses) {
+            int index = Arrays.binarySearch(heaters, house);
+            if(index < 0) {
+                index = -index - 1;
+            }
+            //????
+            int dist1 = index - 1 < 0 ? Integer.MAX_VALUE : Math.abs(heaters[index - 1] - house);
+            int dist2 = index < heaters.length ? Math.abs(heaters[index] - house) : Integer.MAX_VALUE;
+            
+            res = Math.max(res, Math.min(dist1, dist2));
+        }
+        return res;
+    }
+    
+    public static void main(String[] args) {
+        int[] h = {1,2,3,4,5};
+        int[] t = {1,4};
+        
+        findRadius2(h,t);
     }
 }
