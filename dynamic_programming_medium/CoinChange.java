@@ -1,9 +1,24 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+Source:https://leetcode.com/problems/coin-change/#/description
+Date  : 06/26/2017
+********************************************************************************
+You are given coins of different denominations and a total amount of money amount. 
+Write a function to compute the fewest number of coins that you need to make up that amount. 
+If that amount of money cannot be made up by any combination of the coins, return -1.
+
+Example 1:
+coins = [1, 2, 5], amount = 11
+return 3 (11 = 5 + 5 + 1)
+
+Example 2:
+coins = [2], amount = 3
+return -1.
+
+Note:
+You may assume that you have an infinite number of each kind of coin.
+********************************************************************************
  */
-package dynamic_programming_medium;
+package Leetcode_Java.dynamic_programming_medium;
 
 import java.util.Arrays;
 
