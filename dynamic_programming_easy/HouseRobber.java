@@ -17,7 +17,7 @@ package Leetcode_Java.dynamic_programming_easy;
  *
  * @author Borui Wang
  */
-public class Rob {
+public class HouseRobber {
     /*
  * Dynamic Programming
  * dp[n] means max values we can get from first n houses, not including the nth house
