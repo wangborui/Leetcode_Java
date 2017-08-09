@@ -2,8 +2,8 @@
 //Date   : 02/20/2017
 /**
  * ****************************************************************************
- * There are n coins in a line. 
- * Two players take turns to take one or two coins from right side until there are no more coins left. 
+ * There are n coins in a line.
+ * Two players take turns to take one or two coins from right side until there are no more coins left.
  * The player who take the last coin wins.
  *
  * Could you please decide the first play will win or lose?
@@ -93,12 +93,31 @@ public class FirstWillWin {
         }
         return dp[n] == WIN;
     }
+
+    static boolean firstWillWin2(int n) {
+        if (n == 0) {
+            return false;
+        }
+
+        //f[i] means wether first player will win given i coins
+        boolean[] f = new boolean[n + 1];
+        //init
+        f[0] = false;
+        f[1] = true;
+
+        for (int i = 2; i <= n; i++) {
+            f[i] = ((f[i - 1] == false) || (f[i - 2] == false));
+        }
+
+        return f[n];
+    }
+
     public static void main(String[] args) {
-        for(int i = 1; i <= 100; i++) {
-            if(!firstWillWin(i)) {
+        for (int i = 1; i <= 100; i++) {
+            if (!firstWillWin(i)) {
                 System.out.print(i + " ");
             }
         }
-         
+
     }
 }
