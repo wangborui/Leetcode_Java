@@ -71,11 +71,13 @@ public class InterleavingString {
                 dp[i][0] = true;
             }
         }
+        printArray(dp);
         for (int i = 1; i <= len2; i++) {
             if (s2.charAt(i - 1) == s3.charAt(i - 1) && dp[0][i - 1]) {
                 dp[0][i] = true;
             }
         }
+        printArray(dp);
         //optimal function
         for (int i = 1; i <= len1; i++) {
             for (int j = 1; j <= len2; j++) {
@@ -84,6 +86,7 @@ public class InterleavingString {
                         || cur == s2.charAt(j - 1) && dp[i][j - 1]) {
                     dp[i][j] = true;
                 }
+                printArray(dp);
             }
         }
         return dp[len1][len2];
@@ -95,10 +98,11 @@ public class InterleavingString {
             }
             System.out.println();
         }
+        System.out.println("=================================================");
     }
     public static void main(String[] args) {
-        System.out.println(isInterleave("axy","aab","aaxaby"));
-        System.out.println(isInterleave("aab","axy","abaaxy"));
+        //System.out.println(isInterleave("axy","aab","aaxaby"));
+        //System.out.println(isInterleave("aab","axy","abaaxy"));
         System.out.println(isInterleave("aabcc","dbbca","aadbbcbcac"));
     }
 }

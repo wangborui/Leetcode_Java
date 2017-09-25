@@ -87,7 +87,7 @@ public class Heapify {
 
     static void sink(int[] A, int idx) {
         int size = A.length;
-        //make sure the children of current idx is smaller than size of A
+        //make sure the left or first children of current idx is smaller than size of A
         while (idx * 2 + 1 < size) {
             int child = idx * 2 + 1;
             if (idx * 2 + 2 < size && A[idx * 2 + 2] < A[child]) {
@@ -110,7 +110,11 @@ public class Heapify {
     }
 
     public static void main(String[] args) {
-        int[] a = {3, 2, 1, 4, 5};
+        //int[] a = {3, 2, 1, 4, 5};
+        int[] a = {3, 2, 1};
         heapify(a);
+        for(int n : a) {
+            System.out.print(n + ",");
+        }
     }
 }

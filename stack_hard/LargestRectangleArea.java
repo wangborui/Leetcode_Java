@@ -140,9 +140,9 @@ public class LargestRectangleArea {
             //let the removed bar be minHeight, calculate area of rectangle with minHeight as smallest bar
             //for minHeight, the "left index" is previous (previous to top) item in the stack, or -1 if stack is empty
             //"right index" is right bound
-                int minHeight = heights[stack.pop()];
+                int maxHeight = heights[stack.pop()];
                 int leftBound =  stack.isEmpty() ? -1 : stack.peek();
-                maxArea = Math.max(minHeight * (rightBound - leftBound - 1), maxArea);
+                maxArea = Math.max(maxHeight * (rightBound - leftBound - 1), maxArea);
 
             }
         }
