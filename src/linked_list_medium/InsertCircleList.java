@@ -32,17 +32,22 @@ public class InsertCircleList {
         temp = new Node(1);
         temp.next = temp;
         //Test Case 2
-        System.out.println(insertCircleList.insert(temp, 3));
+        System.out.println(insertCircleList.insert(temp, 3).val);
         temp = new Node(1);
         temp.next = temp;
         //Test Case 3
-        System.out.println(insertCircleList.insert(temp, 0));
+        System.out.println(insertCircleList.insert(temp, 0).val);
 
         Node node1 = new Node(1);
         Node node5 = new Node(5);
         node1.next = node5;
         node5.next = node1;
-        System.out.println(insertCircleList.insert(node5, 3));
+        //Test Case 4
+        System.out.println(insertCircleList.insert(node5, 3).val);
+        //Test Case 4
+        System.out.println(insertCircleList.insert(node5, 7).val);
+        //Test Case 5
+        System.out.println(insertCircleList.insert(node5, -1).val);
     }
 
     public Node insert(Node root, int k) {
@@ -58,17 +63,15 @@ public class InsertCircleList {
                 min = walker;
             }
 
+            //Condition 2.a.
             if (walker.val >= walker.next.val) {
                 if (walker.val < k || k < walker.next.val) {
-                    Node next = walker.next;
-                    walker.next = kNode;
-                    kNode.next = next;
+                    insertNode(walker, kNode);
                 }
             } else {
+                //Condition 2.b
                 if (walker.val < k && k < walker.next.val) {
-                    Node next = walker.next;
-                    walker.next = kNode;
-                    kNode.next = next;
+                    insertNode(walker, kNode);
                 }
             }
 
@@ -76,4 +79,11 @@ public class InsertCircleList {
         } while (walker != root);
         return min;
     }
+
+    public void insertNode(Node root, Node insert) {
+        Node next = root.next;
+        root.next = insert;
+        insert.next = next;
+    }
 }
+
