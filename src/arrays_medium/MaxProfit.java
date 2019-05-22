@@ -13,7 +13,6 @@ Dynamic Programming Time O(n) Space O(1)
 */
 package Leetcode_Java.arrays_medium;
 
-import edu.princeton.cs.algs4.StdOut;
 
 /**
  *
@@ -40,6 +39,6 @@ public class MaxProfit {
     }
     public static void main(String[] args){
         int [] test = {7,6};
-        StdOut.println(new MaxProfit().maxProfit(test));
+        System.out.println(new MaxProfit().maxProfit(test));
     }
 }

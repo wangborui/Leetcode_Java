@@ -13,9 +13,7 @@ Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 ********************************************************************************
  */
-package Leetcode_Java.arrays_easy;
 
-import edu.princeton.cs.algs4.StdOut;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -54,7 +52,7 @@ public class TwoSum {
         int target = 6;
         TwoSum b =  new TwoSum();
         for(int temp: b.twoSum(a,target)){
-            StdOut.println(temp);
+            System.out.println(temp);
         }
     }
 }

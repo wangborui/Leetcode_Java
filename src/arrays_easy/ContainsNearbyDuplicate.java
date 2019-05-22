@@ -26,7 +26,6 @@ public class ContainsNearbyDuplicate {
             map.put(nums[i], i);
              }
          return false;
-    
 }
 }
      

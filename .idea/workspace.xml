@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f2555b8a-d385-4759-b169-4bc09b9145fc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/linked_list_medium/InsertCircleList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_easy/ContainsNearbyDuplicate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_easy/ContainsNearbyDuplicate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_easy/Duplicates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_easy/Duplicates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_easy/FindDisappearedNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_easy/FindDisappearedNumbers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_easy/FindMaxAverage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_easy/FindMaxAverage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_easy/FindRelativeRanks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_easy/FindRelativeRanks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_easy/FindUnsortedSubarray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_easy/FindUnsortedSubarray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_easy/MajorityElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_easy/MajorityElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_easy/MaxRotateFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_easy/MaxRotateFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_easy/Merge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_easy/Merge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_easy/MoveZeros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_easy/MoveZeros.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_easy/PascalTriangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_easy/PascalTriangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_easy/PascalTriangle2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_easy/PascalTriangle2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_easy/PlusOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_easy/PlusOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_easy/RecoverRotatedSortedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_easy/RecoverRotatedSortedArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_easy/RemoveElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_easy/RemoveElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_easy/RemoveElementFromSortedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_easy/RemoveElementFromSortedArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_easy/RemoveElementFromSortedArray2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_easy/RemoveElementFromSortedArray2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_easy/Rotate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_easy/Rotate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_easy/ShortestDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_easy/ShortestDistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_easy/TwoSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_easy/TwoSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_hard/FirstMissingPositive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_hard/FirstMissingPositive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_hard/Insert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_hard/Insert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_hard/NQueen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_hard/NQueen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_hard/NQueen2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_hard/NQueen2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/Combination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/Combination.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/CombinationSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/CombinationSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/CombinationSum2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/CombinationSum2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/CombinationSum3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/CombinationSum3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/CombinationSum4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/CombinationSum4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/CountOfAirplanes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/CountOfAirplanes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/FindPoisonedDuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/FindPoisonedDuration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/FourSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/FourSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/GameOfLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/GameOfLife.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/GetFactors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/GetFactors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/MajorityElement2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/MajorityElement2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/MajorityElement3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/MajorityElement3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/MaxProfit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/MaxProfit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/MaxProfit2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/MaxProfit2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/MaxProfit3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/MaxProfit3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/MeetingRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/MeetingRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/MeetingRoom2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/MeetingRoom2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/MissingNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/MissingNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/NumArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/NumArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/Permutation2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/Permutation2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/Permutations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/Permutations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/ProductExceptSelf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/ProductExceptSelf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/QuickSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/RangeAddition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/RangeAddition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/RemoveDuplicates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/RemoveDuplicates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/RemoveDuplicates2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/RemoveDuplicates2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/ReverseWords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/ReverseWords.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/ReverseWords2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/ReverseWords2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/Rotated.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/Rotated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/SetZeroes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/SetZeroes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/ShortestWordDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/ShortestWordDistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/SpiralMatrix2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/SpiralMatrix2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/SpiralOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/SpiralOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/Subsets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/Subsets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/Subsets2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/Subsets2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/SummaryRange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/SummaryRange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/ThreeSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/ThreeSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/ThreeSumClosest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/ThreeSumClosest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/ThreeSumSmaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/ThreeSumSmaller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/TicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/TicTacToe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/WiggleSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/WiggleSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/WiggleSort2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/WiggleSort2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays_medium/merge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/Merge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_tracking_medium/GenerateParenthesis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/back_tracking_medium/GenerateParenthesis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_search_easy/ArrangeCoins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/binary_search_easy/ArrangeCoins.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_search_easy/ClosestValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/binary_search_easy/ClosestValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_search_easy/FindPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/binary_search_easy/FindPosition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_search_easy/FirstBadVersion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/binary_search_easy/FirstBadVersion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_search_easy/Heaters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/binary_search_easy/Heaters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_search_hard/FindMedianOfSortedArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/binary_search_hard/FindMedianOfSortedArrays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_search_hard/FindMin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/binary_search_hard/FindMin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_search_hard/FindMin2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/binary_search_hard/FindMin2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_search_hard/FindPeakElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/binary_search_hard/FindPeakElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_search_hard/FindPeakElement2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/binary_search_hard/FindPeakElement2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_search_hard/SearchRotatedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/binary_search_hard/SearchRotatedArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_search_hard/SearchRotatedArray2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/binary_search_hard/SearchRotatedArray2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_search_medium/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/binary_search_medium/Search.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_search_medium/Search2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/binary_search_medium/Search2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_search_medium/Search2DMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/binary_search_medium/Search2DMatrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_search_medium/Search2DMatrix2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/binary_search_medium/Search2DMatrix2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_search_medium/SearchInsert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/binary_search_medium/SearchInsert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_search_medium/SearchRange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/binary_search_medium/SearchRange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_search_medium/SearchRangeJCL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/binary_search_medium/SearchRangeJCL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bit_manipulation_easy/GetSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bit_manipulation_easy/GetSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bit_manipulation_easy/HammingWeight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bit_manipulation_easy/HammingWeight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bit_manipulation_easy/ReverseBits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bit_manipulation_easy/ReverseBits.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bit_manipulation_easy/SingleNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bit_manipulation_easy/SingleNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bit_manipulation_easy/ToHex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bit_manipulation_easy/ToHex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bit_manipulation_medium/ReadBinaryWatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bit_manipulation_medium/ReadBinaryWatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bit_manipulation_medium/SingleNumber2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bit_manipulation_medium/SingleNumber2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bit_manipulation_medium/SingleNumber3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bit_manipulation_medium/SingleNumber3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bit_manipulation_medium/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bit_manipulation_medium/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/design/StringIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/design/StringIterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_easy/ClimbingStairs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_easy/ClimbingStairs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_easy/HouseRobber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_easy/HouseRobber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_easy/NumArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_easy/NumArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_easy/PaintFence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_easy/PaintFence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_hard/CopyBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_hard/CopyBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_hard/DistinctSubsequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_hard/DistinctSubsequence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_hard/EditDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_hard/EditDistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_hard/InterleavingString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_hard/InterleavingString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_hard/JumpGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_hard/JumpGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_hard/JumpGame2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_hard/JumpGame2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_hard/KSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_hard/KSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_hard/KSum2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_hard/KSum2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_hard/PaintHouse2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_hard/PaintHouse2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_hard/PalindromePartitioning.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_hard/PalindromePartitioning.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_hard/PalindromePartitioning2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_hard/PalindromePartitioning2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_hard/RussianDollEnvelopes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_hard/RussianDollEnvelopes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_hard/StudentRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_hard/StudentRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_hard/WordSegment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_hard/WordSegment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_hard/WordSegment2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_hard/WordSegment2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/Backpack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/Backpack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/Backpack2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/Backpack2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/CanPartition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/CanPartition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/CheckSubarraySum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/CheckSubarraySum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/CoinChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/CoinChange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/ContinuousSubarraySum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/ContinuousSubarraySum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/ContinuousSubarraySum2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/ContinuousSubarraySum2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/CountBits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/CountBits.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/DecodeWays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/DecodeWays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/FirstWillWin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/FirstWillWin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/FirstWillWin2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/FirstWillWin2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/GenerateTrees.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/GenerateTrees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/HouseRobber2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/HouseRobber2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/LengthOfLIS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/LengthOfLIS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/LongestCommonSubsequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/LongestCommonSubsequence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/LongestCommonSubstring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/LongestCommonSubstring.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/LongestIncreasingContinuousSubsequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/LongestIncreasingContinuousSubsequence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/LongestIncreasingContinuousSubsequence2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/LongestIncreasingContinuousSubsequence2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/LongestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/LongestPalindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/LongestPalindromeSubseq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/LongestPalindromeSubseq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/MaxKilledEnemies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/MaxKilledEnemies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/MaxProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/MaxProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/MaxSubArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/MaxSubArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/MaxSubArray2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/MaxSubArray2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/MaximalSquare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/MaximalSquare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/MinPathSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/MinPathSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/MinSubArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/MinSubArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/PaintHouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/PaintHouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/PerfectSquare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/PerfectSquare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/PredictTheWinner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/PredictTheWinner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/SubarrayMatrixSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/SubarrayMatrixSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/SubarraySum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/SubarraySum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/SubarraySum2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/SubarraySum2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/SubarraySumClosest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/SubarraySumClosest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/UniquePathWithObstacles2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/UniquePathWithObstacles2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic_programming_medium/UniquePaths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dynamic_programming_medium/UniquePaths.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph_medium/CalcEquation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graph_medium/CalcEquation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph_medium/CloneGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graph_medium/CloneGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph_medium/TheMaze2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graph_medium/TheMaze2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph_medium/TopologicalSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graph_medium/TopologicalSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph_medium/WordLadder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graph_medium/WordLadder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph_medium/WordLadder2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graph_medium/WordLadder2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph_medium/WordLadderJiuZhang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graph_medium/WordLadderJiuZhang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/greedy/ReconstructQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/greedy/ReconstructQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hash_easy/BullsCows.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_easy/BullsCows.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hash_easy/CountPrimes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_easy/CountPrimes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hash_easy/FindTheDifference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_easy/FindTheDifference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hash_easy/GroupStrings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_easy/GroupStrings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hash_easy/IntersectionOfTwoArrays1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_easy/IntersectionOfTwoArrays1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hash_easy/IntersectionOfTwoArrays2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_easy/IntersectionOfTwoArrays2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hash_easy/IsIsomorphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_easy/IsIsomorphic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hash_easy/IsValidSudoku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_easy/IsValidSudoku.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hash_easy/IslandPerimeter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_easy/IslandPerimeter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hash_easy/LongestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_easy/LongestPalindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hash_easy/NumberOfBoomerangs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_easy/NumberOfBoomerangs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hash_easy/TwoSum3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_easy/TwoSum3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hash_easy/ValidWordAbbr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_easy/ValidWordAbbr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hash_easy/WordPattern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_easy/WordPattern.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hash_hard/LongestConsecutive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_hard/LongestConsecutive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heap_hard/GetSkyline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heap_hard/GetSkyline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heap_hard/Heapify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heap_hard/Heapify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heap_hard/KthSmallest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heap_hard/KthSmallest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heap_hard/MaxSlidingWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heap_hard/MaxSlidingWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heap_hard/MedianFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heap_hard/MedianFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heap_hard/MedianSlidingWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heap_hard/MedianSlidingWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_easy/DeleteNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_easy/DeleteNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_easy/IntersectionNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_easy/IntersectionNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_easy/MergeTwoLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_easy/MergeTwoLists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_easy/Palindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_easy/Palindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_easy/RemoveElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_easy/RemoveElements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_easy/RemoveNthFromEnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_easy/RemoveNthFromEnd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_easy/SwapPairs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_easy/SwapPairs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_hard/CopyRandomList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_hard/CopyRandomList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_hard/LFUCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_hard/LFUCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_hard/LRUCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_hard/LRUCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_hard/MergeKSortedLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_hard/MergeKSortedLists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_hard/ReverseKGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_hard/ReverseKGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_medium/AddTwoNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_medium/AddTwoNumbers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_medium/AddTwoNumbers2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_medium/AddTwoNumbers2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_medium/HasCycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_medium/HasCycle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_medium/HasCycle2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_medium/HasCycle2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_medium/InsertionSortList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_medium/InsertionSortList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_medium/OddEvenList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_medium/OddEvenList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_medium/Partition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_medium/Partition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_medium/PhoneDirectory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_medium/PhoneDirectory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_medium/PlusOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_medium/PlusOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_medium/RemoveDuplicates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_medium/RemoveDuplicates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_medium/RemoveDuplicates2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_medium/RemoveDuplicates2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_medium/ReorderList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_medium/ReorderList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_medium/ReverseList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_medium/ReverseList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_medium/ReverseList2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_medium/ReverseList2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_medium/RotateRight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_medium/RotateRight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_medium/SortList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_medium/SortList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list_medium/SortedListToBST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linked_list_medium/SortedListToBST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math_easy/AddDigits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math_easy/AddDigits.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math_easy/AddStrings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math_easy/AddStrings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math_easy/ConvertToTitle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math_easy/ConvertToTitle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math_easy/IsPowerOfThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math_easy/IsPowerOfThree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math_easy/IsPowerOfTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math_easy/IsPowerOfTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math_easy/IsUgly.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math_easy/IsUgly.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math_easy/NthNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math_easy/NthNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math_easy/Palindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math_easy/Palindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math_easy/Sqrt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math_easy/Sqrt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math_easy/TitleToNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math_easy/TitleToNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math_easy/TrailingZeroes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math_easy/TrailingZeroes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math_medium/Divide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math_medium/Divide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math_medium/FractionToDecimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math_medium/FractionToDecimal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math_medium/PowXN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math_medium/PowXN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack_easy/MinStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack_easy/MinStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack_easy/MyQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack_easy/MyQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack_easy/MyStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack_easy/MyStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack_easy/ValidParenthesis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack_easy/ValidParenthesis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack_hard/AddOperators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack_hard/AddOperators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack_hard/BasicCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack_hard/BasicCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack_hard/BasicCalculator2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack_hard/BasicCalculator2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack_hard/ConvertToRPN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack_hard/ConvertToRPN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack_hard/EvaluateExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack_hard/EvaluateExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack_hard/LargestRectangleArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack_hard/LargestRectangleArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack_hard/MaxTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack_hard/MaxTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack_hard/MaximalRectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack_hard/MaximalRectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack_medium/EvalRPN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack_medium/EvalRPN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack_medium/LengthLongestPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack_medium/LengthLongestPath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack_medium/SimplifyPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack_medium/SimplifyPath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string_easy/AddBinary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/string_easy/AddBinary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string_easy/CanConstruct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/string_easy/CanConstruct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string_easy/CompareVersion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/string_easy/CompareVersion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string_easy/CountAndSay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/string_easy/CountAndSay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string_easy/DetectCapitalUse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/string_easy/DetectCapitalUse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string_easy/FindLUSlength.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/string_easy/FindLUSlength.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string_easy/FirstUniqChar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/string_easy/FirstUniqChar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string_easy/GeneratePossibleNextMoves.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/string_easy/GeneratePossibleNextMoves.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string_easy/IsPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/string_easy/IsPalindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string_easy/LongestCommonPrefix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/string_easy/LongestCommonPrefix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string_easy/RepeatedSubstringPattern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/string_easy/RepeatedSubstringPattern.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string_easy/ReverseStr2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/string_easy/ReverseStr2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string_easy/RomanToInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/string_easy/RomanToInt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string_easy/Strstr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/string_easy/Strstr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string_easy/ValidWordAbbreviation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/string_easy/ValidWordAbbreviation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string_easy/ZigZag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/string_easy/ZigZag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string_hard/isValid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/string_hard/isValid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string_medium/EncodeDecodeString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/string_medium/EncodeDecodeString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_easy/BinaryTreePaths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_easy/BinaryTreePaths.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_easy/HasPathSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_easy/HasPathSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_easy/InvertTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_easy/InvertTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_easy/IsBalanced.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_easy/IsBalanced.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_easy/IsSameTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_easy/IsSameTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_easy/IsSymmetric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_easy/IsSymmetric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_easy/LevelOrderTraversal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_easy/LevelOrderTraversal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_easy/MaxDepth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_easy/MaxDepth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_easy/MinDepth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_easy/MinDepth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_easy/MinDifference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_easy/MinDifference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_easy/PathSum3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_easy/PathSum3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_hard/BSTIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_hard/BSTIterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_hard/Codec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_hard/Codec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_hard/MaxPathSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_hard/MaxPathSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_hard/RecoverTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_hard/RecoverTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/BuildTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/BuildTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/BuildTree2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/BuildTree2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/ClosestKValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/ClosestKValues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/Connect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/Connect2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/Connect2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/CountNodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/CountNodes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/DeleteNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/DeleteNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/FindBottomLeftValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/FindBottomLeftValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/FindLeaves.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/FindLeaves.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/Flatten.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/Flatten.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/InorderSuccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/InorderSuccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/InorderTraversal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/InorderTraversal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/IsValidSerialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/IsValidSerialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/LargestBSTSubtree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/LargestBSTSubtree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/LargestValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/LargestValues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/LongestConsecutive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/LongestConsecutive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/LowestCommonAncestors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/LowestCommonAncestors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/LowestCommonAncestorsBST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/LowestCommonAncestorsBST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/PathSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/PathSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/PostorderTraversal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/PostorderTraversal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/PreorderTraversal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/PreorderTraversal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/RightSideView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/RightSideView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/Rob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/Rob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/SortedArrayToBST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/SortedArrayToBST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/SumNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/SumNumbers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/UniqueBSTs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/UniqueBSTs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/UniqueBSTs2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/UniqueBSTs2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/ValidateBinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/ValidateBinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/VerifyPreorder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/VerifyPreorder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/ZigzagLevelOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/ZigzagLevelOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/kthSmallest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/kthSmallest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_medium/levelOrderBottom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree_medium/levelOrderBottom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_hard/ValidWordSquare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/trie_hard/ValidWordSquare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_hard/WordSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/trie_hard/WordSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_hard/WordSearch2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/trie_hard/WordSearch2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_medium/ImplementTrie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/trie_medium/ImplementTrie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_medium/WordDictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/trie_medium/WordDictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointers_easy/ReverseVowels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/two_pointers_easy/ReverseVowels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointers_easy/strStr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/two_pointers_easy/strStr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointers_hard/LengthOfLongestSubstringKDistinct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/two_pointers_hard/LengthOfLongestSubstringKDistinct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointers_hard/MinWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/two_pointers_hard/MinWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointers_hard/TrapWater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/two_pointers_hard/TrapWater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointers_hard/TrapWater2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/two_pointers_hard/TrapWater2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointers_medium/FindKthLargest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/two_pointers_medium/FindKthLargest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointers_medium/LengthOfLongestSubstring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/two_pointers_medium/LengthOfLongestSubstring.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointers_medium/MaxArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/two_pointers_medium/MaxArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointers_medium/MinSubArrayLen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/two_pointers_medium/MinSubArrayLen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointers_medium/PartitionArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/two_pointers_medium/PartitionArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointers_medium/Rerange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/two_pointers_medium/Rerange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointers_medium/SmallestDifference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/two_pointers_medium/SmallestDifference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointers_medium/SortLetters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/two_pointers_medium/SortLetters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointers_medium/SortNutsAndBolts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/two_pointers_medium/SortNutsAndBolts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/union_find/CountComponents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/union_find/CountComponents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/union_find/NumIslands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/union_find/NumIslands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/union_find/NumIslands2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/union_find/NumIslands2.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/linked_list_medium/InsertCircleList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="452">
+              <caret line="78" column="1" lean-forward="true" selection-start-line="15" selection-end-line="78" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/arrays_easy/TwoSum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+              <folding>
+                <element signature="e#0#1730#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/arrays_easy/ContainsNearbyDuplicate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret lean-forward="true" />
+              <folding>
+                <element signature="e#0#797#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/arrays_easy/FindDisappearedNumbers.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/arrays_easy/FindMaxAverage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/arrays_easy/Merge.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/arrays_medium/Merge.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/arrays_medium/MaxProfit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="13" column="26" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/arrays_medium/MaxProfit.java" />
+        <option value="$PROJECT_DIR$/src/arrays_easy/TwoSum.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Leetcode_Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Leetcode_Java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Leetcode_Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Leetcode_Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Leetcode_Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Leetcode_Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="arrays_easy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Leetcode_Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Leetcode_Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="arrays_medium" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Leetcode_Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Leetcode_Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="linked_list_medium" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="InsertCircleList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="linked_list_medium.InsertCircleList" />
+      <module name="Leetcode_Java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="linked_list_medium.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.InsertCircleList" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f2555b8a-d385-4759-b169-4bc09b9145fc" name="Default Changelist" comment="" />
+      <created>1558541456880</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1558541456880</updated>
+      <workItem from="1558541460681" duration="762000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="762000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Designer" />
+      <window_info id="Image Layers" />
+      <window_info id="Capture Tool" />
+      <window_info id="UI Designer" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Messages" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="leetcode" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/arrays_medium/Merge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arrays_medium/MaxProfit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="13" column="26" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arrays_easy/TwoSum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#1730#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arrays_easy/ContainsNearbyDuplicate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="e#0#797#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arrays_easy/FindDisappearedNumbers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arrays_easy/FindMaxAverage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arrays_easy/Merge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/linked_list_medium/InsertCircleList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="78" column="1" lean-forward="true" selection-start-line="15" selection-end-line="78" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
