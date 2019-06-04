@@ -19,6 +19,19 @@ import java.util.PriorityQueue;
  *  |
  *  |
  *  3---> ATL
+ *
+ *  Solution:
+ *  1. DFSBackTracking
+ *  2. Eulerian Path(Hierholzer Algorithm)
+ *      a. A graph contains Eulerian Path iff:
+ *          1. graph is connected, and there is a path between any two nodes on the graph(true from problem description)
+ *          2. One of the two conditions are true:
+ *              a. all nodes indegree = outdegreee
+ *              b. only one node with indegree one less than outdegree(source),
+ *              only one node with indegree one greater than out degree(end), all other nodes indegree = outdegree
+ *
+ *  Note: What is the difference between Hierholzer Algorithm and regular DFS?:x
+ *
  */
 public class FindItinerary {
     /**
