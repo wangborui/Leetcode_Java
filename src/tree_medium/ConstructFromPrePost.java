@@ -21,8 +21,10 @@ import java.util.Arrays;
  *
  * The first element in preorder array pre[0] must be the root of entire tree
  * The last element in postorder array post[n - 1] must be the root of entire tree
- * The second element in preorder array pre[1] must be the root of left sub tree
- * find index of post[pre[1]] in postorder array as index, then all elements from
+ * The second element in preorder array pre[1] must be the root of left sub tree.
+ *
+ * If the left subtree branch has L nodes, then the root of this subtree must be pre[1].
+ * Find index of post[pre[1]] in postorder array as index, then all elements from
  *      post[0 : index] is left subtree,
  *      post[(index + 1) : (n - 2)] is right subtree;
  *
