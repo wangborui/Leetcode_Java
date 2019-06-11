@@ -39,8 +39,41 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- *
+ * June 10, 2019
+ * https://leetcode.com/problems/validate-binary-search-tree/
  * @author Borui Wang
+ *
+ * Solutions:
+ * 1. Iteratively tranverse BST and see if elements are sorted in order
+ * 2. preorder traversal of the BST and validate
+ *    Analysis:
+ *      A BST is valid if left subtree root is smaller than root, and right subtree root is larger than root.
+ *      Recursion will work if we compare the value of current ROOT, and respective subtrees root, it works in this case
+ *       1
+ *      /\
+ *     0  2
+ *
+ *     However, this approach will fail in this case, because the leaf node(2) is smaller than tree root(5).
+ *       5
+ *     /  \
+ *    1    9
+ *        /  \
+ *(failed)2  10
+ *
+ *
+ *   Solution:
+ *      To resovle problem above, we can carry two variables upper and lower limit when preorder traversing the tree
+ *                                       5(lowerlimit = null, upperlimit = null)
+ *                                     /  \
+ *(lowerlimit = null, upperlimit = 5) 1    9(lowerlimit = 5, upperlimit = null)
+ *                                       /  \
+ *      (lowerlimit = 5, upperlimit = 9)2  10 (lowerlimit = 9, upperlimit = null)
+ *
+ *   Implementation:
+ *      Recursively traverse the tree and compare each node with its upper and lower limit to validate the BST
+ *   Complexity:
+ *      Time complexity : O(N) since we visit each node exactly once.
+ *      Space complexity : O(1)
  */
 public class ValidateBinarySearchTree {
 
@@ -79,5 +112,30 @@ public class ValidateBinarySearchTree {
             }
         }
         return true;
+    }
+
+    /**
+     * Solution 2 Implementations
+     * @param root
+     * @return
+     */
+    public boolean isValidBSTSolution2(TreeNode root) {
+        return preorder(root, null, null);
+    }
+
+    public boolean preorder(TreeNode root, Integer lowerLimit, Integer upperLimit) {
+        if(root == null) {
+            return true;
+        }
+
+        int val = root.val;
+        if(lowerLimit != null && val <= lowerLimit) {
+            return false;
+        }
+        if(upperLimit != null && val >= upperLimit) {
+            return false;
+        }
+
+        return preorder(root.left, lowerLimit, val) && preorder(root.right, val, upperLimit);
     }
 }
