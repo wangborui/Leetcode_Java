@@ -7,6 +7,15 @@ import java.util.Set;
  * June 14, 2019
  * https://leetcode.com/problems/robot-room-cleaner/
  *
+ * Analysis:
+ * Constraint Program:
+ *  Mark visited cells as virtual obstacles
+ * BackTracking:
+ *  After a few moves, if the robot is surrounded by visited or virtual obstacle blocks, but several steps back there was
+ *  a cell which proposed an alternative path to go. This means that proposed alternative path was not used and the room
+ *  is not completely cleaned, therefore, the robot needs to backtrack to that cell and explore the alternative path.
+ *
+ *
  * Solution Steps:
  * 1. We do not have a known 2D matrix to traverse, therefore, we need to keep track of visited spots as string "x-y"
  * 2. Mark all visited spot as if it is a blocker
