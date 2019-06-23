@@ -79,6 +79,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
@@ -88,30 +89,28 @@ import java.util.Set;
  * @author Borui Wang
  */
 public class WordLadder {
-    static int ladderLength(String beginWord, String endWord, Set<String> wordList) {
+    //One way BFS
+    static int ladderLength(String beginWord, String endWord, Set<String> wordLists) {
         /********************************************
          * Test Case:
          * 1. wordList is null, return 0
          * 2. begin word equals end word, return 1
          * 3. begin and end words can be connected via word list
-        *********************************************/
+         *********************************************/
+        Set<String> wordList = new HashSet<>(wordLists);
         if(wordList == null || beginWord == null || endWord == null) {
             return 0;
         }
         //2 purposes of hash map:
         //1.) keep track of visited words
         //2.) keep distance of each node from the source
-        
+
         Map<String, Integer> visited = new HashMap();
         Queue<String> q = new LinkedList();
-        
+
         visited.put(beginWord, 1);
         q.add(beginWord);
-        
-        //add begin and end word into dictionary
-        wordList.add(beginWord);
-        wordList.add(endWord);
-        
+
         while(!q.isEmpty()) {
             String word = q.poll();
             //find neighbors of word
@@ -128,6 +127,60 @@ public class WordLadder {
             }
         }
         return visited.getOrDefault(endWord, 0);
+    }
+
+    //Two way BFS
+    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+        Set<String> dict = new HashSet(wordList);
+        //start from begin word
+        List<String> beginSet = new LinkedList();
+        //start from end word
+        List<String> endSet = new LinkedList();
+        //keep track of all visited words
+        Set<String> visited = new HashSet();
+
+        beginSet.add(beginWord);
+        if(dict.contains(endWord)) {
+            endSet.add(endWord);
+        } else {
+            return 0;
+        }
+
+        for(int dist = 2; !beginSet.isEmpty() ; dist++) {
+            List<String> temp = new LinkedList();
+
+            //find neighbors
+            for(String oldWord: beginSet) {
+                for(int j = 0; j < oldWord.length(); j++) {
+                    char[] wc = oldWord.toCharArray();
+                    for(char c = 'a'; c <= 'z'; c++) {
+                        //bypass the oldword itself
+                        if(c == oldWord.charAt(j)) {
+                            continue;
+                        }
+                        wc[j] = c;
+                        String newWord = new String(wc);
+                        //two ends meet
+                        if(endSet.contains(newWord)) {
+                            return dist;
+                        }
+                        if(dict.contains(newWord) && !visited.contains(newWord)) {
+                            temp.add(newWord);
+                            visited.add(newWord);
+                        }
+                    }
+                }
+            }
+
+            //switch the smaller sized set to be begining set
+            beginSet = temp;
+            if(endSet.size() < beginSet.size()) {
+                temp = beginSet;
+                beginSet = endSet;
+                endSet = temp;
+            }
+        }
+        return 0;
     }
     public static void main(String[] args) {
         String[] list = {"hot","dot","dog","lot","log"};
