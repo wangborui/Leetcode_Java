@@ -1,5 +1,6 @@
 // Source : https://oj.leetcode.com/problems/insert-interval/
 // Date   : 03/05/2017
+// Update : 06/23/2019 New Solution Using TreeMap Changing Time from O(n) to O(n log n) space O(n)
 /**
  * ********************************************************************************
  *
@@ -22,6 +23,8 @@ package Leetcode_Java.arrays_hard;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  *
@@ -51,8 +54,9 @@ public class Insert {
 //    remove all existing intervals whose end is less than new interval start
 //            
 //    After removal, merge intervals whose start is less than new interval's end
-//            
+//
 //    then add the rest of the intervals if there are any
+//    Time O(n) Space O(n)
     public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
         if (intervals == null || newInterval == null) {
             return intervals;
@@ -79,5 +83,35 @@ public class Insert {
             res.add(intervals.get(i++));
         }
         return res;
+    }
+
+    //TreeMap Solution
+    public int[][] insertTreeMapSolution(int[][] intervals, int[] newInterval) {
+        Map<Integer, Integer> map = new TreeMap<>();
+        //Adding new interval
+        map.put(newInterval[0], map.getOrDefault(newInterval[0], 0) + 1);
+        map.put(newInterval[1], map.getOrDefault(newInterval[1], 0) - 1);
+
+        for (int[] itl : intervals) {
+            map.put(itl[0], map.getOrDefault(itl[0], 0) + 1);
+            map.put(itl[1], map.getOrDefault(itl[1], 0) - 1);
+        }
+        List<int[]> res = new ArrayList();
+        int start = 0; int count = 0;
+        for(Map.Entry<Integer,Integer> e : map.entrySet()) {
+            if(count == 0) {
+                start = e.getKey();
+            }
+
+            count += e.getValue();
+            if(count == 0) {
+                res.add(new int[]{start, e.getKey()});
+            }
+        }
+        int[][] temp = new int[res.size()][2];
+        for(int i = 0; i < res.size(); i++) {
+            temp[i] = res.get(i);
+        }
+        return temp;
     }
 }
