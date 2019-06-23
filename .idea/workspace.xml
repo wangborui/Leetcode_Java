@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="433431ed-0d45-4efa-a758-28cb948b6ea8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/arrays_medium/MyCalendar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arrays_medium/MeetingRoom2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays_medium/MeetingRoom2.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,15 +17,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tree_medium/ZigzagLevelOrder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="94" column="22" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/linked_list_medium/HasCycle2.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -95,11 +86,27 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/arrays_medium/MeetingRoom2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-884">
-              <caret line="2" column="51" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
+            <state relative-caret-position="50">
+              <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#2054#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/arrays_medium/MyCalendar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="48" column="14" lean-forward="true" selection-start-line="48" selection-end-line="49" />
+              <folding>
+                <element signature="e#1609#1610#0" expanded="true" />
+                <element signature="e#1648#1649#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -149,6 +156,7 @@
         <option value="$PROJECT_DIR$/src/arrays_medium/Merge.java" />
         <option value="$PROJECT_DIR$/src/arrays_hard/Insert.java" />
         <option value="$PROJECT_DIR$/src/arrays_medium/MeetingRoom2.java" />
+        <option value="$PROJECT_DIR$/src/arrays_medium/MyCalendar.java" />
       </list>
     </option>
   </component>
@@ -175,6 +183,12 @@
               <item name="Leetcode_Java" type="b2602c69:ProjectViewProjectNode" />
               <item name="Leetcode_Java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Leetcode_Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Leetcode_Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="arrays_medium" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Leetcode_Java" type="b2602c69:ProjectViewProjectNode" />
@@ -221,18 +235,18 @@
       <workItem from="1560030904445" duration="6745000" />
       <workItem from="1560534894487" duration="1095000" />
       <workItem from="1561261990847" duration="260000" />
-      <workItem from="1561327143656" duration="2943000" />
+      <workItem from="1561327143656" duration="4307000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11043000" />
+    <option name="totallyTimeSpent" value="12407000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25799572" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25799572" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -249,7 +263,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.35969663" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.35969663" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -382,8 +396,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/arrays_medium/MeetingRoom2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-884">
-          <caret line="2" column="51" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
+        <state relative-caret-position="50">
+          <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#2054#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arrays_medium/MyCalendar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="48" column="14" lean-forward="true" selection-start-line="48" selection-end-line="49" />
+          <folding>
+            <element signature="e#1609#1610#0" expanded="true" />
+            <element signature="e#1648#1649#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
