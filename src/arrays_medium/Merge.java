@@ -1,5 +1,6 @@
 // Source : https://oj.leetcode.com/problems/merge-intervals/
 // Date   : 02/27/2017
+// Update : 06/23/2019 using TreeMap
 
 /********************************************************************************** 
 * 
@@ -18,6 +19,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  *
@@ -69,5 +72,32 @@ public class Merge {
         //add last interval
         res.add(new Interval(prevStart, prevEnd));
         return res;
+    }
+
+    //TreeMap Solution
+    public int[][] mergeTreeMap(int[][] intervals) {
+        Map<Integer, Integer> map = new TreeMap<>();
+
+        for (int[] itl : intervals) {
+            map.put(itl[0], map.getOrDefault(itl[0], 0) + 1);
+            map.put(itl[1], map.getOrDefault(itl[1], 0) - 1);
+        }
+        List<int[]> res = new ArrayList();
+        int start = 0; int count = 0;
+        for(Map.Entry<Integer,Integer> e : map.entrySet()) {
+            if(count == 0) {
+                start = e.getKey();
+            }
+
+            count += e.getValue();
+            if(count == 0) {
+                res.add(new int[]{start, e.getKey()});
+            }
+        }
+        int[][] temp = new int[res.size()][2];
+        for(int i = 0; i < res.size(); i++) {
+            temp[i] = res.get(i);
+        }
+        return temp;
     }
 }
