@@ -1,5 +1,6 @@
 //Source : https://leetcode.com/problems/meeting-rooms-ii/?tab=Description
 //Date   : 03/05/2017
+//Update : 06/23/2019 update solution using treemap
 /**
  * ********************************************************************************
  * Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...]
@@ -15,6 +16,8 @@ package Leetcode_Java.arrays_medium;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  *
@@ -79,5 +82,27 @@ public class MeetingRoom2 {
             minRooms = Math.max(minRooms, rooms);
         }
         return minRooms;
+    }
+
+    //Update Using TreeMap Solution
+    public int minMeetingRoomsTreeMap(int[][] intervals) {
+        if(intervals.length == 0) {
+            return 0;
+        }
+        Map<Integer, Integer> map = new TreeMap<>();
+
+        for (int[] itl : intervals) {
+            map.put(itl[0], map.getOrDefault(itl[0], 0) + 1);
+            map.put(itl[1], map.getOrDefault(itl[1], 0) - 1);
+        }
+        List<int[]> res = new ArrayList();
+        int count = 0;
+        int minRoom = Integer.MIN_VALUE;
+        for(Map.Entry<Integer,Integer> e : map.entrySet()) {
+            count += e.getValue();
+            minRoom = Math.max(minRoom, count);
+        }
+
+        return minRoom;
     }
 }
