@@ -1,6 +1,7 @@
 //Source : https://leetcode.com/problems/meeting-rooms-ii/?tab=Description
 //Date   : 03/05/2017
 //Update : 06/23/2019 update solution using treemap
+//Reference: https://leetcode.com/problems/meeting-rooms-ii/discuss/203658/HashMapTreeMap-resolves-Scheduling-Problem
 /**
  * ********************************************************************************
  * Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...]

@@ -1,6 +1,7 @@
 // Source : https://oj.leetcode.com/problems/insert-interval/
 // Date   : 03/05/2017
 // Update : 06/23/2019 New Solution Using TreeMap Changing Time from O(n) to O(n log n) space O(n)
+//Reference: https://leetcode.com/problems/meeting-rooms-ii/discuss/203658/HashMapTreeMap-resolves-Scheduling-Problem
 /**
  * ********************************************************************************
  *

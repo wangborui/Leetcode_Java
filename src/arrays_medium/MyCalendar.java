@@ -4,6 +4,7 @@ import java.util.TreeMap;
 
 /**
  * https://leetcode.com/problems/my-calendar-i/description/
+ * Reference: https://leetcode.com/problems/meeting-rooms-ii/discuss/203658/HashMapTreeMap-resolves-Scheduling-Problem
  * 06/23/2019
  *
  * Implement a MyCalendar class to store your events. A new event can be added if adding the event will not cause a double booking.
